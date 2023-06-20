@@ -1,6 +1,6 @@
 package com.java.ohshu.servlet.dao;
 
-public class OhShuDAO {
+public interface OhShuDAO {
 	
 	/*
 	
