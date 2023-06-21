@@ -52,7 +52,7 @@ public class LoginDAOImpl implements LoginDAO {
 
 	@Override
 	public void selectMemberByIdAndPw (UserTableVO vo) {
-		String sql = "SELECT * FROM user_tb WHERE (id, pw) IN ((?,?))";
+		String sql = "SELECT * FROM user_tb WHERE (user_id, user_pwd) IN ((?,?))";
 
 		try (
 
