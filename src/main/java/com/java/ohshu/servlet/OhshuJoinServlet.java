@@ -9,6 +9,8 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import com.java.ohshu.sevlet.service.JoinService;
+import com.java.ohshu.sevlet.service.impl.JoinServiceImpl;
 import com.java.ohshu.sevlet.vo.UserTableVO;
 import com.java.servlet.util.SHAEncodeUtil;
 
@@ -44,14 +46,14 @@ public class OhshuJoinServlet extends HttpServlet {
 	public void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		UserTableVO usertable = new UserTableVO();
 		usertable.setUser_id(request.getParameter("user_id"));
-		usertable.setUser_pwd(SHAEncodeUtil.encodeSha(request.getParameter("pw")));
-		usertable.setUser_name(request.getParameter("id"));
-		usertable.setUser_age(request.getParameter("id"));
-		usertable.setUser_jumin(request.getParameter("id"));
+		usertable.setUser_pwd(SHAEncodeUtil.encodeSha(request.getParameter("user_pwd")));
+		usertable.setUser_name(request.getParameter("user_name"));
+		usertable.setUser_age(Integer.parseInt(request.getParameter("user_age")));   // int형 user_age
+		usertable.setUser_jumin(request.getParameter("user_jumin"));
 	
 		int isOk= 1;
 		String msg = null;
-		if(service.registerMember(vo) == isOk) {
+		if(service.registerUsertable(usertable) == isOk) {
 			msg = "success";
 
 		}else {
