@@ -1,15 +1,15 @@
 package com.java.ohshu.sevlet.service.impl;
 
-import com.java.servlet.dao.JoinDAO;
-import com.java.servlet.dao.impl.JoinDAOImpl;
-import com.java.servlet.service.JoinService;
-import com.java.servlet.vo.MemberVO;
+import com.java.ohshu.servlet.dao.JoinDAO;
+import com.java.ohshu.servlet.dao.impl.JoinDAOImpl;
+import com.java.ohshu.sevlet.service.JoinService;
+import com.java.ohshu.sevlet.vo.UserTableVO;
 
 public class JoinServiceImpl implements JoinService {
 	
 	private  final JoinDAO dao = JoinDAOImpl.getInstance();
 	
-	private static final JoinService instance = new JoinServiceImpl();
+	private static final JoinServiceImpl instance = new JoinServiceImpl();
 	
 	private JoinServiceImpl() {
 		
@@ -20,8 +20,8 @@ public class JoinServiceImpl implements JoinService {
 	}
 	
 	@Override
-	public int registerMember(MemberVO member) {
-	return dao.insertMember(member);
+	public int registerUsertable(UserTableVO usertable) {
+	return dao.insertUsertable(usertable);
 	}
 
 }
