@@ -51,8 +51,8 @@ public class STAY_API {
             stmt.setString(6, stay_address);
             stmt.setString(7, stay_x);
             stmt.setString(8, stay_y);
-            stmt.setString(9, stay_home_url);
-            stmt.setString(10, stay_tel);
+            stmt.setString(9, stay_tel);
+            stmt.setString(10, stay_home_url);
             stmt.setString(11, stay_info);
             stmt.setString(12, stay_img);
 
