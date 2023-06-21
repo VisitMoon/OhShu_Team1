@@ -16,7 +16,7 @@ public class STAY_API {
          URL url = new URL("https://tour.chungnam.go.kr/_prog/openapi/?func=stay&start=1&end=200");
          DocumentBuilderFactory dbFactory = DocumentBuilderFactory.newInstance();
          Document doc = dbFactory.newDocumentBuilder().parse(url.openStream());
-
+         
          // DB 연결
 
          Class.forName("oracle.jdbc.driver.OracleDriver");
@@ -24,10 +24,9 @@ public class STAY_API {
          // 삽입 쿼리 실행
          NodeList nodeList = doc.getElementsByTagName("item");
          String query = "INSERT INTO STAY (stay_no ,stay_location ,stay_category ,stay_name ,stay_sub_title ,stay_address ,stay_x ,stay_y ,stay_tel ,stay_home_url ,stay_info ,stay_img)"
-               + "VALUES (? ,? ,? ,? ,? ,? ,? ,? ,? ,? ,? ,?)";
+               + " VALUES (? ,? ,? ,? ,? ,? ,? ,? ,? ,? ,? ,?)";
          // 넣을 테이블 이랑 컬럼
-         PreparedStatement stmt = conn.prepareStatement(query);
-
+         PreparedStatement pstmt = conn.prepareStatement(query);
          for (int i = 0; i < nodeList.getLength(); i++) {
             Element element = (Element) nodeList.item(i);
             String stay_no = element.getElementsByTagName("mng_no").item(0).getTextContent();
@@ -43,24 +42,24 @@ public class STAY_API {
             String stay_info = element.getElementsByTagName("desc").item(0).getTextContent();
             String stay_img = element.getElementsByTagName("list_img").item(0).getTextContent();
 
-            stmt.setString(1, stay_no);
-            stmt.setString(2, stay_location);
-            stmt.setString(3, stay_category);
-            stmt.setString(4, stay_name);
-            stmt.setString(5, stay_sub_title);
-            stmt.setString(6, stay_address);
-            stmt.setString(7, stay_x);
-            stmt.setString(8, stay_y);
-            stmt.setString(9, stay_tel);
-            stmt.setString(10, stay_home_url);
-            stmt.setString(11, stay_info);
-            stmt.setString(12, stay_img);
+            pstmt.setString(1, stay_no);
+            pstmt.setString(2, stay_location);
+            pstmt.setString(3, stay_category);
+            pstmt.setString(4, stay_name);
+            pstmt.setString(5, stay_sub_title);
+            pstmt.setString(6, stay_address);
+            pstmt.setString(7, stay_x);
+            pstmt.setString(8, stay_y);
+            pstmt.setString(9, stay_tel);
+            pstmt.setString(10, stay_home_url);
+            pstmt.setString(11, stay_info);
+            pstmt.setString(12, stay_img);
 
-            stmt.executeUpdate();
+            pstmt.executeUpdate();
          }
 
-            stmt.close();
-            conn.close();
+     	pstmt.close();
+        conn.close();
         } catch (Exception e) {
             e.printStackTrace();
         }
