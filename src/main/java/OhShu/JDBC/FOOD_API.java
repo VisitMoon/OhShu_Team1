@@ -17,7 +17,7 @@ public class FOOD_API {
          DocumentBuilderFactory dbFactory = DocumentBuilderFactory.newInstance();
          Document doc = dbFactory.newDocumentBuilder().parse(url.openStream());
 
-<<<<<<< HEAD
+
             // DB 연결
             Class.forName("oracle.jdbc.driver.OracleDriver");
             Connection conn = DriverManager.getConnection("jdbc:oracle:thin:@localhost:1521:xe", "c##ohshu", "ohshu");
@@ -59,7 +59,7 @@ public class FOOD_API {
                 
                 stmt.executeUpdate();
             }
-=======
+
          // DB 연결
 
          Class.forName("oracle.jdbc.driver.OracleDriver");
@@ -85,7 +85,7 @@ public class FOOD_API {
             String food_tel = element.getElementsByTagName("tel").item(0).getTextContent();
             String food_info = element.getElementsByTagName("desc").item(0).getTextContent();
             String food_img = element.getElementsByTagName("list_img").item(0).getTextContent();
->>>>>>> 2f673f3a2066da6930ebd7cb703fa08df15f0090
+
 
             stmt.setString(1, food_no);
             stmt.setString(2, food_location);

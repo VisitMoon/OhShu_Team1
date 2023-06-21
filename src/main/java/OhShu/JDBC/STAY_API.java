@@ -17,7 +17,7 @@ public class STAY_API {
          DocumentBuilderFactory dbFactory = DocumentBuilderFactory.newInstance();
          Document doc = dbFactory.newDocumentBuilder().parse(url.openStream());
 
-<<<<<<< HEAD
+
             // DB 연결
             Class.forName("oracle.jdbc.driver.OracleDriver");
             Connection conn = DriverManager.getConnection("jdbc:oracle:thin:@localhost:1521:xe", "c##ohshu", "ohshu");
@@ -59,7 +59,7 @@ public class STAY_API {
                 
                 stmt.executeUpdate();
             }
-=======
+
          // DB 연결
 
          Class.forName("oracle.jdbc.driver.OracleDriver");
@@ -101,7 +101,7 @@ public class STAY_API {
 
             stmt.executeUpdate();
          }
->>>>>>> 2f673f3a2066da6930ebd7cb703fa08df15f0090
+
 
             stmt.close();
             conn.close();

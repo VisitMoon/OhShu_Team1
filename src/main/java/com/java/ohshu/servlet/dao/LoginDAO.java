@@ -5,9 +5,9 @@ import com.java.ohshu.sevlet.vo.UserTableVO;
 
 public interface LoginDAO {
 
-	int selectCountMember(UserTableVO vo);
+	void selectUsertableByIdAndPw(UserTableVO usertable);
 
-	void selectMemberByIdAndPw(UserTableVO vo);
+	int selectCountUsertable(UserTableVO usertable);
 	
 
 }

@@ -23,7 +23,7 @@ public class LoginDAOImpl implements LoginDAO {
 	}
 
 	@Override
-	public int selectCountMember(UserTableVO vo) {
+	public int selectCountUsertable(UserTableVO usertable) {
 
 		int result = 0;
 		String sql = "SELECT COUNT(1) FROM user_tb WHERE (user_id, user_pwd) IN ((?,?))";
@@ -35,8 +35,8 @@ public class LoginDAOImpl implements LoginDAO {
 
 		) {
 			System.out.println(pstmt);
-			pstmt.setString(1, vo.getUser_id());
-			pstmt.setString(2, vo.getUser_pwd());
+			pstmt.setString(1, usertable.getUser_id());
+			pstmt.setString(2, usertable.getUser_pwd());
 			ResultSet rs = pstmt.executeQuery();
 			if (rs.next()) {
 				result = rs.getInt(1);
@@ -51,7 +51,7 @@ public class LoginDAOImpl implements LoginDAO {
 	}
 
 	@Override
-	public void selectMemberByIdAndPw (UserTableVO vo) {
+	public void selectUsertableByIdAndPw (UserTableVO usertable) {
 		String sql = "SELECT * FROM user_tb WHERE (user_id, user_pwd) IN ((?,?))";
 
 		try (
@@ -61,15 +61,15 @@ public class LoginDAOImpl implements LoginDAO {
 
 		) {
 			System.out.println(pstmt);
-			pstmt.setString(1, vo.getUser_id());
-			pstmt.setString(2, vo.getUser_pwd());
+			pstmt.setString(1, usertable.getUser_id());
+			pstmt.setString(2, usertable.getUser_pwd());
 
 			ResultSet rs = pstmt.executeQuery();
 
 			if (rs.next()) {
-				vo.setUser_name(rs.getString("user_name"));
-				vo.setUser_age(rs.getInt("age"));
-				vo.setUser_jumin(rs.getString("jumin"));
+				usertable.setUser_name(rs.getString("user_name"));
+				usertable.setUser_age(rs.getInt("age"));
+				usertable.setUser_jumin(rs.getString("jumin"));
 
 			}
 
@@ -78,5 +78,7 @@ public class LoginDAOImpl implements LoginDAO {
 
 		}
 	}
+
+
 
 }

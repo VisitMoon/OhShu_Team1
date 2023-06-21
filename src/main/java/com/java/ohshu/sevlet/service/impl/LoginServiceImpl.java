@@ -1,9 +1,9 @@
 package com.java.ohshu.sevlet.service.impl;
 
-import com.java.servlet.dao.LoginDAO;
-import com.java.servlet.dao.impl.LoginDAOImpl;
-import com.java.servlet.service.LoginService;
-import com.java.servlet.vo.MemberVO;
+import com.java.ohshu.servlet.dao.LoginDAO;
+import com.java.ohshu.servlet.dao.impl.LoginDAOImpl;
+import com.java.ohshu.sevlet.service.LoginService;
+import com.java.ohshu.sevlet.vo.UserTableVO;
 
 public class LoginServiceImpl implements LoginService {
 
@@ -15,8 +15,8 @@ public class LoginServiceImpl implements LoginService {
 	}
 
 	@Override
-	public int getCountMember(MemberVO vo) {
-		return dao.selectCountMember(vo);
+	public int getCountUsertable(UserTableVO usertable) {
+		return dao.selectCountUsertable(usertable);
 	}
 
 	public static LoginService getInstance() {
@@ -24,8 +24,8 @@ public class LoginServiceImpl implements LoginService {
 	}
 
 	@Override
-	public void getMemberByIdAndPw(MemberVO vo) {
-		dao.selectMemberByIdAndPw(vo);
+	public void getUsertableByIdAndPw(UserTableVO usertable) {
+		dao.selectUsertableByIdAndPw(usertable);
 	}
 
 }
