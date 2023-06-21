@@ -56,7 +56,6 @@ public class FOOD_API {
                  stmt.setString(12, food_img);
 
                 
-                
                 stmt.executeUpdate();
             }
 
