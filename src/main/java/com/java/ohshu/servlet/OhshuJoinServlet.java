@@ -10,10 +10,8 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import com.java.ohshu.sevlet.vo.UserTableVO;
-import com.java.servlet.service.JoinService;
-import com.java.servlet.service.impl.JoinServiceImpl;
 import com.java.servlet.util.SHAEncodeUtil;
-import com.java.servlet.vo.MemberVO;
+
 
 /**
  * Servlet implementation class JoinSerlvet
