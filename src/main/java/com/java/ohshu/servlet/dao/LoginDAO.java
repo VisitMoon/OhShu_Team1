@@ -1,12 +1,13 @@
 package com.java.ohshu.servlet.dao;
 
-import com.java.servlet.vo.MemberVO;
+import com.java.ohshu.sevlet.vo.UserTableVO;
+
 
 public interface LoginDAO {
 
-	int selectCountMember(MemberVO vo);
+	int selectCountMember(UserTableVO vo);
 
-	void selectMemberByIdAndPw(MemberVO vo);
+	void selectMemberByIdAndPw(UserTableVO vo);
 	
 
 }
