@@ -2,7 +2,7 @@ package com.java.ohshu.sevlet.vo;
 
 import java.util.Objects;
 
-public class UseTableVO {
+public class UserTableVO {
 	
 	private String user_id;
 	private String user_pwd;
