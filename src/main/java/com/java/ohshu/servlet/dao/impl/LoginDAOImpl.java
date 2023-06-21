@@ -4,11 +4,11 @@ import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 
+import com.java.ohshu.servlet.dao.LoginDAO;
 import com.java.ohshu.sevlet.vo.UserTableVO;
-import com.java.servlet.dao.LoginDAO;
 import com.java.servlet.util.DBCP2Util;
 import com.java.servlet.util.DataBaseUtil;
-import com.java.servlet.vo.MemberVO;
+
 
 public class LoginDAOImpl implements LoginDAO {
 
