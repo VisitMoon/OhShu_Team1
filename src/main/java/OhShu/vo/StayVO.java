@@ -12,6 +12,8 @@ public class StayVO {
 	private String stay_tel;
 	private String stay_home_url;
 	private String stay_img;
+	
+	
 	public int getStay_no() {
 		return stay_no;
 	}
