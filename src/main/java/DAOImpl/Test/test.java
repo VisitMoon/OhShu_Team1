@@ -1,10 +1,11 @@
-package OhShu.service;
+package DAOImpl.Test;
 
 import static org.junit.jupiter.api.Assertions.*;
 
 import org.junit.jupiter.api.Test;
 
 import OhShu.ServiceImpl.StayServiceImpl;
+import OhShu.service.StayService;
 
 class test {
 
