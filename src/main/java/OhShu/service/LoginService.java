@@ -1,6 +1,6 @@
 package OhShu.service;
 
-import com.java.ohshu.sevlet.vo.UserTableVO;
+import OhShu.vo.UserTableVO;
 
 public interface LoginService {
 

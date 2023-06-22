@@ -1,9 +1,9 @@
 package OhShu.ServiceImpl;
 
-import com.java.ohshu.servlet.dao.JoinDAO;
-import com.java.ohshu.servlet.dao.impl.JoinDAOImpl;
-import com.java.ohshu.sevlet.service.JoinService;
-import com.java.ohshu.sevlet.vo.UserTableVO;
+import OhShu.DAO.JoinDAO;
+import OhShu.DAOImpl.JoinDAOImpl;
+import OhShu.service.JoinService;
+import OhShu.vo.UserTableVO;
 
 public class JoinServiceImpl implements JoinService {
 	

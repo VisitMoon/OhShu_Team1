@@ -10,11 +10,11 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
-import com.java.ohshu.sevlet.service.LoginService;
-import com.java.ohshu.sevlet.service.impl.LoginServiceImpl;
-import com.java.ohshu.sevlet.vo.UserTableVO;
-import com.java.servlet.util.Define;
-import com.java.servlet.util.SHAEncodeUtil;
+import OhShu.service.LoginService;
+import OhShu.ServiceImpl.LoginServiceImpl;
+import OhShu.vo.UserTableVO;
+import OhShu.Util.Define;
+import OhShu.Util.SHAEncodeUtil;
 
 
 

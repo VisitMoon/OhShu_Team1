@@ -9,10 +9,10 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import com.java.ohshu.sevlet.service.JoinService;
-import com.java.ohshu.sevlet.service.impl.JoinServiceImpl;
-import com.java.ohshu.sevlet.vo.UserTableVO;
-import com.java.servlet.util.SHAEncodeUtil;
+import OhShu.service.JoinService;
+import OhShu.ServiceImpl.JoinServiceImpl;
+import OhShu.vo.UserTableVO;
+import OhShu.Util.SHAEncodeUtil;
 
 
 /**
