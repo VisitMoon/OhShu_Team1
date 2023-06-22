@@ -1,4 +1,4 @@
-package test.com.java.test;
+package DAOImpl.Test;
 
 import static org.junit.Assert.assertEquals;
 
