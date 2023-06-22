@@ -24,10 +24,15 @@ public class StayReviewDAOImpl  implements StayReviewDAO{
 		int result = 0;
 		
 		
-		String sql="INSERT INTO stay_review \r\n"
-				+ "(review_no, time, user_id, stay_no, review_content)\r\n"
-				+ "VALUES (seq_review_no.nextval, to_Char(sysdate,'yyyy.mm.dd hh24:mi') ,'?', ?, '?')"
-				;
+		String sql="INSERT INTO stay_review (review_no, time, user_id, stay_no, review_content)\r\n"
+				+ "								  VALUES (\r\n"
+				+ "								 seq_review_no.nextval\r\n"
+				+ "								 ,to_Char(sysdate,'yyyy.mm.dd hh24:mi')\r\n"
+				+ "								 ,?\r\n"
+				+ "								 ,?\r\n"
+				+ "								 ,?\r\n"
+				+ "                 )";
+				
 		
 	
 		try(
@@ -40,15 +45,69 @@ public class StayReviewDAOImpl  implements StayReviewDAO{
 			pstmt.setString(3, stay_review.getReview_content());
 			
 			
+			result = pstmt.executeUpdate();
+			System.out.println("result -"+result);
+			
+		}catch(Exception e) {
+			 e.printStackTrace();
+		}
+		return result;
+		
+	}
+	
+	@Override
+	public int DeleteStayReview(StayReviewVO reviewdelete) {
+		int result = 0;
+		
+		
+		String sql="DELETE FROM stay_review WHERE review_no = ?";
+				
+		
+	
+		try(
+			Connection conn = DataBaseUtil.getConnection();
+			PreparedStatement pstmt = conn.prepareStatement(sql);
+			){
+			System.out.println(pstmt);
+			pstmt.setInt(1, reviewdelete.getReview_no());
+			
 			
 			result = pstmt.executeUpdate();
 			System.out.println("result -"+result);
 			
 		}catch(Exception e) {
-			
+			 e.printStackTrace();
 		}
 		return result;
-
+		
 	}
+	
+	public int updateStayReview(StayReviewVO reviewupdate) {
+		int result = 0;
+		
+		
+		String sql="UPDATE stay_review SET review_content = ? WHERE review_no = ?";
+				
+		
+	
+		try(
+			Connection conn = DataBaseUtil.getConnection();
+			PreparedStatement pstmt = conn.prepareStatement(sql);
+			){
+			System.out.println(pstmt);
+			pstmt.setString(1, reviewupdate.getReview_content());
+			pstmt.setInt(2, reviewupdate.getReview_no());
+			
+			
+			result = pstmt.executeUpdate();
+			System.out.println("result -"+result);
+			
+		}catch(Exception e) {
+			 e.printStackTrace();
+		}
+		return result;
+		
+	}
+
 
 }

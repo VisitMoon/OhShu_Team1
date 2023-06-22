@@ -33,6 +33,7 @@ public class StayDAOImpl implements StayDAO{
 				+ "        ,stay_y\r\n"
 				+ "        ,stay_tel\r\n"
 				+ "        ,stay_home_url\r\n"
+				+ "        ,stay_info\r\n"
 				+ "        ,stay_img\r\n"
 				+ "		   FROM stay WHERE stay_no = ?"
 				;
@@ -58,6 +59,7 @@ public class StayDAOImpl implements StayDAO{
 	            vo.setStay_y(rs.getString("stay_y"));
 	            vo.setStay_tel(rs.getString("stay_tel"));
 	            vo.setStay_home_url(rs.getString("stay_home_url"));
+	            vo.setStay_info(rs.getString("stay_info"));
 	            vo.setStay_img(rs.getString("stay_img"));
 				
 				

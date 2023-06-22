@@ -9,7 +9,12 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class DataBaseUtil {
-private static Connection connection;
+	
+	// DriverManager
+	// Connection
+	// Statement, PrepareStatement
+	// ResultSet
+	private static Connection connection;
 	
 	static {
 		
@@ -45,14 +50,14 @@ private static Connection connection;
 	public static Connection connectionDB() throws ClassNotFoundException, SQLException{
 		Class.forName("oracle.jdbc.driver.OracleDriver");
 		String url = "jdbc:oracle:thin:@localhost:1521:XE";
-		String id = "C##OhShu";
+		String id = "c##OhSHu";
 		String pwd= "OhShu";
 		return DriverManager.getConnection(url,id,pwd);
 	}
 	public static void main(String[] args) throws ClassNotFoundException, SQLException{
 
+
 	}
 	
 
 }
-

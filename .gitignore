@@ -3,4 +3,8 @@
 .classpath
 .project
 build
+<<<<<<< HEAD
+.settings
+=======
+>>>>>>> e623f8d793e6d56f9bcb28910addbba821b889a9
 /bin/
