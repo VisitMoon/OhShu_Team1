@@ -17,8 +17,8 @@ class StayReviewTest {
 	   void testGetStay() {
 		  StayReviewVO vo = new StayReviewVO();
 		  
-		  vo.setUser_id("1");
-		  vo.setStay_no(9739);
+		  vo.setUser_id("jihol Park");
+		  vo.setStay_no(9708);
 		  vo.setReview_content("안녕하세요 반갑습니다.");
 	      
 	      assertNotEquals(1, service.InsertStayReview(vo) );

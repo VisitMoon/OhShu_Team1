@@ -24,9 +24,14 @@ public class StayReviewDAOImpl  implements StayReviewDAO{
 		int result = 0;
 		
 		
-		String sql="INSERT INTO stay_review \r\n"
-				+ "(review_no, time, user_id, stay_no, review_content)\r\n"
-				+ "VALUES (seq_review_no.nextval, to_Char(sysdate,'yyyy.mm.dd hh24:mi') ,'?', ?, '?')"
+		String sql="INSERT INTO stay_review ( review_no, time, user_id, stay_no, review_content)\r\n"
+				+ "            VALUES ( \r\n"
+				+ "            seq_review_no.nextval\r\n"
+				+ "            ,to_char(sysdate,'yyyy.mm.dd hh24:mi') \r\n"
+				+ "            ,?\r\n"
+				+ "            ,?\r\n"
+				+ "            ,?\r\n"
+				+ "            )"
 				;
 		
 	
