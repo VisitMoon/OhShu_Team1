@@ -36,7 +36,7 @@ public class JoinDAOImpl implements JoinDAO {
 
 		try (
 				
-				Connection conn = DBCP2Util.getConnection(); 
+				Connection conn = DataBaseUtil.getConnection(); 
 				PreparedStatement pstmt = conn.prepareStatement(sql);
 
 		) {

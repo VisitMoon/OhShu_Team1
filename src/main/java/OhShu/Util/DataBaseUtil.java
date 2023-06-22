@@ -11,8 +11,7 @@ import java.util.List;
 public class DataBaseUtil {
 private static Connection connection;
 	
-	static {
-		
+	static {		
 		try {
 			connection = connectionDB();
 		} catch (ClassNotFoundException e) {
@@ -44,12 +43,13 @@ private static Connection connection;
 	}
 	public static Connection connectionDB() throws ClassNotFoundException, SQLException{
 		Class.forName("oracle.jdbc.driver.OracleDriver");
-		String url = "jdbc:oracle:thin:@localhost:1521:XE";
+		String url = "jdbc:oracle:thin:@localhost:1521:xe";
 		String id = "C##OhShu";
 		String pwd= "OhShu";
 		return DriverManager.getConnection(url,id,pwd);
 	}
-	public static void main(String[] args) throws ClassNotFoundException, SQLException{
+	
+//	public static void main(String[] args) throws ClassNotFoundException, SQLException{
 ////		System.out.println(connectionDB());
 //		String id = "bang0008";
 //		String pwd = "112233";
@@ -80,22 +80,22 @@ private static Connection connection;
 //				memberList.add(vo);
 //			}
 //			System.out.println(memberList);
-////			System.out.println(conn);
-////		
-////			rs.next();
-////			int cnt = rs.getInt(1);
-////			if(cnt==1) {
-////				System.out.println("로그인 성공");
-////				
-////			}else {
-////				System.out.println("로그인 실패");
-////			}
+//			System.out.println(conn);
+//		
+//			rs.next();
+//			int cnt = rs.getInt(1);
+//			if(cnt==1) {
+//				System.out.println("로그인 성공");
+//				
+//			}else {
+//				System.out.println("로그인 실패");
+//			}
 //		}
 //		catch(Exception e) {
 //			e.printStackTrace();
 //		}
-	}
-	
-
+//	}
+//	
+//
 }
 
