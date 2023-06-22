@@ -2,7 +2,7 @@ package OhShu.DAOImpl;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;
-import java.sql.ResultSet;
+
 
 
 import OhShu.DAO.StayReviewDAO;

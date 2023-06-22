@@ -1,0 +1,26 @@
+package OhShu.ServiceImpl;
+
+import OhShu.DAO.FoodDAO;
+import OhShu.DAOImpl.FoodDAOImpl;
+import OhShu.service.FoodService;
+import OhShu.vo.FoodVO;
+
+
+public class FoodServiceImpl implements FoodService {
+	  private static final FoodServiceImpl instance = new FoodServiceImpl();
+	   private final FoodDAO dao = FoodDAOImpl.getInstance();
+	   
+	   private FoodServiceImpl() {
+		   
+	   }
+	   
+	   public static FoodServiceImpl getInstance() {
+		   return instance;
+	   }
+	   
+	   
+	   @Override
+	   public FoodVO getFood(int Food_no) {
+	      return dao.selectFood(Food_no);
+	   }
+}

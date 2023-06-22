@@ -1,6 +1,8 @@
 package DAOImpl.Test;
 
-import static org.junit.jupiter.api.Assertions.*;
+
+
+import static org.junit.Assert.assertNotEquals;
 
 import org.junit.jupiter.api.Test;
 
