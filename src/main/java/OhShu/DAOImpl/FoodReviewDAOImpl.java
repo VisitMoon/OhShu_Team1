@@ -3,39 +3,28 @@ package OhShu.DAOImpl;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 
-
-
+import OhShu.DAO.FoodReviewDAO;
 import OhShu.DAO.StayReviewDAO;
 import OhShu.Util.DataBaseUtil;
+import OhShu.vo.FoodReviewVO;
 import OhShu.vo.StayReviewVO;
 
+public class FoodReviewDAOImpl implements FoodReviewDAO {
 
-public class StayReviewDAOImpl  implements StayReviewDAO{
-	private final static StayReviewDAO instance = new StayReviewDAOImpl();
+private final static FoodReviewDAO instance = new FoodReviewDAOImpl();
 	
 		
 	
-	public static StayReviewDAO getInstance() {
+	public static FoodReviewDAO getInstance() {
 		return instance;
 	}
 	
 	@Override
-	public int InsertStayReview(StayReviewVO stay_review) {
+	public int InsertFoodReview(FoodReviewVO food_review) {
 		int result = 0;
 		
 		
-<<<<<<< HEAD
-		String sql="INSERT INTO stay_review ( review_no, time, user_id, stay_no, review_content)\r\n"
-				+ "            VALUES ( \r\n"
-				+ "            seq_review_no.nextval\r\n"
-				+ "            ,to_char(sysdate,'yyyy.mm.dd hh24:mi') \r\n"
-				+ "            ,?\r\n"
-				+ "            ,?\r\n"
-				+ "            ,?\r\n"
-				+ "            )"
-				;
-=======
-		String sql="INSERT INTO stay_review (review_no, time, user_id, stay_no, review_content)\r\n"
+		String sql="INSERT INTO food_review (review_no, time, user_id, food_no, review_content)\r\n"
 				+ "								  VALUES (\r\n"
 				+ "								 seq_review_no.nextval\r\n"
 				+ "								 ,to_Char(sysdate,'yyyy.mm.dd hh24:mi')\r\n"
@@ -44,7 +33,6 @@ public class StayReviewDAOImpl  implements StayReviewDAO{
 				+ "								 ,?\r\n"
 				+ "                 )";
 				
->>>>>>> 2f6c0df1d89b48c8b53e619ed595bc1f06fea67a
 		
 	
 		try(
@@ -52,9 +40,9 @@ public class StayReviewDAOImpl  implements StayReviewDAO{
 			PreparedStatement pstmt = conn.prepareStatement(sql);
 			){
 			System.out.println(pstmt);
-			pstmt.setString(1, stay_review.getUser_id());
-			pstmt.setInt(2, stay_review.getStay_no());
-			pstmt.setString(3, stay_review.getReview_content());
+			pstmt.setString(1, food_review.getUser_id());
+			pstmt.setInt(2, food_review.getFood_no());
+			pstmt.setString(3, food_review.getReview_content());
 			
 			
 			result = pstmt.executeUpdate();
@@ -68,11 +56,11 @@ public class StayReviewDAOImpl  implements StayReviewDAO{
 	}
 	
 	@Override
-	public int DeleteStayReview(StayReviewVO reviewdelete) {
+	public int DeleteFoodReview(FoodReviewVO reviewdelete) {
 		int result = 0;
 		
 		
-		String sql="DELETE FROM stay_review WHERE review_no = ?";
+		String sql="DELETE FROM food_review WHERE review_no = ?";
 				
 		
 	
@@ -94,11 +82,11 @@ public class StayReviewDAOImpl  implements StayReviewDAO{
 		
 	}
 	
-	public int updateStayReview(StayReviewVO reviewupdate) {
+	public int updateFoodReview(FoodReviewVO reviewupdate) {
 		int result = 0;
 		
 		
-		String sql="UPDATE stay_review SET review_content = ? WHERE review_no = ?";
+		String sql="UPDATE food_review SET review_content = ? WHERE review_no = ?";
 				
 		
 	
@@ -123,3 +111,4 @@ public class StayReviewDAOImpl  implements StayReviewDAO{
 
 
 }
+

@@ -6,7 +6,6 @@ import java.sql.ResultSet;
 
 import OhShu.DAO.UserLoginDAO;
 import OhShu.vo.UserTableVO;
-import OhShu.Util.DBCP2Util;
 import OhShu.Util.DataBaseUtil;
 
 
@@ -61,7 +60,7 @@ public class UserLoginDAOImpl implements UserLoginDAO {
 
 		try (
 
-				Connection conn = DBCP2Util.getConnection(); // DBCP2Util
+				Connection conn = DataBaseUtil.getConnection(); // DBCP2Util
 				PreparedStatement pstmt = conn.prepareStatement(sql);
 
 		) {
