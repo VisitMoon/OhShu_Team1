@@ -1,6 +1,5 @@
 package OhShu.service;
 
-import OhShu.Util.PageMaker;
 import OhShu.vo.FoodMainVO;
 
 public interface FoodMainService {
