@@ -4,10 +4,10 @@ import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.SQLException;
 
-import com.java.ohshu.servlet.dao.JoinDAO;
-import com.java.ohshu.sevlet.vo.UserTableVO;
-import com.java.servlet.util.DBCP2Util;
-import com.java.servlet.util.DataBaseUtil;
+import OhShu.DAO.JoinDAO;
+import OhShu.vo.UserTableVO;
+import OhShu.Util.DBCP2Util;
+import OhShu.Util.DataBaseUtil;
 
 
 public class JoinDAOImpl implements JoinDAO {
@@ -47,7 +47,7 @@ public class JoinDAOImpl implements JoinDAO {
 			pstmt.setString(5, usertable.getUser_jumin());
 			
 			result = pstmt.executeUpdate();
-			System.out.println("result - " + result);
+			System.out.println(result+"명의 유저가 회원가입 완료");
 			
 		} catch (Exception e) {
 			e.printStackTrace();

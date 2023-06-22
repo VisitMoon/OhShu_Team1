@@ -7,11 +7,11 @@ import java.sql.Statement;
 import java.util.ArrayList;
 import java.util.List;
 
-import com.java.servlet.dao.MainDAO;
-import com.java.servlet.util.DBCP2Util;
-import com.java.servlet.util.DataBaseUtil;
-import com.java.servlet.util.PageMaker;
-import com.java.servlet.vo.BoardVO;
+import OhShu.DAO.MainDAO;
+import OhShu.Util.DBCP2Util;
+import OhShu.Util.DataBaseUtil;
+import OhShu.Util.PageMaker;
+import OhShu.Servlet.vo.BoardVO;
 
 
 public class MainDAOImpl implements MainDAO {

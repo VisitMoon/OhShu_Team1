@@ -2,8 +2,8 @@ package OhShu.DAO;
 
 import java.util.List;
 
-import com.java.servlet.util.PageMaker;
-import com.java.servlet.vo.BoardVO;
+import OhShu.Util.PageMaker;
+import OhShu.Servlet.vo.BoardVO;
 
 public interface MainDAO {
 	

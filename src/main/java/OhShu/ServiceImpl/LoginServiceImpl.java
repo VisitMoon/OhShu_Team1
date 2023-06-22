@@ -1,9 +1,9 @@
 package OhShu.ServiceImpl;
 
-import com.java.ohshu.servlet.dao.LoginDAO;
-import com.java.ohshu.servlet.dao.impl.LoginDAOImpl;
-import com.java.ohshu.sevlet.service.LoginService;
-import com.java.ohshu.sevlet.vo.UserTableVO;
+import OhShu.DAO.LoginDAO;
+import OhShu.DAOImpl.LoginDAOImpl;
+import OhShu.service.LoginService;
+import OhShu.vo.UserTableVO;
 
 public class LoginServiceImpl implements LoginService {
 

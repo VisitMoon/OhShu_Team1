@@ -4,10 +4,10 @@ import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 
-import com.java.ohshu.servlet.dao.LoginDAO;
-import com.java.ohshu.sevlet.vo.UserTableVO;
-import com.java.servlet.util.DBCP2Util;
-import com.java.servlet.util.DataBaseUtil;
+import OhShu.DAO.LoginDAO;
+import OhShu.vo.UserTableVO;
+import OhShu.Util.DBCP2Util;
+import OhShu.Util.DataBaseUtil;
 
 
 public class LoginDAOImpl implements LoginDAO {

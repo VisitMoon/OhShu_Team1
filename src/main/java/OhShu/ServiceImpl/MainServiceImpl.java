@@ -2,11 +2,11 @@ package OhShu.ServiceImpl;
 
 import java.util.List;
 
-import com.java.servlet.dao.MainDAO;
-import com.java.servlet.dao.impl.MainDAOImpl;
-import com.java.servlet.service.MainService;
-import com.java.servlet.util.PageMaker;
-import com.java.servlet.vo.BoardVO;
+import OhShu.DAO.MainDAO;
+import OhShu.DAOImpl.MainDAOImpl;
+import OhShu.service.MainService;
+import OhShu.Util.PageMaker;
+import OhShu.Servlet.vo.BoardVO;
 
 
 
