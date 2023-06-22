@@ -3,7 +3,7 @@ package OhShu.DAO;
 import OhShu.vo.UserTableVO;
 
 
-public interface LoginDAO {
+public interface UserLoginDAO {
 
 	void selectUsertableByIdAndPw(UserTableVO usertable);
 

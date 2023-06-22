@@ -5,13 +5,13 @@ import static org.junit.Assert.assertEquals;
 import org.junit.Ignore;
 import org.junit.jupiter.api.Test;
 
-import OhShu.DAO.LoginDAO;
-import OhShu.DAOImpl.LoginDAOImpl;
+import OhShu.DAO.UserLoginDAO;
+import OhShu.DAOImpl.UserLoginDAOImpl;
 import OhShu.vo.UserTableVO;
 
 class LoginDAOImplTest {
 	
-	LoginDAO dao = LoginDAOImpl.getInstance();
+	UserLoginDAO dao = UserLoginDAOImpl.getInstance();
 
 	@Test @Ignore
 	void testSelectMember() {

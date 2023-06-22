@@ -5,15 +5,15 @@ import static org.junit.jupiter.api.Assertions.*;
 import org.junit.Ignore;
 import org.junit.jupiter.api.Test;
 
-import OhShu.ServiceImpl.LoginServiceImpl;
-import OhShu.service.LoginService;
+import OhShu.ServiceImpl.UserLoginServiceImpl;
+import OhShu.service.UserLoginService;
 import OhShu.vo.UserTableVO;
 
 
 
 class LoginServiceTest {
 
-private LoginService service = LoginServiceImpl.getInstance();
+private UserLoginService service = UserLoginServiceImpl.getInstance();
 	
 //		@Test 
 //		void testSelectMember() {

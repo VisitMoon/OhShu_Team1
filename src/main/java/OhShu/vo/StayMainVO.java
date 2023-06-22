@@ -1,6 +1,6 @@
 package OhShu.vo;
 
-public class StayVO {
+public class StayMainVO {
 	private int stay_no;
 	private String stay_location;
 	private String stay_category;
@@ -11,9 +11,17 @@ public class StayVO {
 	private String stay_y;
 	private String stay_tel;
 	private String stay_home_url;
+	private String stay_info;
 	private String stay_img;
 	
 	
+	
+	public String getStay_info() {
+		return stay_info;
+	}
+	public void setStay_info(String stay_info) {
+		this.stay_info = stay_info;
+	}
 	public int getStay_no() {
 		return stay_no;
 	}
@@ -80,15 +88,15 @@ public class StayVO {
 	public void setStay_no(int stay_no) {
 		this.stay_no = stay_no;
 	}
+	
+	
 	@Override
 	public String toString() {
-		return "StayVO [stay_no=" + stay_no + ", stay_location=" + stay_location + ", stay_category=" + stay_category
-				+ ", stay_name=" + stay_name + ", stay_sub_title=" + stay_sub_title + ", stay_address=" + stay_address
-				+ ", stay_x=" + stay_x + ", stay_y=" + stay_y + ", stay_tel=" + stay_tel + ", stay_home_url="
-				+ stay_home_url + ", stay_img=" + stay_img + "]";
+		return "StayMainVO [stay_no=" + stay_no + ", stay_location=" + stay_location + ", stay_category="
+				+ stay_category + ", stay_name=" + stay_name + ", stay_sub_title=" + stay_sub_title + ", stay_address="
+				+ stay_address + ", stay_x=" + stay_x + ", stay_y=" + stay_y + ", stay_tel=" + stay_tel
+				+ ", stay_home_url=" + stay_home_url + ", stay_info=" + stay_info + ", stay_img=" + stay_img + "]";
 	}
-	
-	
-	
+
 
 }

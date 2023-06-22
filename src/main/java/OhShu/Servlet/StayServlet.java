@@ -10,9 +10,9 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 
-import OhShu.ServiceImpl.StayServiceImpl;
-import OhShu.service.StayService;
-import OhShu.vo.StayVO;
+import OhShu.ServiceImpl.StayMainServiceImpl;
+import OhShu.service.StayMainService;
+import OhShu.vo.StayMainVO;
 
 /**
  * Servlet implementation class StayServlet
@@ -20,7 +20,7 @@ import OhShu.vo.StayVO;
 @WebServlet("/StayServlet")
 public class StayServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
-	private final StayService service = StayServiceImpl.getInstance();
+	private final StayMainService service = StayMainServiceImpl.getInstance();
     /**
      * @see HttpServlet#HttpServlet()
      */

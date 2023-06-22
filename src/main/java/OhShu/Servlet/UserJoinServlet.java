@@ -9,8 +9,8 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import OhShu.service.JoinService;
-import OhShu.ServiceImpl.JoinServiceImpl;
+import OhShu.service.UserJoinService;
+import OhShu.ServiceImpl.UserJoinServiceImpl;
 import OhShu.vo.UserTableVO;
 import OhShu.Util.SHAEncodeUtil;
 
@@ -19,14 +19,14 @@ import OhShu.Util.SHAEncodeUtil;
  * Servlet implementation class JoinSerlvet
  */
 @WebServlet("/ohshujoin")
-public class OhshuJoinServlet extends HttpServlet {
+public class UserJoinServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
-	private final JoinService service = JoinServiceImpl.getInstance();
+	private final UserJoinService service = UserJoinServiceImpl.getInstance();
        
     /**
      * @see HttpServlet#HttpServlet()
      */
-    public OhshuJoinServlet() {
+    public UserJoinServlet() {
         super();
         // TODO Auto-generated constructor stub
     }

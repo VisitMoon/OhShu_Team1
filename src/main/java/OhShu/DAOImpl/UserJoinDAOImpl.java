@@ -4,21 +4,21 @@ import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.SQLException;
 
-import OhShu.DAO.JoinDAO;
+import OhShu.DAO.UserJoinDAO;
 import OhShu.vo.UserTableVO;
 import OhShu.Util.DBCP2Util;
 import OhShu.Util.DataBaseUtil;
 
 
-public class JoinDAOImpl implements JoinDAO {
+public class UserJoinDAOImpl implements UserJoinDAO {
 	
-	private static final JoinDAO instance = new JoinDAOImpl();
+	private static final UserJoinDAO instance = new UserJoinDAOImpl();
 	
-	private JoinDAOImpl() {
+	private UserJoinDAOImpl() {
 		
 	}
 	
-	public static JoinDAO getInstance() {
+	public static UserJoinDAO getInstance() {
 		return instance;
 	}
 

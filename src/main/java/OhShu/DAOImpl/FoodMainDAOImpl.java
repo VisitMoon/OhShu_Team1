@@ -3,64 +3,81 @@ package OhShu.DAOImpl;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
-import java.sql.Statement;
-import java.util.ArrayList;
-import java.util.List;
 
-import OhShu.DAO.MainDAO;
-import OhShu.Util.DBCP2Util;
+import OhShu.DAO.FoodMainDAO;
 import OhShu.Util.DataBaseUtil;
-import OhShu.Util.PageMaker;
-import OhShu.Servlet.vo.BoardVO;
+import OhShu.vo.FoodMainVO;
 
+public class FoodMainDAOImpl implements FoodMainDAO {
 
-public class MainDAOImpl implements MainDAO {
+	private static final FoodMainDAO instance = new FoodMainDAOImpl();
 
-	private static final MainDAO instance = new MainDAOImpl();
-
-	private MainDAOImpl() {
+	private FoodMainDAOImpl() {
 	}
 
-	public static MainDAO getInstance() {
+	public static FoodMainDAO getInstance() {
 		return instance;
 	}
 
 	@Override
-	public List<BoardVO> selectAllBoard() {
+	public FoodMainVO selectFood(int food_no) {
 
-		String sql = "SELECT b_no\r\n" + "        "
-				+ ",title\r\n" + "        "
-				+ ",content\r\n" + "        "
-				+ ",reg_date\r\n"
-				+ "        ,up_date\r\n"
-				+ "        ,(SELECT id FROM member WHERE  m_no = a.m_no ) as id\r\n" 
-				+ "    FROM board";
-		List<BoardVO> list = null;
+		String sql = "SELECT food_no\r\n"
+				+ "			,food_location\r\n"
+				+ "			,food_source\r\n"
+				+ "			,food_name\r\n"
+				+ "			,food_sub_title\r\n"
+				+ "			,food_address\r\n"
+				+ "			,food_x\r\n"
+				+ "			,food_y\r\n"
+				+ "			,food_tel\r\n"
+				+ "			,food_home_url\r\n"
+				+"			,food_info\r\n"
+				+ "			,food_img\r\n"
+				+ "			FROM food WHERE food_no = ?\r\n"
+ 				;
+		
+		FoodMainVO food = null;
 
-		try (Connection conn = DBCP2Util.getConnection(); // DBCP2Util, DataBaseUtil
-				Statement stmt = conn.createStatement();) {
-
-			ResultSet rs = stmt.executeQuery(sql);
-
-			list = new ArrayList<>();
-
-			while (rs.next()) {
-				BoardVO vo = new BoardVO();
-				vo.setB_no(rs.getInt("b_no"));
-				vo.setTitle(rs.getString("title"));
-				vo.setId(rs.getString("id"));
-				vo.setReg_date(rs.getDate("reg_date"));
-				vo.setUp_date(rs.getDate("up_date"));
-
-				list.add(vo);
+		try (
+				Connection conn = DataBaseUtil.getConnection(); // DBCP2Util, DataBaseUtil
+				PreparedStatement pstmt = conn.prepareStatement(sql);
+				){
+			pstmt.setInt(1, food_no);
+			ResultSet rs = pstmt.executeQuery();
+			
+			if (rs.next()) {
+				
+				food = new FoodMainVO();
+				
+				food.setFood_no(rs.getInt("food_no"));
+				food.setFood_location(rs.getString("food_location"));
+				food.setFood_source(rs.getString("food_source"));
+				food.setFood_name(rs.getString("food_name"));
+				food.setFood_sub_title(rs.getString("food_sub_title"));
+				food.setFood_address(rs.getString("food_address"));
+				food.setFood_x(rs.getString("food_x"));
+				food.setFood_y(rs.getString("food_y"));
+				food.setFood_tel(rs.getString("food_tel"));
+				food.setFood_home_url(rs.getString("food_home_url"));
+				food.setFood_info(rs.getString("food_info"));
+				food.setFood_img(rs.getString("food_img"));
+			
 			}
+			rs.close();
+			
 
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
 
-		return list;
+		return food;
 	}
+
+	
+	
+	
+	/*
 
 
 	@Override
@@ -87,7 +104,7 @@ public class MainDAOImpl implements MainDAO {
 	@Override
 	public List<BoardVO> selectAllBoardByPage(PageMaker pageMaker) {
 		String sql = "SELECT \r\n" + "        * \r\n" + "    FROM (\r\n"
-				+ "            SELECT /*+ INDEX (board index_board_bno_pk) */\r\n"
+				+ "            SELECT /*+ INDEX (board index_board_bno_pk)\r\n"
 				+ "                    ROWNUM as rn\r\n" + "                    ,b_no\r\n"
 				+ "                    ,title\r\n" + "                    ,content\r\n"
 				+ "                    ,reg_date\r\n" + "                    ,up_date\r\n"
@@ -127,6 +144,15 @@ public class MainDAOImpl implements MainDAO {
 
 		return list;
 	}
+
+
+
+
+
+
+
+	 */
+
 
 
 

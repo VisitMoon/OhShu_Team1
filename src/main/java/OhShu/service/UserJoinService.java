@@ -2,7 +2,7 @@ package OhShu.service;
 
 import OhShu.vo.UserTableVO;
 
-public interface JoinService {
+public interface UserJoinService {
 
 	int registerUsertable(UserTableVO usertable);
 
