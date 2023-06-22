@@ -50,50 +50,7 @@ private static Connection connection;
 		return DriverManager.getConnection(url,id,pwd);
 	}
 	public static void main(String[] args) throws ClassNotFoundException, SQLException{
-////		System.out.println(connectionDB());
-//		String id = "bang0008";
-//		String pwd = "112233";
-//		String sql = "SELECT COUNT(1) FROM member\n"
-//				+ "WHERE id = '" + id + "'\n"
-//					+" 			AND pwd = '"+ pwd + "'\n"
-//					;
-//		
-//		
-//		sql = "SELECT m_no\r\n"
-//				+ "        ,name\r\n"
-//				+ "        ,jumin\r\n"
-//				+ "        ,id\r\n"
-//				+ "   	 FROM member\r\n"
-//				+ "		   ";
-//		try(Connection conn = connectionDB();
-//			Statement stmt = conn.createStatement();
-//			ResultSet rs = stmt.executeQuery(sql);
-//			){
-//			
-//			List<MemberVO> memberList = new ArrayList<>();
-//			while( rs.next()) {
-//				MemberVO vo = new MemberVO();
-//				vo.setM_no	(rs.getInt(1));
-//				vo.setName	(rs.getString(2));
-//				vo.setJumin	(rs.getString(3));
-//				vo.setId	(rs.getString(4));
-//				memberList.add(vo);
-//			}
-//			System.out.println(memberList);
-////			System.out.println(conn);
-////		
-////			rs.next();
-////			int cnt = rs.getInt(1);
-////			if(cnt==1) {
-////				System.out.println("로그인 성공");
-////				
-////			}else {
-////				System.out.println("로그인 실패");
-////			}
-//		}
-//		catch(Exception e) {
-//			e.printStackTrace();
-//		}
+
 	}
 	
 
