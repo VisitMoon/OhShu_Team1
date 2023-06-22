@@ -1,4 +1,4 @@
-package com.java.ohshu.sevlet.service;
+package OhShu.service;
 
 import com.java.ohshu.sevlet.vo.UserTableVO;
 

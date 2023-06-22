@@ -1,4 +1,4 @@
-package com.java.servlet.util;
+package OhShu.Util;
 
 // 현재 내가 클릭한 페이지 넘버
 // 페이지 당 몇 개씩 읽을 지

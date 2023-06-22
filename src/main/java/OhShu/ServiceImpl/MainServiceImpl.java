@@ -1,4 +1,4 @@
-package com.java.ohshu.sevlet.service.impl;
+package OhShu.ServiceImpl;
 
 import java.util.List;
 

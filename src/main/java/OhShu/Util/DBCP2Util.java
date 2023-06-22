@@ -1,4 +1,4 @@
-package com.java.servlet.util;
+package OhShu.Util;
 
 import java.sql.Connection;
 import java.sql.SQLException;

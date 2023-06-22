@@ -1,4 +1,4 @@
-package com.java.ohshu.sevlet.service.impl;
+package OhShu.ServiceImpl;
 
 import com.java.ohshu.servlet.dao.LoginDAO;
 import com.java.ohshu.servlet.dao.impl.LoginDAOImpl;

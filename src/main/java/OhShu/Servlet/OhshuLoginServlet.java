@@ -1,4 +1,4 @@
-package com.java.ohshu.servlet;
+package OhShu.Servlet;
 
 import java.io.IOException;
 
