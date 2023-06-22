@@ -23,7 +23,7 @@ public class FOOD_API {
          Connection conn = DriverManager.getConnection("jdbc:oracle:thin:@localhost:1521:xe", "c##OhShu", "OhShu");
          // 삽입 쿼리 실행
          NodeList nodeList = doc.getElementsByTagName("item");
-         String query = "INSERT INTO FOOD (food_no ,food_location ,food_source ,food_name ,food_sub_title ,food_address ,food_x ,food_y ,food_tel ,food_home_url ,food_info ,food_img)"
+         String query = "INSERT INTO FOOD (food_no ,food_location ,food_source ,food_name ,food_sub_title ,food_address ,food_x ,food_y ,food_home_url ,food_tel ,food_info ,food_img)"
                + "VALUES (? ,? ,? ,? ,? ,? ,? ,? ,? ,? ,? ,?)";
          // 넣을 테이블 이랑 컬럼
          PreparedStatement stmt = conn.prepareStatement(query);
