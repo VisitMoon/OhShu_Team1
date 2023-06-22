@@ -20,7 +20,7 @@ public class FOOD_API {
          // DB 연결
 
          Class.forName("oracle.jdbc.driver.OracleDriver");
-         Connection conn = DriverManager.getConnection("jdbc:oracle:thin:@localhost:1521:xe", "c##OhShu", "OhShu");
+         Connection conn = DriverManager.getConnection("jdbc:oracle:thin:@localhost:1521:xe", "c##OhShu", "ohshu");
          // 삽입 쿼리 실행
          NodeList nodeList = doc.getElementsByTagName("item");
          String query = "INSERT INTO FOOD (food_no ,food_location ,food_source ,food_name ,food_sub_title ,food_address ,food_x ,food_y ,food_home_url ,food_tel ,food_info ,food_img)"

@@ -43,9 +43,11 @@ private static Connection connection;
 	}
 	public static Connection connectionDB() throws ClassNotFoundException, SQLException{
 		Class.forName("oracle.jdbc.driver.OracleDriver");
+
 		String url = "jdbc:oracle:thin:@localhost:1521:xe";
 		String id = "C##OhShu";
 		String pwd= "OhShu";
+
 		return DriverManager.getConnection(url,id,pwd);
 	}
 

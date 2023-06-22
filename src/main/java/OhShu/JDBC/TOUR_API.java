@@ -20,7 +20,7 @@ public class TOUR_API {
          // DB 연결
 
          Class.forName("oracle.jdbc.driver.OracleDriver");
-         Connection conn = DriverManager.getConnection("jdbc:oracle:thin:@localhost:1521:xe", "c##OhShu", "OhShu");
+         Connection conn = DriverManager.getConnection("jdbc:oracle:thin:@localhost:1521:xe", "c##OhShu", "ohshu");
          // 삽입 쿼리 실행
          NodeList nodeList = doc.getElementsByTagName("item");
          String query = "INSERT INTO TOUR (tour_no ,tour_location ,tour_category ,tour_name ,tour_sub_title ,tour_address ,tour_x ,tour_y ,tour_tel ,tour_home_url ,tour_info ,tour_img)"
