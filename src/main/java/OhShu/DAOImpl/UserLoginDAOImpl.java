@@ -35,13 +35,18 @@ public class UserLoginDAOImpl implements UserLoginDAO {
 
 		) {
 			System.out.println(pstmt);
+			String userid = usertable.getUser_id();
+
 			pstmt.setString(1, usertable.getUser_id());
 			pstmt.setString(2, usertable.getUser_pwd());
 			ResultSet rs = pstmt.executeQuery();
+			
 			if (rs.next()) {
+				
 				result = rs.getInt(1);
 			}
-			System.out.println("result - " + result);
+			System.out.println(result+"명의 유저가 로그인함");
+			System.out.println("\""+userid+"\" 님 로그인 성공");
 
 		} catch (Exception e) {
 			e.printStackTrace();

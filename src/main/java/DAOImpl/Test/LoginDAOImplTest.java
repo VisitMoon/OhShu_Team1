@@ -16,8 +16,8 @@ class LoginDAOImplTest {
 	@Test @Ignore
 	void testSelectMember() {
 		UserTableVO usertable = new UserTableVO();
-		usertable.setUser_id("ohshu");
-		usertable.setUser_pwd("ohshu1");
+		usertable.setUser_id("jihol Park");
+		usertable.setUser_pwd("1234");
 		
 		assertEquals(1, dao.selectCountUsertable(usertable));
 	}

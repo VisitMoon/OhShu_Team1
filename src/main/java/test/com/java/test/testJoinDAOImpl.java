@@ -2,15 +2,15 @@ package test.com.java.test;
 
 import org.junit.Ignore;
 import org.junit.jupiter.api.Test;
-import OhShu.DAO.JoinDAO;
-import OhShu.DAOImpl.JoinDAOImpl;
+import OhShu.DAO.UserJoinDAO;
+import OhShu.DAOImpl.UserJoinDAOImpl;
 import OhShu.vo.UserTableVO;
 
 public class testJoinDAOImpl {
 	
 	@Test
 	void testJoinDAO() {
-		JoinDAO dao = JoinDAOImpl.getInstance();
+		UserJoinDAO dao = UserJoinDAOImpl.getInstance();
 		
 		UserTableVO vo = new UserTableVO();
 		vo.setUser_id("jihol Park");
