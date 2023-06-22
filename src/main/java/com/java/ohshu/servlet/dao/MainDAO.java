@@ -6,6 +6,9 @@ import com.java.servlet.util.PageMaker;
 import com.java.servlet.vo.BoardVO;
 
 public interface MainDAO {
+	
+	
+	 // 메인 VO 만들어야함
 
 	List<BoardVO> selectAllBoard();
 
