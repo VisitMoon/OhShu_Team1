@@ -1,6 +1,5 @@
 package OhShu.service;
 
-import OhShu.vo.StayVO;
 import OhShu.vo.TourVO;
 
 public interface TourService {

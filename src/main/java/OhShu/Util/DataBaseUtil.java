@@ -16,19 +16,6 @@ public class DataBaseUtil {
 	// ResultSet
 	private static Connection connection;
 	
-	static {
-		
-		try {
-			connection = connectionDB();
-		} catch (ClassNotFoundException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		} catch (SQLException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}
-		
-	}
 	public static void destroyConnection() {
 		if(connection != null) {
 			try	{	connection.close();
@@ -48,27 +35,13 @@ public class DataBaseUtil {
 		return connection;
 	}
 	public static Connection connectionDB() throws ClassNotFoundException, SQLException{
+		
 		Class.forName("oracle.jdbc.driver.OracleDriver");
-<<<<<<< HEAD
-
 		String url = "jdbc:oracle:thin:@localhost:1521:xe";
 		String id = "C##OhShu";
-=======
-		String url = "jdbc:oracle:thin:@localhost:1521:XE";
-		String id = "c##OhSHu";
->>>>>>> 2f6c0df1d89b48c8b53e619ed595bc1f06fea67a
 		String pwd= "OhShu";
 
 		return DriverManager.getConnection(url,id,pwd);
 	}
-<<<<<<< HEAD
 
-=======
-	public static void main(String[] args) throws ClassNotFoundException, SQLException{
-
-
-	}
-	
-
->>>>>>> 2f6c0df1d89b48c8b53e619ed595bc1f06fea67a
 }

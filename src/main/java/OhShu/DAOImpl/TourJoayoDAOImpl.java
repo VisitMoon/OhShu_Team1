@@ -1,14 +1,10 @@
 package OhShu.DAOImpl;
 
-<<<<<<< HEAD
-public class TourJoayoDAOImpl {
-=======
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 
 import OhShu.DAO.TourJoayoDAO;
 import OhShu.Util.DataBaseUtil;
-
 import OhShu.vo.TourJoayoVO;
 
 public class TourJoayoDAOImpl implements TourJoayoDAO {
@@ -16,6 +12,12 @@ public class TourJoayoDAOImpl implements TourJoayoDAO {
 
 	public static TourJoayoDAO getInstance() {
 		return instance;
+	}
+	
+	@Override
+	public int toggleTourJoayo(TourJoayoVO tourJoayo) {
+		// TODO Auto-generated method stub
+		return 0;
 	}
 
 	@Override
@@ -38,6 +40,5 @@ public class TourJoayoDAOImpl implements TourJoayoDAO {
 		return result;
 
 	}
->>>>>>> 2f6c0df1d89b48c8b53e619ed595bc1f06fea67a
 
 }
