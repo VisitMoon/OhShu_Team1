@@ -4,21 +4,21 @@ import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 
-import OhShu.DAO.LoginDAO;
+import OhShu.DAO.UserLoginDAO;
 import OhShu.vo.UserTableVO;
 import OhShu.Util.DBCP2Util;
 import OhShu.Util.DataBaseUtil;
 
 
-public class LoginDAOImpl implements LoginDAO {
+public class UserLoginDAOImpl implements UserLoginDAO {
 
-	private static final LoginDAO instance = new LoginDAOImpl();
+	private static final UserLoginDAO instance = new UserLoginDAOImpl();
 
-	private LoginDAOImpl() {
+	private UserLoginDAOImpl() {
 
 	}
 
-	public static LoginDAO getInstance() {
+	public static UserLoginDAO getInstance() {
 		return instance;
 	}
 

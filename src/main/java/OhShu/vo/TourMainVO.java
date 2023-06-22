@@ -1,6 +1,6 @@
 package OhShu.vo;
 
-public class TourVO {
+public class TourMainVO {
 	
 	private int tour_no;
 	private String tour_location;

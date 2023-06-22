@@ -2,7 +2,7 @@ package OhShu.service;
 
 import OhShu.vo.UserTableVO;
 
-public interface LoginService {
+public interface UserLoginService {
 
 	int getCountUsertable(UserTableVO usertable);
 

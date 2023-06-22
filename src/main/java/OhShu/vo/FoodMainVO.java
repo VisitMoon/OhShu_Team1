@@ -1,6 +1,6 @@
 package OhShu.vo;
 
-public class FoodVO {
+public class FoodMainVO {
 	
 	private int food_no;
 	private String food_location;
