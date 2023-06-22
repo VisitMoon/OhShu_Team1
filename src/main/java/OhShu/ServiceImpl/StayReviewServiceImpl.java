@@ -6,8 +6,10 @@ import OhShu.service.StayReviewService;
 import OhShu.vo.StayReviewVO;
 
 public class StayReviewServiceImpl  implements StayReviewService{
-	  private static final StayReviewServiceImpl instance = new StayReviewServiceImpl();
+	  
 	   private final StayReviewDAO dao = StayReviewDAOImpl.getInstance();
+	  
+	   private static final StayReviewService instance = new StayReviewServiceImpl();
 	   
 	   private StayReviewServiceImpl() {
 		   
@@ -19,7 +21,13 @@ public class StayReviewServiceImpl  implements StayReviewService{
 	   
 	   
 	   @Override
-	      public int InsertStayReview(StayReviewVO stay_review) {
-	  		return dao.InsertStayReview(stay_review);
+	      public int registerstay_reviewinsert(StayReviewVO reviewinsert)  {
+	  		return dao.InsertStayReview(reviewinsert);
 	   }
+	   	  public int registerstay_reviewupdate(StayReviewVO reviewdelete)  {
+	  		return dao.InsertStayReview(reviewdelete);
+	   }
+	   	  public int registerstay_reviewdelete(StayReviewVO reviewupdate)  {
+		  		return dao.InsertStayReview(reviewupdate);
+		   }
 }

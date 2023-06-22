@@ -43,6 +43,7 @@ public class FOOD_API {
             String food_info = element.getElementsByTagName("desc").item(0).getTextContent();
             String food_img = element.getElementsByTagName("list_img").item(0).getTextContent();
 
+
             stmt.setString(1, food_no);
             stmt.setString(2, food_location);
             stmt.setString(3, food_source);
@@ -53,7 +54,7 @@ public class FOOD_API {
             stmt.setString(8, food_y);
             stmt.setString(9, food_home_url);
             stmt.setString(10, food_tel);
-            stmt.setString(11, food_info);
+            stmt.setString(11, food_info);      
             stmt.setString(12, food_img);
 
             stmt.executeUpdate();

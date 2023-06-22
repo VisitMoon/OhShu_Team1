@@ -1,6 +1,7 @@
 package OhShu.vo;
 
 public class StayVO {
+
 	private int stay_no;
 	private String stay_location;
 	private String stay_category;
@@ -16,6 +17,10 @@ public class StayVO {
 
 	public int getStay_no() {
 		return stay_no;
+	}
+
+	public void setStay_no(int stay_no) {
+		this.stay_no = stay_no;
 	}
 
 	public String getStay_location() {
@@ -90,24 +95,20 @@ public class StayVO {
 		this.stay_home_url = stay_home_url;
 	}
 
-	public String getStay_img() {
-		return stay_img;
-	}
-
-	public void setStay_img(String stay_img) {
-		this.stay_img = stay_img;
-	}
-
-	public void setStay_no(int stay_no) {
-		this.stay_no = stay_no;
-	}
-
 	public String getStay_info() {
 		return stay_info;
 	}
 
 	public void setStay_info(String stay_info) {
 		this.stay_info = stay_info;
+	}
+
+	public String getStay_img() {
+		return stay_img;
+	}
+
+	public void setStay_img(String stay_img) {
+		this.stay_img = stay_img;
 	}
 
 	@Override

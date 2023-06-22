@@ -43,6 +43,7 @@ public class TOUR_API {
             String tour_info = element.getElementsByTagName("desc").item(0).getTextContent();
             String tour_img = element.getElementsByTagName("list_img").item(0).getTextContent();
 
+
             stmt.setString(1, tour_no);
             stmt.setString(2, tour_location);
             stmt.setString(3, tour_category);

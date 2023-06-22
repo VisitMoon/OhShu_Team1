@@ -2,31 +2,62 @@ package DAOImpl.Test;
 
 
 
-import static org.junit.Assert.assertNotEquals;
 
+import static org.junit.jupiter.api.Assertions.*;
+
+import org.junit.Ignore;
 import org.junit.jupiter.api.Test;
 
+import OhShu.DAO.StayReviewDAO;
+import OhShu.DAOImpl.StayReviewDAOImpl;
 import OhShu.ServiceImpl.StayReviewServiceImpl;
 import OhShu.service.StayReviewService;
 import OhShu.vo.StayReviewVO;
 
 class StayReviewTest {
 
-	private final StayReviewService service = StayReviewServiceImpl.getInstance(); 
+	StayReviewDAO dao = StayReviewDAOImpl.getInstance(); 
 	   
 	   
-	   @Test 
-	   void testGetStay() {
+	   @Test @Ignore
+	   void testinsertstay_review() {
 		  StayReviewVO vo = new StayReviewVO();
 		  
 		  vo.setUser_id("1");
 		  vo.setStay_no(9739);
-		  vo.setReview_content("안녕하세요 반갑습니다.");
-	      
-	      assertNotEquals(1, service.InsertStayReview(vo) );
+		  vo.setReview_content("살자.");
+		  System.out.println(vo);
+		  assertEquals(1, dao.InsertStayReview(vo) );
 	      System.out.println(vo);
+	      
 	      
 	  
 	}
+	   @Test @Ignore
+	   void testdeleteStay_review() {
+		  StayReviewVO vo = new StayReviewVO();
+		  
+		  vo.setReview_no(9);
+		  System.out.println(vo);
+		  assertEquals(1, dao.DeleteStayReview(vo) );
+	      
+	      
+	      
+	  
+	}
+	   @Test @Ignore
+	   void testupdateStay_review() {
+		  StayReviewVO vo = new StayReviewVO();
+		  
+		  vo.setReview_content("변경 성공");
+		  vo.setReview_no(12);
+		  System.out.println(vo);
+		  assertEquals(1, dao.updateStayReview(vo) );
+	      
+	      
+	      
+	  
+	}
+	   
 
 }

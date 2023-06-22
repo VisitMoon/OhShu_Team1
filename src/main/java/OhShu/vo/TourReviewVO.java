@@ -6,7 +6,7 @@ public class TourReviewVO {
 		private int review_no;
 		private Date time;
 		private String user_id;
-		private String tour_no;
+		private int tour_no;
 		private String review_content;
 		
 		
@@ -28,10 +28,10 @@ public class TourReviewVO {
 		public void setUser_id(String user_id) {
 			this.user_id = user_id;
 		}
-		public String getTour_no() {
+		public int getTour_no() {
 			return tour_no;
 		}
-		public void setTour_no(String tour_no) {
+		public void setTour_no(int tour_no) {
 			this.tour_no = tour_no;
 		}
 		public String getReview_content() {
