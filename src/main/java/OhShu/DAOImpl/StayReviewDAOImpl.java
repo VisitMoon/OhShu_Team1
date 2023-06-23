@@ -18,12 +18,6 @@ public class StayReviewDAOImpl  implements StayReviewDAO{
 	@Override
 	public int InsertStayReview(StayReviewVO stay_review) {
 		int result = 0;
-<<<<<<< HEAD
-	
-=======
-		
-		
->>>>>>> de65e1e02633c47509047f606420c9789275cf7f
 		String sql="INSERT INTO stay_review ( review_no, time, user_id, stay_no, review_content)\r\n"
 				+ "            VALUES ( \r\n"
 				+ "            seq_review_no.nextval\r\n"
@@ -33,11 +27,7 @@ public class StayReviewDAOImpl  implements StayReviewDAO{
 				+ "            ,?\r\n"
 				+ "            )"
 				;
-<<<<<<< HEAD
-=======
-		
->>>>>>> de65e1e02633c47509047f606420c9789275cf7f
-	
+
 		try(
 			Connection conn = DataBaseUtil.getConnection();
 			PreparedStatement pstmt = conn.prepareStatement(sql);
