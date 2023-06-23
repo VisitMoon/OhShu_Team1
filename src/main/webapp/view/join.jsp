@@ -6,7 +6,6 @@
 <meta charset="UTF-8">
 <title>Join the membership Page</title>
 
-
 <!-- 코드변경하기 -->
 
     <style>
