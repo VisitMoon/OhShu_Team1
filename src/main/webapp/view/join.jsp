@@ -5,6 +5,10 @@
 <head>
 <meta charset="UTF-8">
 <title>Join the membership Page</title>
+
+
+<!-- 코드변경하기 -->
+
     <style>
         .box-submit {
             text-align: center;
@@ -138,7 +142,6 @@
         </div>
 
     </form>
-
-
+ 
 </body>
 </html>
