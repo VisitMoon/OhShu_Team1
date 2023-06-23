@@ -1,9 +1,9 @@
 package OhShu.service;
 
-import OhShu.vo.StayMainVO;
+import OhShu.vo.StayVO;
 
 public interface StayMainService {
 
-	StayMainVO getStay(int stay_no);
+	StayVO getStay(int stay_no);
 
 }

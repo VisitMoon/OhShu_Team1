@@ -6,7 +6,7 @@ import java.sql.ResultSet;
 
 import OhShu.DAO.FoodMainDAO;
 import OhShu.Util.DataBaseUtil;
-import OhShu.vo.FoodMainVO;
+import OhShu.vo.FoodVO;
 
 public class FoodMainDAOImpl implements FoodMainDAO {
 
@@ -20,7 +20,7 @@ public class FoodMainDAOImpl implements FoodMainDAO {
 	}
 
 	@Override
-	public FoodMainVO selectFood(int food_no) {
+	public FoodVO selectFood(int food_no) {
 
 		String sql = "SELECT food_no\r\n"
 				+ "			,food_location\r\n"
@@ -37,7 +37,7 @@ public class FoodMainDAOImpl implements FoodMainDAO {
 				+ "			FROM food WHERE food_no = ?\r\n"
  				;
 		
-		FoodMainVO food = null;
+		FoodVO food = null;
 
 		try (
 				Connection conn = DataBaseUtil.getConnection(); // DBCP2Util, DataBaseUtil
@@ -48,7 +48,7 @@ public class FoodMainDAOImpl implements FoodMainDAO {
 			
 			if (rs.next()) {
 				
-				food = new FoodMainVO();
+				food = new FoodVO();
 				
 				food.setFood_no(rs.getInt("food_no"));
 				food.setFood_location(rs.getString("food_location"));

@@ -1,9 +1,9 @@
 package OhShu.service;
 
-import OhShu.vo.FoodMainVO;
+import OhShu.vo.FoodVO;
 
 public interface FoodMainService {
 
-	FoodMainVO getFood(int food_no);
+	FoodVO getFood(int food_no);
 	
 }

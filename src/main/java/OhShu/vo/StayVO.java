@@ -1,6 +1,6 @@
 package OhShu.vo;
 
-public class StayMainVO {
+public class StayVO {
 
 	private int stay_no;
 	private String stay_location;

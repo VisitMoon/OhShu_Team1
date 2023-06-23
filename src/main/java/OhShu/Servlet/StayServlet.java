@@ -12,7 +12,7 @@ import javax.servlet.http.HttpServletResponse;
 
 import OhShu.ServiceImpl.StayMainServiceImpl;
 import OhShu.service.StayMainService;
-import OhShu.vo.StayMainVO;
+import OhShu.vo.StayVO;
 
 /**
  * Servlet implementation class StayServlet

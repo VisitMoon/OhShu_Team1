@@ -1,7 +1,7 @@
 package OhShu.DAO;
 
 import OhShu.vo.StayReviewVO;
-import OhShu.vo.StayMainVO;
+import OhShu.vo.StayVO;
 
 public interface StayReviewDAO {
 
