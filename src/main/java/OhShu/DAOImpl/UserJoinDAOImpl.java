@@ -9,14 +9,9 @@ import OhShu.vo.UserTableVO;
 import OhShu.Util.DataBaseUtil;
 
 
-<<<<<<< HEAD:src/main/java/OhShu/DAOImpl/UserJoinDAOImpl.java
 public class UserJoinDAOImpl implements UserJoinDAO {
 	
 	private static final UserJoinDAO instance = new UserJoinDAOImpl();
-=======
-public class JoinDAOImpl implements JoinDAO {
-	private static final JoinDAO instance = new JoinDAOImpl();
->>>>>>> 2f6c0df1d89b48c8b53e619ed595bc1f06fea67a:src/main/java/OhShu/DAOImpl/JoinDAOImpl.java
 	
 	private UserJoinDAOImpl() {
 		

@@ -6,20 +6,20 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 
 
-import OhShu.DAO.StayDAO;
+import OhShu.DAO.StayMainDAO;
 import OhShu.Util.DataBaseUtil;
-import OhShu.vo.StayVO;
+import OhShu.vo.StayMainVO;
 
-public class StayDAOImpl implements StayDAO{
-	private final static StayDAO instance = new StayDAOImpl();
+public class StayDAOImpl implements StayMainDAO{
+	private final static StayMainDAO instance = new StayDAOImpl();
 	private StayDAOImpl() {
 		
 	}
-	public static StayDAO getInstance() {
+	public static StayMainDAO getInstance() {
 		return instance;
 	}
 	@Override
-	public StayVO selectStay(int stay_no) {
+	public StayMainVO selectStay(int stay_no) {
 		
 		
 		
@@ -38,7 +38,7 @@ public class StayDAOImpl implements StayDAO{
 				+ "		   FROM stay WHERE stay_no = ?"
 				;
 		
-		StayVO vo = null;
+		StayMainVO vo = null;
 		try(
 			Connection conn = DataBaseUtil.getConnection();
 			PreparedStatement pstmt = conn.prepareStatement(sql);
@@ -48,7 +48,7 @@ public class StayDAOImpl implements StayDAO{
 			
 			
 			if( rs.next() ) {
-				vo = new StayVO();
+				vo = new StayMainVO();
 				vo.setStay_no(rs.getInt("stay_no"));
 				vo.setStay_location(rs.getString("stay_location"));
 	            vo.setStay_category(rs.getString("stay_category"));

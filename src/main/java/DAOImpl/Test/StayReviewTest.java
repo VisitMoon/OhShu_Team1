@@ -1,8 +1,5 @@
 package DAOImpl.Test;
 
-
-
-
 import static org.junit.jupiter.api.Assertions.*;
 
 import org.junit.Ignore;
@@ -17,25 +14,17 @@ import OhShu.vo.StayReviewVO;
 class StayReviewTest {
 
 	StayReviewDAO dao = StayReviewDAOImpl.getInstance(); 
-	   
+	StayReviewService service = StayReviewServiceImpl.getInstance();	   
 	   
 	   @Test @Ignore
 	   void testinsertstay_review() {
 		  StayReviewVO vo = new StayReviewVO();
-		  
-<<<<<<< HEAD
+
 		  vo.setUser_id("jihol Park");
 		  vo.setStay_no(9708);
 		  vo.setReview_content("안녕하세요 반갑습니다.");
 	      
-	      assertNotEquals(1, service.InsertStayReview(vo) );
-=======
-		  vo.setUser_id("1");
-		  vo.setStay_no(9739);
-		  vo.setReview_content("살자.");
-		  System.out.println(vo);
-		  assertEquals(1, dao.InsertStayReview(vo) );
->>>>>>> 2f6c0df1d89b48c8b53e619ed595bc1f06fea67a
+	      assertNotEquals(1, dao.InsertStayReview(vo) );
 	      System.out.println(vo);
 	      
 	      

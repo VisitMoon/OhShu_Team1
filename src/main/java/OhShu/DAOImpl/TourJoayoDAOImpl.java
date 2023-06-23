@@ -1,8 +1,5 @@
 package OhShu.DAOImpl;
 
-<<<<<<< HEAD
-public class TourJoayoDAOImpl {
-=======
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 
@@ -38,6 +35,5 @@ public class TourJoayoDAOImpl implements TourJoayoDAO {
 		return result;
 
 	}
->>>>>>> 2f6c0df1d89b48c8b53e619ed595bc1f06fea67a
 
 }

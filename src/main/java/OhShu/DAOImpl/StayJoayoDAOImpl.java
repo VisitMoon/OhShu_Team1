@@ -20,7 +20,7 @@ public class StayJoayoDAOImpl implements StayJoayoDAO{
 				
 		String sql="MERGE INTO stay_joayo sj\r\n"
 				+ "USING (\r\n"
-				+ "  SELECT ? AS userid, ? AS stayno, ? AS joayo FROM dual\r\n"
+				+ "  SELECT ? AS user_id, ? AS stay_no, ? AS joayo FROM dual\r\n"
 				+ ") push_joayo\r\n"
 				+ "ON (sj.joayo = 1)\r\n"
 				+ "WHEN MATCHED THEN\r\n"
