@@ -35,7 +35,7 @@ public class UserJoinServlet extends HttpServlet {
 	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		RequestDispatcher dispatcher = request.getRequestDispatcher("????????????조인페이지주소필요함");
+		RequestDispatcher dispatcher = request.getRequestDispatcher("");
 		dispatcher.forward(request, response);
 
 	}

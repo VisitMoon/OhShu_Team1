@@ -6,7 +6,7 @@ import java.sql.ResultSet;
 
 import OhShu.DAO.StayMainDAO;
 import OhShu.Util.DataBaseUtil;
-import OhShu.vo.StayMainVO;
+import OhShu.vo.StayVO;
 
 public class StayMainDAOImpl implements StayMainDAO{
 	
@@ -20,7 +20,7 @@ public class StayMainDAOImpl implements StayMainDAO{
 	}
 	
 	@Override
-	public StayMainVO selectStay(int stay_no) {
+	public StayVO selectStay(int stay_no) {
 		
 		String sql="SELECT stay_no\r\n"
 				+ "        ,stay_location\r\n"
@@ -37,7 +37,7 @@ public class StayMainDAOImpl implements StayMainDAO{
 				+ "		   FROM stay WHERE stay_no = ?"
 				;
 		
-		StayMainVO stay = null;
+		StayVO stay = null;
 		
 		try(
 				Connection conn = DataBaseUtil.getConnection();
@@ -48,7 +48,7 @@ public class StayMainDAOImpl implements StayMainDAO{
 			
 			
 			if( rs.next() ) {
-				stay = new StayMainVO();
+				stay = new StayVO();
 				stay.setStay_no(rs.getInt("stay_no"));
 				stay.setStay_location(rs.getString("stay_location"));
 				stay.setStay_category(rs.getString("stay_category"));
