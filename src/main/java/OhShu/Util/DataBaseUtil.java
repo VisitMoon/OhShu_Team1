@@ -37,11 +37,26 @@ public class DataBaseUtil {
 	public static Connection connectionDB() throws ClassNotFoundException, SQLException{
 		
 		Class.forName("oracle.jdbc.driver.OracleDriver");
+<<<<<<< HEAD
 		String url = "jdbc:oracle:thin:@localhost:1521:xe";
 		String id = "C##OhShu";
+=======
+		
+		String url = "jdbc:oracle:thin:@localhost:1521:XE";
+		String id = "c##OhSHu";
+>>>>>>> de65e1e02633c47509047f606420c9789275cf7f
 		String pwd= "OhShu";
 
 		return DriverManager.getConnection(url,id,pwd);
 	}
 
+<<<<<<< HEAD
+=======
+	public static void main(String[] args) throws ClassNotFoundException, SQLException{
+
+
+	}
+	
+
+>>>>>>> de65e1e02633c47509047f606420c9789275cf7f
 }
