@@ -8,6 +8,5 @@ public interface StayReviewService {
 	int registerstay_reviewdelete(StayReviewVO reviewdelete);
 	
 	int registerstay_reviewupdate(StayReviewVO reviewupdate);
-
 	
 }

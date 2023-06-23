@@ -5,7 +5,10 @@ import java.sql.PreparedStatement;
 
 import OhShu.DAO.TourJoayoDAO;
 import OhShu.Util.DataBaseUtil;
+<<<<<<< HEAD
+=======
 import OhShu.vo.TourJoayoVO;
+>>>>>>> de65e1e02633c47509047f606420c9789275cf7f
 import OhShu.vo.TourJoayoVO;
 
 public class TourJoayoDAOImpl implements TourJoayoDAO {
@@ -15,6 +18,12 @@ public class TourJoayoDAOImpl implements TourJoayoDAO {
 		return instance;
 	}
 	
+	@Override
+	public int toggleTourJoayo(TourJoayoVO tourJoayo) {
+		// TODO Auto-generated method stub
+		return 0;
+	}
+
 	@Override
 	public int toggleTourJoayo(TourJoayoVO TourJoayo) {
 		int result = 0;
