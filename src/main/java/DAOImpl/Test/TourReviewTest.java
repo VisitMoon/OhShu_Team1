@@ -43,10 +43,6 @@ class TourReviewTest {
 		  vo.setReview_no(15);
 		  System.out.println(vo);
 		  assertEquals(1, dao.updateTourReview(vo) );
-	      
-	      
-	      
-	  
-	}
-	   
+	       
+	}	   
 }

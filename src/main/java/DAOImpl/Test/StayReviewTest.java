@@ -19,27 +19,18 @@ class StayReviewTest {
 	   @Test @Ignore
 	   void testinsertstay_review() {
 		  StayReviewVO vo = new StayReviewVO();
-<<<<<<< HEAD
-		  
-=======
 
->>>>>>> de65e1e02633c47509047f606420c9789275cf7f
 		  vo.setUser_id("jihol Park");
 		  vo.setStay_no(9708);
 		  vo.setReview_content("안녕하세요 반갑습니다.");
-	      
-<<<<<<< HEAD
-	      assertNotEquals(1, service.InsertStayReview(vo) );
+	      assertNotEquals(1, dao.InsertStayReview(vo));
 
 		  vo.setUser_id("1");
 		  vo.setStay_no(9739);
 		  vo.setReview_content("살자.");
 		  System.out.println(vo);
-		  assertEquals(1, dao.InsertStayReview(vo) );
-
-=======
-	      assertNotEquals(1, dao.InsertStayReview(vo) );
->>>>>>> de65e1e02633c47509047f606420c9789275cf7f
+		  assertEquals(1, dao.InsertStayReview(vo));
+	      assertNotEquals(1, dao.InsertStayReview(vo));
 	      System.out.println(vo);
 	   
 	  

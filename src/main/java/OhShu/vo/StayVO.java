@@ -15,20 +15,13 @@ public class StayVO {
 	private String stay_info;
 	private String stay_img;
 	
-<<<<<<< HEAD
-=======
-
->>>>>>> de65e1e02633c47509047f606420c9789275cf7f
 	public int getStay_no() {
 		return stay_no;
 	}
 	public void setStay_no(int stay_no) {
 		this.stay_no = stay_no;
 	}
-<<<<<<< HEAD
-=======
-
->>>>>>> de65e1e02633c47509047f606420c9789275cf7f
+	
 	public String getStay_location() {
 		return stay_location;
 	}
@@ -96,6 +89,7 @@ public class StayVO {
 		this.stay_img = stay_img;
 		
 	}
+	
 	@Override
 	public String toString() {
 		return "StayVO [stay_no=" + stay_no + ", stay_location=" + stay_location + ", stay_category=" + stay_category
@@ -103,9 +97,5 @@ public class StayVO {
 				+ ", stay_x=" + stay_x + ", stay_y=" + stay_y + ", stay_tel=" + stay_tel + ", stay_home_url="
 				+ stay_home_url + ", stay_info=" + stay_info + ", stay_img=" + stay_img + "]";
 	}
-<<<<<<< HEAD
-	
-=======
 
->>>>>>> de65e1e02633c47509047f606420c9789275cf7f
 }
