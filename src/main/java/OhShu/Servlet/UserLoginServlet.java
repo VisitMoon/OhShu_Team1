@@ -40,7 +40,7 @@ public class UserLoginServlet extends HttpServlet {
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
 		System.out.println(request.getParameter("msg"));
-		RequestDispatcher dispatcher = request.getRequestDispatcher("????????????로그인페이지주소필요함");
+		RequestDispatcher dispatcher = request.getRequestDispatcher("view/login.jsp");
 		dispatcher.forward(request, response);
 		
 	  }

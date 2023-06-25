@@ -2,18 +2,14 @@ package OhShu.DAOImpl;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;
-
-
-
 import OhShu.DAO.StayReviewDAO;
 import OhShu.Util.DataBaseUtil;
 import OhShu.vo.StayReviewVO;
 
 
 public class StayReviewDAOImpl  implements StayReviewDAO{
-	private final static StayReviewDAO instance = new StayReviewDAOImpl();
 	
-		
+	private final static StayReviewDAO instance = new StayReviewDAOImpl();
 	
 	public static StayReviewDAO getInstance() {
 		return instance;
@@ -22,8 +18,6 @@ public class StayReviewDAOImpl  implements StayReviewDAO{
 	@Override
 	public int InsertStayReview(StayReviewVO stay_review) {
 		int result = 0;
-		
-		
 		String sql="INSERT INTO stay_review ( review_no, time, user_id, stay_no, review_content)\r\n"
 				+ "            VALUES ( \r\n"
 				+ "            seq_review_no.nextval\r\n"
@@ -33,8 +27,7 @@ public class StayReviewDAOImpl  implements StayReviewDAO{
 				+ "            ,?\r\n"
 				+ "            )"
 				;
-		
-	
+
 		try(
 			Connection conn = DataBaseUtil.getConnection();
 			PreparedStatement pstmt = conn.prepareStatement(sql);
@@ -59,11 +52,8 @@ public class StayReviewDAOImpl  implements StayReviewDAO{
 	public int DeleteStayReview(StayReviewVO reviewdelete) {
 		int result = 0;
 		
-		
 		String sql="DELETE FROM stay_review WHERE review_no = ?";
 				
-		
-	
 		try(
 			Connection conn = DataBaseUtil.getConnection();
 			PreparedStatement pstmt = conn.prepareStatement(sql);
@@ -85,11 +75,8 @@ public class StayReviewDAOImpl  implements StayReviewDAO{
 	public int updateStayReview(StayReviewVO reviewupdate) {
 		int result = 0;
 		
+		String sql="UPDATE stay_review SET review_content = ? WHERE review_no = ?";	
 		
-		String sql="UPDATE stay_review SET review_content = ? WHERE review_no = ?";
-				
-		
-	
 		try(
 			Connection conn = DataBaseUtil.getConnection();
 			PreparedStatement pstmt = conn.prepareStatement(sql);

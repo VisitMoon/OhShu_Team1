@@ -6,7 +6,6 @@ import java.sql.PreparedStatement;
 import OhShu.DAO.TourJoayoDAO;
 import OhShu.Util.DataBaseUtil;
 import OhShu.vo.TourJoayoVO;
-import OhShu.vo.TourJoayoVO;
 
 public class TourJoayoDAOImpl implements TourJoayoDAO {
 	private final static TourJoayoDAO instance = new TourJoayoDAOImpl();

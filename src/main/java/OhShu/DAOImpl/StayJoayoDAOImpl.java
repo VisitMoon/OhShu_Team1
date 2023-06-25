@@ -18,7 +18,19 @@ public class StayJoayoDAOImpl implements StayJoayoDAO {
 	@Override
 	public int toggleStayJoayo(StayJoayoVO stayJoayo) {
 		int result = 0;
-		
+				
+		String sql="MERGE INTO stay_joayo sj\r\n"
+				+ "				USING (\r\n"
+				+ "  			SELECT ? AS user_id, ? AS stay_no, ? AS joayo FROM dual\r\n"
+				+ "				) push_joayo\r\n"
+				+ "				ON (sj.joayo = 1)\r\n"
+				+ "				WHEN MATCHED THEN\r\n"
+				+ "				DELETE\r\n"
+				+ "				WHEN NOT MATCHED THEN\r\n"
+				+ "				INSERT (user_id, stay_no, joayo)\r\n"
+				+ "  VALUES (push_joayo.userid, push_joayo.stayno, push_joayo.joayo)"
+				;
+	
 		int joayo_flag = selectStayJoayo(stayJoayo);
 		switch(joayo_flag) {
 		case 0:

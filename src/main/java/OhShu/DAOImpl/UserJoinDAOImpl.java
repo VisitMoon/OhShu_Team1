@@ -16,11 +16,11 @@ public class UserJoinDAOImpl implements UserJoinDAO {
 	private UserJoinDAOImpl() {
 		
 	}
-	
+
 	public static UserJoinDAO getInstance() {
 		return instance;
 	}
-
+	
 	@Override
 	public int insertUsertable(UserTableVO usertable) {
 
@@ -56,3 +56,5 @@ public class UserJoinDAOImpl implements UserJoinDAO {
 	}
 
 }
+
+
