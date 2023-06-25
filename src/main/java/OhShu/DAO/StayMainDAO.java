@@ -1,9 +1,7 @@
 package OhShu.DAO;
 
-import OhShu.vo.StayVO;
+import OhShu.vo.StayMainVO;
 
 public interface StayMainDAO {
-
-	StayVO selectStay(int stay_no);
-
+	StayMainVO selectStayJoayoRank(int rank);
 }

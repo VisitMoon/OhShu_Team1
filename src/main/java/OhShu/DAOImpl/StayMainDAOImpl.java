@@ -6,7 +6,7 @@ import java.sql.ResultSet;
 
 import OhShu.DAO.StayMainDAO;
 import OhShu.Util.DataBaseUtil;
-import OhShu.vo.StayVO;
+import OhShu.vo.StayMainVO;
 
 public class StayMainDAOImpl implements StayMainDAO{
 	
@@ -20,56 +20,50 @@ public class StayMainDAOImpl implements StayMainDAO{
 	}
 	
 	@Override
-	public StayVO selectStay(int stay_no) {
+	public StayMainVO selectStayJoayoRank(int rank) {
+
+		String sql = "SELECT stay.stay_no,stay_name, stay.stay_img,joayo_amount\r\n"
+				+ "FROM stay\r\n"
+				+ "JOIN (\r\n"
+				+ "    SELECT stay_no, SUM(joayo) as joayo_amount\r\n"
+				+ "    FROM stay_joayo\r\n"
+				+ "    GROUP BY stay_no\r\n"
+				+ "    ORDER BY joayo_amount DESC\r\n"
+				+ ") ranking_table\r\n"
+				+ "ON stay.stay_no = ranking_table.stay_no\r\n"
+				+ "WHERE ranking_table.joayo_amount = ("
+				+ "SELECT joayo_amount FROM (\r\n"
+				+ "    SELECT stay_no, SUM(joayo) as joayo_amount, ROW_NUMBER() OVER(ORDER BY SUM(joayo) DESC) as rank_idx\r\n"
+				+ "    FROM stay_joayo\r\n"
+				+ "    GROUP BY stay_no\r\n"
+				+ ")\r\n"
+				+ "WHERE rank_idx = ?)";
 		
-		String sql="SELECT stay_no\r\n"
-				+ "        ,stay_location\r\n"
-				+ "        ,stay_category\r\n"
-				+ "        ,stay_name\r\n"
-				+ "        ,stay_sub_title\r\n"
-				+ "        ,stay_address\r\n"
-				+ "        ,stay_x\r\n"
-				+ "        ,stay_y\r\n"
-				+ "        ,stay_tel\r\n"
-				+ "        ,stay_home_url\r\n"
-				+ "        ,stay_img\r\n"
-				+ "		   ,stay_info\r\n"
-				+ "		   FROM stay WHERE stay_no = ?"
-				;
-		
-		StayVO stay = null;
-		
-		try(
-				Connection conn = DataBaseUtil.getConnection();
+		StayMainVO stay = null;
+
+		try (
+				Connection conn = DataBaseUtil.getConnection(); // DBCP2Util, DataBaseUtil
 				PreparedStatement pstmt = conn.prepareStatement(sql);
 				){
-			pstmt.setInt(1, stay_no);
+			pstmt.setInt(1, rank);
 			ResultSet rs = pstmt.executeQuery();
 			
-			
-			if( rs.next() ) {
-				stay = new StayVO();
+			if (rs.next()) {
+				
+				stay = new StayMainVO();
+				
 				stay.setStay_no(rs.getInt("stay_no"));
-				stay.setStay_location(rs.getString("stay_location"));
-				stay.setStay_category(rs.getString("stay_category"));
-				stay.setStay_name(rs.getString("stay_name"));
-				stay.setStay_sub_title(rs.getString("stay_sub_title"));
-				stay.setStay_address(rs.getString("stay_address"));
-				stay.setStay_x(rs.getString("stay_x"));
-				stay.setStay_y(rs.getString("stay_y"));
-				stay.setStay_tel(rs.getString("stay_tel"));
-				stay.setStay_home_url(rs.getString("stay_home_url"));
-				stay.setStay_info(rs.getString("stay_info"));
+				stay.setStay_name(rs.getString("stay_name"));		
 				stay.setStay_img(rs.getString("stay_img"));
-				
-				
+				stay.setJoayo_amount(rs.getInt("joayo_amount"));
 			}
 			rs.close();
 			
-		
-		}catch(Exception e) {
+
+		} catch (Exception e) {
 			e.printStackTrace();
 		}
+
 		return stay;
 	}
 

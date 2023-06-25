@@ -5,17 +5,16 @@ import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 
-
-import OhShu.DAO.StayMainDAO;
+import OhShu.DAO.StayDAO;
 import OhShu.Util.DataBaseUtil;
 import OhShu.vo.StayVO;
 
-public class StayDAOImpl implements StayMainDAO{
-	private final static StayMainDAO instance = new StayDAOImpl();
+public class StayDAOImpl implements StayDAO{
+	private final static StayDAO instance = new StayDAOImpl();
 	private StayDAOImpl() {
 		
 	}
-	public static StayMainDAO getInstance() {
+	public static StayDAO getInstance() {
 		return instance;
 	}
 	@Override

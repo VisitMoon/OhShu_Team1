@@ -1,9 +1,8 @@
 package OhShu.DAO;
 
-import OhShu.vo.FoodVO;
+import OhShu.vo.FoodMainVO;
+
 
 public interface FoodMainDAO {
-
-	FoodVO selectFood(int food_no);
-
+	FoodMainVO selectFoodJoayoRank(int rank);
 }

@@ -1,9 +1,9 @@
 package OhShu.service;
 
-import OhShu.vo.StayVO;
+import OhShu.vo.StayMainVO;
 
 public interface StayMainService {
 
-	StayVO getStay(int stay_no);
+	StayMainVO getStayJoayoRanking(int rank);
 
 }

@@ -3,7 +3,7 @@ package OhShu.ServiceImpl;
 import OhShu.DAO.FoodMainDAO;
 import OhShu.DAOImpl.FoodMainDAOImpl;
 import OhShu.service.FoodMainService;
-import OhShu.vo.FoodVO;
+import OhShu.vo.FoodMainVO;
 import OhShu.Util.PageMaker;
 
 
@@ -19,8 +19,8 @@ public class FoodMainServiceImpl implements FoodMainService {
 	}
 	
 	@Override
-	public FoodVO getFood(int food_no) {
-		return dao.selectFood(food_no);
+	public FoodMainVO getFoodJoayoRanking(int rank) {
+		return dao.selectFoodJoayoRank(rank);
 		
 	}
 
