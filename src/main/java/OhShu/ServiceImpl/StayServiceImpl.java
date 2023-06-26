@@ -16,6 +16,7 @@ public class StayServiceImpl implements StayService {
 	   
 	   public static StayServiceImpl getInstance() {
 		   return instance;
+		   
 	   }
 	   
 	   
