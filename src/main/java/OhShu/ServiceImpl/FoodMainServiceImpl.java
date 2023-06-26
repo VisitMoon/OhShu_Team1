@@ -20,7 +20,7 @@ public class FoodMainServiceImpl implements FoodMainService {
 	
 	@Override
 	public FoodMainVO getFoodJoayoRanking(int rank) {
-		return dao.selectFoodJoayoRank(rank);
+		return dao.selectFoodJoayoRank  (rank);
 		
 	}
 

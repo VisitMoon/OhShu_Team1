@@ -18,7 +18,7 @@ import OhShu.Util.SHAEncodeUtil;
 /**
  * Servlet implementation class JoinSerlvet
  */
-@WebServlet("/ohshujoin")
+@WebServlet("/SignUp")
 public class UserJoinServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 	private final UserJoinService service = UserJoinServiceImpl.getInstance();
@@ -35,7 +35,7 @@ public class UserJoinServlet extends HttpServlet {
 	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		RequestDispatcher dispatcher = request.getRequestDispatcher("view/join.jsp");
+		RequestDispatcher dispatcher = request.getRequestDispatcher("view/js/signup.jsp");
 		dispatcher.forward(request, response);
 
 	}
@@ -62,7 +62,7 @@ public class UserJoinServlet extends HttpServlet {
 		}
 		request.setCharacterEncoding("UTF-8");
 		response.setCharacterEncoding("UTF-8");
-		response.sendRedirect(request.getContextPath()+"/login?msg="+msg);
+		response.sendRedirect(request.getContextPath()+"/SignIn?msg="+msg);
 		
 	}
 

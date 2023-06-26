@@ -4,7 +4,7 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<title> ohshu joim page</title>
+<title>충남오슈회원가입</title>
 
 <!-- 코드변경하기 -->
 
@@ -115,7 +115,7 @@
 </head>
 
 <body>
-    <form action = "${ pageContext.servletContext.contextPath }/ohshujoin" method="post">
+    <form action = "${ pageContext.servletContext.contextPath }/SignUp" method="post">
         <div class="header">
             <h3>회원가입</h3>
         </div>

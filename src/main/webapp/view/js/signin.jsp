@@ -69,7 +69,7 @@
 </head>
 <body>
 
-    <form action = "${ pageContext.servletContext.contextPath }/ohshlogin" method="post">
+    <form action = "${ pageContext.servletContext.contextPath }/Main" method="post">
         <div class="header">
             <h3>로그인</h3>
         </div>
@@ -86,7 +86,7 @@
         <div class="box-line-height"></div>
         <div class="box-submit">
             <input type="submit" value="로그인" onclick="return verifyField();">
-            <a href= " <%= request.getContextPath()%>/ohshujoin" > 회원가입 </a>
+            <a href= " <%= request.getContextPath()%>/SignUp" > 회원가입 </a>
 
         </div>
 

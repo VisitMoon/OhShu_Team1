@@ -9,22 +9,17 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-
-import OhShu.ServiceImpl.StayMainServiceImpl;
-import OhShu.service.StayMainService;
-import OhShu.vo.StayVO;
-
 /**
- * Servlet implementation class StayServlet
+ * Servlet implementation class MainServlet
  */
-@WebServlet("/StayServlet")
-public class StayServlet extends HttpServlet {
+@WebServlet("/Main")
+public class MainServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
-	private final StayMainService service = StayMainServiceImpl.getInstance();
+       
     /**
      * @see HttpServlet#HttpServlet()
      */
-    public StayServlet() {
+    public MainServlet() {
         super();
         // TODO Auto-generated constructor stub
     }
@@ -33,9 +28,14 @@ public class StayServlet extends HttpServlet {
 	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-
+		System.out.println(request.getParameter("msg"));
+		RequestDispatcher dispatcher = request.getRequestDispatcher("view/js/main.jsp");
+		dispatcher.forward(request, response);
+		
+		
+		
+		
 	}
-	
 
 	/**
 	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
