@@ -19,7 +19,7 @@ public class STAY_API {
 
             // DB 연결
             Class.forName("oracle.jdbc.driver.OracleDriver");
-            Connection conn = DriverManager.getConnection("jdbc:oracle:thin:@localhost:1521:xe",  "c##OhShu", "OhShu");
+            Connection conn = DriverManager.getConnection("jdbc:oracle:thin:@localhost:1521:xe",  "c##OhShu", "ohshu");
             // 삽입 쿼리 실행
             NodeList nodeList = doc.getElementsByTagName("item");
             String query = "INSERT INTO STAY (stay_no ,stay_location ,stay_category ,stay_name ,stay_sub_title ,stay_address ,stay_x ,stay_y ,stay_tel ,stay_home_url ,stay_info ,stay_img)"

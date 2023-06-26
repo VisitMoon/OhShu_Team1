@@ -1,7 +1,6 @@
 package OhShu.service;
 
 import java.util.List;
-
 import OhShu.vo.FoodVO;
 
 public interface FoodService {

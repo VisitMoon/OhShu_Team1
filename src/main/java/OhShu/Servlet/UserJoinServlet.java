@@ -18,7 +18,8 @@ import OhShu.Util.SHAEncodeUtil;
 /**
  * Servlet implementation class JoinSerlvet
  */
-@WebServlet("/join")
+
+@WebServlet("/SignUp")
 public class UserJoinServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 	private final UserJoinService service = UserJoinServiceImpl.getInstance();
@@ -35,7 +36,8 @@ public class UserJoinServlet extends HttpServlet {
 	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		RequestDispatcher dispatcher = request.getRequestDispatcher("");
+
+		RequestDispatcher dispatcher = request.getRequestDispatcher("view/js/signup.jsp");
 		dispatcher.forward(request, response);
 
 	}
@@ -46,24 +48,22 @@ public class UserJoinServlet extends HttpServlet {
 	public void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		UserTableVO usertable = new UserTableVO();
 		usertable.setUser_id(request.getParameter("user_id"));
-		usertable.setUser_pwd(SHAEncodeUtil.encodeSha(request.getParameter("user_pwd")));
+		usertable.setUser_pwd( SHAEncodeUtil.encodeSha(request.getParameter("user_pwd")));
 		usertable.setUser_name(request.getParameter("user_name"));
 		usertable.setUser_age(Integer.parseInt(request.getParameter("user_age")));   // int형 user_age
 		usertable.setUser_jumin(request.getParameter("user_jumin"));
-	
+		
 		int isOk= 1;
 		String msg = null;
 		if(service.registerUsertable(usertable) == isOk) {
 			msg = "success";
-
 		}else {
 			msg = "fail, try again";
 
 		}
 		request.setCharacterEncoding("UTF-8");
 		response.setCharacterEncoding("UTF-8");
-		response.sendRedirect(request.getContextPath()+"/login?msg="+msg);
-		
+		response.sendRedirect(request.getContextPath()+"/SignIn?msg="+msg);		
 	}
 
 }

@@ -21,7 +21,8 @@ import OhShu.Util.SHAEncodeUtil;
 /**
  * Servlet implementation class ohshuservlet
  */
-@WebServlet("/ohshlogin")
+
+@WebServlet("/SignIn")
 public class UserLoginServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 	private final UserLoginService service = UserLoginServiceImpl.getInstance();
@@ -40,7 +41,9 @@ public class UserLoginServlet extends HttpServlet {
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
 		System.out.println(request.getParameter("msg"));
-		RequestDispatcher dispatcher = request.getRequestDispatcher("view/login.jsp");
+
+		RequestDispatcher dispatcher = request.getRequestDispatcher("view/js/signin.jsp");
+
 		dispatcher.forward(request, response);
 		
 	  }
@@ -69,7 +72,8 @@ public class UserLoginServlet extends HttpServlet {
 			session.setAttribute("SESS_ID",usertable.getUser_id());
 			session.setAttribute("SESS_USERNAME",usertable.getUser_name());
 			
-			response.sendRedirect(request.getContextPath()+"/ohshumain");
+
+			response.sendRedirect(request.getContextPath()+"/Main");
 			
 			System.out.println("session - "+session);
 			
@@ -77,8 +81,8 @@ public class UserLoginServlet extends HttpServlet {
 		}else {
 			// login false
 			// login success
-			request.getRequestDispatcher("/view/login.jsp?msg=login failed, plz try again")
-					.forward(request, response);
+
+			request.getRequestDispatcher("/view/js/signin.jsp?msg=login failed, plz try again").forward(request, response);
 			
 		}
 		

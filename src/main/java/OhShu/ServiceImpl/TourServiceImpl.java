@@ -2,7 +2,6 @@ package OhShu.ServiceImpl;
 
 import java.util.ArrayList;
 import java.util.List;
-
 import OhShu.DAO.TourDAO;
 import OhShu.DAOImpl.TourDAOImpl;
 import OhShu.service.TourService;

@@ -9,6 +9,10 @@ public class SHAEncodeUtil {
 	  public static String encodeSha(String planeText) {
 	      String encodingText = "";
 	      try {
+	            if (planeText == null) {
+	                throw new IllegalArgumentException("planeText cannot be null");
+	            }	
+	      
 	         // SHA-512, SHA-256, SHA1 등 다양한 방식으로 활용
 	         MessageDigest md = MessageDigest.getInstance("SHA-512");
 	         md.update(planeText.getBytes());
@@ -24,7 +28,8 @@ public class SHAEncodeUtil {
 	   }
 	   
 	   public static void main(String[] args) {
-	      System.out.println(encodeSha("jam04"));
+
+	      System.out.println(encodeSha("pwd"));
 	   }
 	
 
