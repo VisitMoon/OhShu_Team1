@@ -65,7 +65,7 @@
             <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Laudantium veniam exercitationem expedita laborum
               at voluptate. Labore, voluptates totam at aut nemo deserunt rem magni pariatur quos perspiciatis atque eveniet
               unde.</p>
-            <a class="btn btn-primary" href="#">View Project</a>
+            <a class="btn btn-primary" href="https://tour.chungnam.go.kr/_prog/openapi/?func=food&start=1&end=1541">View Project</a>
           </div>
         </div>
         <!-- /.row -->

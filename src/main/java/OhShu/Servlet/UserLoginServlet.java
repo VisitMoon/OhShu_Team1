@@ -84,8 +84,6 @@ public class UserLoginServlet extends HttpServlet {
 		
 		System.out.println("result - "+ service.getCountUsertable(usertable));
 
-		
-//		service.getCountMember(vo);
 //		response.sendRedirect(request.getContextPath()+"/main");
 	}
 
