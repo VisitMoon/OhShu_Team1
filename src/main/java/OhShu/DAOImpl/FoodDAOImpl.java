@@ -35,6 +35,7 @@ import OhShu.vo.FoodVO;
 					+ "        ,food_y\r\n"
 					+ "        ,food_tel\r\n"
 					+ "        ,food_home_url\r\n"
+					+ "        ,food_info\r\n"
 					+ "        ,food_img\r\n"
 					+ "		   FROM food WHERE food_no = ?"
 					;
@@ -53,14 +54,15 @@ import OhShu.vo.FoodVO;
 					vo.setFood_no(rs.getInt("food_no"));
 					vo.setFood_location(rs.getString("food_location"));
 		            vo.setFood_source(rs.getString("food_source"));
-		            vo.setFood_name(rs.getString("tour_name"));
-		            vo.setFood_sub_title(rs.getString("tour_sub_title"));
-		            vo.setFood_address(rs.getString("tour_address"));
-		            vo.setFood_x(rs.getString("tour_x"));
-		            vo.setFood_y(rs.getString("tour_y"));
-		            vo.setFood_tel(rs.getString("tour_tel"));
-		            vo.setFood_home_url(rs.getString("tour_home_url"));
-		            vo.setFood_img(rs.getString("tour_img"));
+		            vo.setFood_name(rs.getString("food_name"));
+		            vo.setFood_sub_title(rs.getString("food_sub_title"));
+		            vo.setFood_address(rs.getString("food_address"));
+		            vo.setFood_x(rs.getString("food_x"));
+		            vo.setFood_y(rs.getString("food_y"));
+		            vo.setFood_tel(rs.getString("food_tel"));
+		            vo.setFood_home_url(rs.getString("food_home_url"));
+		            vo.setFood_info(rs.getString("food_info"));
+		            vo.setFood_img(rs.getString("food_img"));
 					
 					
 				}
@@ -86,6 +88,7 @@ import OhShu.vo.FoodVO;
 					+ "        ,food_y\r\n"
 					+ "        ,food_tel\r\n"
 					+ "        ,food_home_url\r\n"
+					+ "        ,food_info\r\n"
 					+ "        ,food_img\r\n"
 					+ "			FROM food";
 			
@@ -104,14 +107,15 @@ import OhShu.vo.FoodVO;
 					vo.setFood_no(rs.getInt("food_no"));
 					vo.setFood_location(rs.getString("food_location"));
 		            vo.setFood_source(rs.getString("food_source"));
-		            vo.setFood_name(rs.getString("tour_name"));
-		            vo.setFood_sub_title(rs.getString("tour_sub_title"));
-		            vo.setFood_address(rs.getString("tour_address"));
-		            vo.setFood_x(rs.getString("tour_x"));
-		            vo.setFood_y(rs.getString("tour_y"));
-		            vo.setFood_tel(rs.getString("tour_tel"));
-		            vo.setFood_home_url(rs.getString("tour_home_url"));
-		            vo.setFood_img(rs.getString("tour_img"));
+		            vo.setFood_name(rs.getString("food_name"));
+		            vo.setFood_sub_title(rs.getString("food_sub_title"));
+		            vo.setFood_address(rs.getString("food_address"));
+		            vo.setFood_x(rs.getString("food_x"));
+		            vo.setFood_y(rs.getString("food_y"));
+		            vo.setFood_tel(rs.getString("food_tel"));
+		            vo.setFood_home_url(rs.getString("food_home_url"));
+		            vo.setFood_info(rs.getString("food_info"));
+		            vo.setFood_img(rs.getString("food_img"));
 					
 					list.add(vo);
 				}

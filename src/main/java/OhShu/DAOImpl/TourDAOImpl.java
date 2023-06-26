@@ -36,6 +36,7 @@ import OhShu.vo.TourVO;
 					+ "        ,tour_y\r\n"
 					+ "        ,tour_tel\r\n"
 					+ "        ,tour_home_url\r\n"
+					+ "        ,tour_tour_info\r\n"
 					+ "        ,tour_img\r\n"
 					+ "		   FROM tour WHERE tour_no = ?"
 					;
@@ -61,6 +62,7 @@ import OhShu.vo.TourVO;
 		            vo.setTour_y(rs.getString("tour_y"));
 		            vo.setTour_tel(rs.getString("tour_tel"));
 		            vo.setTour_home_url(rs.getString("tour_home_url"));
+		            vo.setTour_info(rs.getString("tour_info"));
 		            vo.setTour_img(rs.getString("tour_img"));
 					
 					
@@ -88,6 +90,7 @@ import OhShu.vo.TourVO;
 					+ "        ,tour_y\r\n"
 					+ "        ,tour_tel\r\n"
 					+ "        ,tour_home_url\r\n"
+					+ "        ,tour_info\r\n"
 					+ "        ,tour_img\r\n"
 					+ "			FROM tour";
 			List<TourVO> list = new ArrayList<TourVO>();
@@ -112,6 +115,7 @@ import OhShu.vo.TourVO;
 		            vo.setTour_y(rs.getString("tour_y"));
 		            vo.setTour_tel(rs.getString("tour_tel"));
 		            vo.setTour_home_url(rs.getString("tour_home_url"));
+		            vo.setTour_info(rs.getString("tour_info"));
 		            vo.setTour_img(rs.getString("tour_img"));
 					
 					list.add(vo);
