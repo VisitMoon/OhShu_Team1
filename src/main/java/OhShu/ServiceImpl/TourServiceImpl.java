@@ -1,5 +1,8 @@
 package OhShu.ServiceImpl;
 
+import java.util.ArrayList;
+import java.util.List;
+
 import OhShu.DAO.TourDAO;
 import OhShu.DAOImpl.TourDAOImpl;
 import OhShu.service.TourService;
@@ -22,5 +25,10 @@ public class TourServiceImpl implements TourService {
 	   @Override
 	   public TourVO getTour(int Tour_no) {
 	      return dao.selectTour(Tour_no);
+	   }
+	   
+	   @Override
+	   public List<TourVO> getTourList(){
+		   return dao.getTourList();
 	   }
 }

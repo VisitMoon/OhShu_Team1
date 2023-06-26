@@ -19,7 +19,7 @@ public class STAY_API {
 
             // DB 연결
             Class.forName("oracle.jdbc.driver.OracleDriver");
-            Connection conn = DriverManager.getConnection("jdbc:oracle:thin:@localhost:1521:xe",  "c##OhShu", "ohshu");
+            Connection conn = DriverManager.getConnection("jdbc:oracle:thin:@localhost:1521:xe",  "c##OhShu", "OhShu");
             // 삽입 쿼리 실행
             NodeList nodeList = doc.getElementsByTagName("item");
             String query = "INSERT INTO STAY (stay_no ,stay_location ,stay_category ,stay_name ,stay_sub_title ,stay_address ,stay_x ,stay_y ,stay_tel ,stay_home_url ,stay_info ,stay_img)"
@@ -50,8 +50,8 @@ public class STAY_API {
                  stmt.setString(6, stay_address);
                  stmt.setString(7, stay_x);
                  stmt.setString(8, stay_y);
-                 stmt.setString(9, stay_home_url);
-                 stmt.setString(10, stay_tel);
+                 stmt.setString(9, stay_tel);
+                 stmt.setString(10, stay_home_url);
                  stmt.setString(11, stay_info);
                  stmt.setString(12, stay_img);
 

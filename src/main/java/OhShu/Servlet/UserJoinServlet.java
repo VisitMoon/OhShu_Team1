@@ -18,7 +18,7 @@ import OhShu.Util.SHAEncodeUtil;
 /**
  * Servlet implementation class JoinSerlvet
  */
-@WebServlet("/ohshujoin")
+@WebServlet("/join")
 public class UserJoinServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 	private final UserJoinService service = UserJoinServiceImpl.getInstance();

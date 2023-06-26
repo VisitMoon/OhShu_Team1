@@ -1,5 +1,7 @@
 package OhShu.ServiceImpl;
 
+import java.util.List;
+
 import OhShu.DAO.FoodDAO;
 import OhShu.DAOImpl.FoodDAOImpl;
 import OhShu.service.FoodService;
@@ -22,5 +24,10 @@ public class FoodServiceImpl implements FoodService {
 	   @Override
 	   public FoodVO getFood(int Food_no) {
 	      return dao.selectFood(Food_no);
+	   }
+	   
+	   @Override
+	   public List<FoodVO> getFoodList(){
+		   return dao.selectFoodList();
 	   }
 }

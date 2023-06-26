@@ -1,5 +1,7 @@
 package OhShu.ServiceImpl;
 
+import java.util.List;
+
 import OhShu.DAO.StayDAO;
 import OhShu.DAOImpl.StayDAOImpl;
 import OhShu.service.StayService;
@@ -23,5 +25,10 @@ public class StayServiceImpl implements StayService {
 	   @Override
 	   public StayVO getStay(int stay_no) {
 	      return dao.selectStay(stay_no);
+	   }
+	   
+	   @Override
+	   public List<StayVO> getStayList(){
+		   return dao.selectStayList();
 	   }
 }

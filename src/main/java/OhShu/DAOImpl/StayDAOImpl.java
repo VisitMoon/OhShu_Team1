@@ -4,6 +4,8 @@ package OhShu.DAOImpl;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
+import java.util.ArrayList;
+import java.util.List;
 
 import OhShu.DAO.StayDAO;
 import OhShu.Util.DataBaseUtil;
@@ -73,4 +75,56 @@ public class StayDAOImpl implements StayDAO{
 		return vo;
 	}
 
+	@Override
+	public List<StayVO> selectStayList(){
+		
+		String sql="SELECT stay_no\r\n"
+				+ "        ,stay_location\r\n"
+				+ "        ,stay_category\r\n"
+				+ "        ,stay_name\r\n"
+				+ "        ,stay_sub_title\r\n"
+				+ "        ,stay_address\r\n"
+				+ "        ,stay_x\r\n"
+				+ "        ,stay_y\r\n"
+				+ "        ,stay_tel\r\n"
+				+ "        ,stay_home_url\r\n"
+				+ "        ,stay_info\r\n"
+				+ "        ,stay_img\r\n"
+				+ "			FROM stay";
+		
+		StayVO vo = null;
+		List<StayVO> list = new ArrayList<StayVO>();
+		try(
+			Connection conn = DataBaseUtil.getConnection();
+			PreparedStatement pstmt = conn.prepareStatement(sql);
+			){
+			ResultSet rs = pstmt.executeQuery();
+			
+			
+			while( rs.next() ) {
+				vo = new StayVO();
+				vo.setStay_no(rs.getInt("stay_no"));
+				vo.setStay_location(rs.getString("stay_location"));
+	            vo.setStay_category(rs.getString("stay_category"));
+	            vo.setStay_name(rs.getString("stay_name"));
+	            vo.setStay_sub_title(rs.getString("stay_sub_title"));
+	            vo.setStay_address(rs.getString("stay_address"));
+	            vo.setStay_x(rs.getString("stay_x"));
+	            vo.setStay_y(rs.getString("stay_y"));
+	            vo.setStay_tel(rs.getString("stay_tel"));
+	            vo.setStay_home_url(rs.getString("stay_home_url"));
+	            vo.setStay_info(rs.getString("stay_info"));
+	            vo.setStay_img(rs.getString("stay_img"));
+				
+				list.add(vo);
+			}
+			rs.close();
+			
+		
+			
+		}catch(Exception e) {
+			e.printStackTrace();
+		}
+		return list;
+	}
 }
