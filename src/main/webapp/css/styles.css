@@ -185,7 +185,6 @@ address {
 ol,
 ul {
   padding-left: 2rem;
-  
 }
 
 ol,
@@ -201,7 +200,6 @@ ol ul,
 ul ol {
   margin-bottom: 0;
 }
-
 
 dt {
   font-weight: 700;
@@ -3817,7 +3815,6 @@ textarea.form-control-lg {
 .navbar-nav .dropdown-menu {
   position: static;
 }
-
 
 .navbar-text {
   padding-top: 0.5rem;
@@ -11025,11 +11022,8 @@ body {
   background-color: #212529;
   color: rgba(255, 255, 255, 0.5);
 }
-.sb-sidenav-dark .sb-sidenav-menu  {
+.sb-sidenav-dark .sb-sidenav-menu .sb-sidenav-menu-heading {
   color: rgba(255, 255, 255, 0.25);
-}
-.sb-sidenav-menu-heading{
-  color: white;
 }
 .sb-sidenav-dark .sb-sidenav-menu .nav-link {
   color: rgba(255, 255, 255, 0.5);
@@ -11168,16 +11162,13 @@ body {
 .datatable-table > tfoot > tr > th,
 .datatable-table > thead > tr > td,
 .datatable-table > thead > tr > th {
- 
+  vertical-align: top;
   padding: 0.5rem 0.5rem;
-  text-align: center;
-  vertical-align: middle;
-  
 }
 
 .datatable-table > thead > tr > th {
-  vertical-align: center;
-  text-align: center;
+  vertical-align: bottom;
+  text-align: left;
   border-bottom: none;
 }
 
@@ -11187,7 +11178,7 @@ body {
 }
 
 .datatable-table th {
-  vertical-align: center;
+  vertical-align: bottom;
   text-align: left;
 }
 

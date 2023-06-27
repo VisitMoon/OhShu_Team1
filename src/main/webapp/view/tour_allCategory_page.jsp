@@ -11,28 +11,21 @@
 <html lang="ko">
 
 <head>
-<meta charset="utf-8" />
-<meta http-equiv="X-UA-Compatible" content="IE=edge" />
-<meta name="viewport"
-	content="width=device-width, initial-scale=1, shrink-to-fit=no" />
-<meta name="description" content="" />
-<meta name="author" content="" />
-<title>Tour Category Page</title>
-<link
-	href="https://cdn.jsdelivr.net/npm/simple-datatables@7.1.2/dist/style.min.css"
-	rel="stylesheet" />
-<link href="../css/styles.css" rel="stylesheet" />
-<script src="https://use.fontawesome.com/releases/v6.3.0/js/all.js"
-	crossorigin="anonymous"></script>
-
-<script
-	src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"
-	crossorigin="anonymous"></script>
-<script src="../js/scripts.js"></script>
-<script
-	src="https://cdn.jsdelivr.net/npm/simple-datatables@7.1.2/dist/umd/simple-datatables.min.js"
-	crossorigin="anonymous"></script>
-<script src="../js/datatables-simple-demo.js"></script>
+  <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+    <meta name="description" content="" />
+    <meta name="author" content="" />
+    <title>Tour Category Page</title>
+    <link href="https://cdn.jsdelivr.net/npm/simple-datatables@7.1.2/dist/style.min.css" rel="stylesheet" />
+    <link href="../css/styles.css" rel="stylesheet" />
+    <script src="https://use.fontawesome.com/releases/v6.3.0/js/all.js" crossorigin="anonymous"></script>
+   
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js" crossorigin="anonymous"></script>
+    <script src="../js/scripts.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/simple-datatables@7.1.2/dist/umd/simple-datatables.min.js" crossorigin="anonymous"></script>
+    <script src="../js/datatables-simple-demo.js"></script>
+    <script src="https://openapi.map.naver.com/openapi/v3/maps.js?ncpClientId=mn7cwsrvym"></script>
 <style>
 .img_detail img {
 	width: 300px;
@@ -53,15 +46,15 @@
 		</button>
 		<!-- Navbar Search-->
 		<!-- <form
-			class="d-none d-md-inline-block form-inline ms-auto me-0 me-md-3 my-2 my-md-0">
-			<div class="input-group">
-				<input class="form-control" type="text" placeholder="Search for..."
-					aria-label="Search for..." aria-describedby="btnNavbarSearch" />
-				<button class="btn btn-primary" id="btnNavbarSearch" type="button">
-					<i class="fas fa-search"></i>
-				</button>
-			</div>
-		</form> -->
+         class="d-none d-md-inline-block form-inline ms-auto me-0 me-md-3 my-2 my-md-0">
+         <div class="input-group">
+            <input class="form-control" type="text" placeholder="Search for..."
+               aria-label="Search for..." aria-describedby="btnNavbarSearch" />
+            <button class="btn btn-primary" id="btnNavbarSearch" type="button">
+               <i class="fas fa-search"></i>
+            </button>
+         </div>
+      </form> -->
 		<!-- Navbar-->
 		<ul class="navbar-nav ms-auto ms-md-0 me-3 me-lg-4">
 			<li class="nav-item dropdown"><a
@@ -136,15 +129,19 @@
 						<div class="collapse" id="collapsePages"
 							aria-labelledby="headingOne" data-bs-parent="#sidenavAccordion">
 							<nav class="sb-sidenav-menu-nested nav">
-								<a class="nav-link" href="여행전체페이지.html">전체</a> <a
-									class="nav-link" href="#">명산</a> <a class="nav-link" href="#">해변/섬</a>
-								<a class="nav-link" href="#">항/포구</a> <a class="nav-link"
-									href="#">강/계곡/호수</a> <a class="nav-link" href="#">캠핑/트레킹/체험</a>
-								<a class="nav-link" href="#">풍경</a> <a class="nav-link" href="#">역사유적지</a>
-								<a class="nav-link" href="#">종교/사찰/성지</a> <a class="nav-link"
-									href="#">고택/민속마을</a> <a class="nav-link" href="#">전시/관람</a> <a
-									class="nav-link" href="#">휴양/옹천</a> <a class="nav-link"
-									href="#">특화관광지</a>
+								<a class="nav-link" href="#">전체</a> 
+								<a class="nav-link" href="tour_allCategory_page.jsp?tourCate=명산">명산</a> 
+								<a class="nav-link" href="tour_allCategory_page.jsp?tourCate=해변/섬">해변/섬</a>
+								<a class="nav-link" href="tour_allCategory_page.jsp?tourCate=항/포구">항/포구</a> 
+								<a class="nav-link"	href="tour_allCategory_page.jsp?tourCate=강/계곡/호수">강/계곡/호수</a> 
+								<a class="nav-link" href="tour_allCategory_page.jsp?tourCate=캠핑/트래킹/체험">캠핑/트래킹/체험</a>
+								<a class="nav-link" href="tour_allCategory_page.jsp?tourCate=풍경">풍경</a> 
+								<a class="nav-link" href="tour_allCategory_page.jsp?tourCate=역사유적지">역사유적지</a>
+								<a class="nav-link" href="tour_allCategory_page.jsp?tourCate=종교/사찰/성지">종교/사찰/성지</a> 
+								<a class="nav-link"	href="tour_allCategory_page.jsp?tourCate=고택/민속마을">고택/민속마을</a> 
+								<a class="nav-link" href="tour_allCategory_page.jsp?tourCate=전시/관람">전시/관람</a> 
+								<a class="nav-link" href="tour_allCategory_page.jsp?tourCate=휴양/온천">휴양/온천</a> 
+								<a class="nav-link"	href="tour_allCategory_page.jsp?tourCate=특화관광지">특화관광지</a>
 
 							</nav>
 						</div>
@@ -200,7 +197,7 @@
 						</div>
 						<div class="card-body"></div>
 
-						
+
 						<table id="datatablesSimple">
 							<thead>
 								<tr>
@@ -214,12 +211,15 @@
 							</thead>
 							<tbody>
 
-							<% TourService service = TourServiceImpl.getInstance();  
-							List<TourVO> tour_list = service.getTourList();
-							
-							for(int i =0; i<460; i++){
-						 %>
-                           			<tr>
+					<% TourService service = TourServiceImpl.getInstance();  
+                     List<TourVO> tour_list = service.getTourList();
+                     String tourCate = request.getParameter("tourCate");
+                     
+                     
+                     for(int i =0; i<tour_list.size(); i++){  %>
+                     
+                 	<%	if(tour_list.get(i).getTour_category().equals(tourCate)){   %>
+								<tr>
 									<td><a href="tour_detail_page.jsp?tourNo=<%= i%>"> <img
 											src="<%=tour_list.get(i).getTour_img()%>"
 											style="border-radius: 20px; width: 200px; height: 111px;"></a>
@@ -227,13 +227,13 @@
 									</td>
 									<td><%= tour_list.get(i).getTour_name()%></td>
 									<td><%=tour_list.get(i).getTour_category()%></td>
-									
+
 									<td><i class="fas fa-table me-1"></i></td>
 
 								</tr>
-							<% }%>
-
-
+								<% }%>
+					<% }%>
+	
 
 
 
@@ -250,13 +250,13 @@
 	<footer class="py-4 bg-light mt-auto">
 		<div class="container-fluid px-4">
 			<!-- <div
-						class="d-flex align-items-center justify-content-between small">
-						<div class="text-muted">Copyright &copy; Your Website 2023</div>
-						<div>
-							<a href="#">Privacy Policy</a> &middot; <a href="#">Terms
-								&amp; Conditions</a>
-						</div>
-					</div> -->
+                  class="d-flex align-items-center justify-content-between small">
+                  <div class="text-muted">Copyright &copy; Your Website 2023</div>
+                  <div>
+                     <a href="#">Privacy Policy</a> &middot; <a href="#">Terms
+                        &amp; Conditions</a>
+                  </div>
+               </div> -->
 		</div>
 	</footer>
 	</div>

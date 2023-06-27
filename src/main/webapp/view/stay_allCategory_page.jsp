@@ -33,12 +33,6 @@
 	src="https://cdn.jsdelivr.net/npm/simple-datatables@7.1.2/dist/umd/simple-datatables.min.js"
 	crossorigin="anonymous"></script>
 <script src="../js/datatables-simple-demo.js"></script>
-<style>
-.img_detail img {
-	width: 300px;
-	height: 167.250px;
-}
-</style>
 
 </head>
 
@@ -136,15 +130,19 @@
 						<div class="collapse" id="collapsePages"
 							aria-labelledby="headingOne" data-bs-parent="#sidenavAccordion">
 							<nav class="sb-sidenav-menu-nested nav">
-								<a class="nav-link" href="여행전체페이지.html">전체</a> <a
-									class="nav-link" href="#">명산</a> <a class="nav-link" href="#">해변/섬</a>
-								<a class="nav-link" href="#">항/포구</a> <a class="nav-link"
-									href="#">강/계곡/호수</a> <a class="nav-link" href="#">캠핑/트레킹/체험</a>
-								<a class="nav-link" href="#">풍경</a> <a class="nav-link" href="#">역사유적지</a>
-								<a class="nav-link" href="#">종교/사찰/성지</a> <a class="nav-link"
-									href="#">고택/민속마을</a> <a class="nav-link" href="#">전시/관람</a> <a
-									class="nav-link" href="#">휴양/옹천</a> <a class="nav-link"
-									href="#">특화관광지</a>
+								<a class="nav-link" href="stay_allCategory_page" >전체</a>
+								<a class="nav-link" href="#">명산</a>
+								<a class="nav-link" href="#">해변/섬</a>
+								<a class="nav-link" href="#">항/포구</a> 
+								<a class="nav-link" href="#">강/계곡/호수</a> 
+								<a class="nav-link" href="#">캠핑/트레킹/체험</a>
+								<a class="nav-link" href="#">풍경</a> 
+								<a class="nav-link" href="#">역사유적지</a>
+								<a class="nav-link" href="#">종교/사찰/성지</a> 
+								<a class="nav-link"	href="#">고택/민속마을</a> 
+								<a class="nav-link" href="#">전시/관람</a> 
+								<a class="nav-link" href="#">휴양/옹천</a> 
+								<a class="nav-link"	href="#">특화관광지</a>
 
 							</nav>
 						</div>
@@ -218,7 +216,7 @@
 							List<StayVO> stay_list = service.getStayList();
 							
 							for(int i =0; i<139; i++){
-						 %>
+						    %>
                            			<tr>
 									<td><a href="stay_detail_page.jsp?stayNo=<%= i%>"> <img
 											src="<%=stay_list.get(i).getStay_img()%>"

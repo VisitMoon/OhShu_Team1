@@ -285,7 +285,7 @@ border:solid;
 						<div class="collapse" id="collapsePages"
 							aria-labelledby="headingOne" data-bs-parent="#sidenavAccordion">
 							<nav class="sb-sidenav-menu-nested nav">
-								<a class="nav-link" href="#">전체</a> <a class="nav-link" href="#">명산</a>
+								<a class="nav-link" href="tour_allCategory_page.jsp">전체</a> <a class="nav-link" href="">명산</a>
 								<a class="nav-link" href="#">해변/섬</a> <a class="nav-link"
 									href="#">항/포구</a> <a class="nav-link" href="#">강/계곡/호수</a> <a
 									class="nav-link" href="#">캠핑/트레킹/체험</a> <a class="nav-link"
