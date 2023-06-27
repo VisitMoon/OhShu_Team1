@@ -5,6 +5,7 @@ import java.util.List;
 import OhShu.DAO.TourDAO;
 import OhShu.DAOImpl.TourDAOImpl;
 import OhShu.service.TourService;
+import OhShu.vo.TourReviewVO;
 import OhShu.vo.TourVO;
 
 
@@ -29,5 +30,10 @@ public class TourServiceImpl implements TourService {
 	   @Override
 	   public List<TourVO> getTourList(){
 		   return dao.getTourList();
+	   }
+	   
+	   @Override
+	   public List<TourReviewVO> getTourReviewList(int tour_no){
+		   return dao.getTourReviewList(tour_no);
 	   }
 }

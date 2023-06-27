@@ -10,6 +10,7 @@ import java.util.List;
 
 import OhShu.DAO.StayDAO;
 import OhShu.Util.DataBaseUtil;
+import OhShu.vo.StayReviewVO;
 import OhShu.vo.StayVO;
 
 public class StayDAOImpl implements StayDAO{
@@ -77,7 +78,7 @@ public class StayDAOImpl implements StayDAO{
 	}
 	
 	@Override
-	public List<StayVO> selectStayList(){
+	public List<StayVO> getStayList(){
 		
 		String sql="SELECT stay_no\r\n"
 				+ "        ,stay_location\r\n"
@@ -127,5 +128,43 @@ public class StayDAOImpl implements StayDAO{
 			e.printStackTrace();
 		}
 		return list;
+	}
+	
+	@Override
+	public List<StayReviewVO> getStayReviewList(int stay_no){
+		String sql = "SELECT  review_no, time, user_id, stay_no, review_content "
+				+ "		FROM stay_review\r\n"
+				+ "		WHERE stay_no = ?"
+				+ "                 )";
+		
+		List<StayReviewVO> list = new ArrayList<StayReviewVO>();
+		StayReviewVO vo = null;
+		
+		try(
+				Connection conn = DataBaseUtil.getConnection();
+				PreparedStatement pstmt = conn.prepareStatement(sql);
+				){
+				pstmt.setInt(1,stay_no);
+				ResultSet rs = pstmt.executeQuery();
+				
+				
+				while( rs.next() ) {
+					vo = new StayReviewVO();
+					vo.setReview_no(rs.getInt("review_no"));
+					vo.setTime(rs.getString("time"));
+					vo.setUser_id(rs.getString("user_id"));
+					vo.setStay_no(rs.getInt("stay_no"));
+					vo.setReview_content(rs.getString("review_content"));
+					
+					list.add(vo);
+				}
+				rs.close();
+				
+			
+				
+			}catch(Exception e) {
+				e.printStackTrace();
+			}
+			return list;
 	}
 }

@@ -24,9 +24,9 @@ public class TourReviewServiceImpl implements TourReviewService {
 	  		return dao.InsertTourReview(reviewinsert);
 	   }
 	   	  public int registerstay_reviewupdate(TourReviewVO reviewdelete)  {
-	  		return dao.InsertTourReview(reviewdelete);
+	  		return dao.updateTourReview(reviewdelete);
 	   }
 	   	  public int registerstay_reviewdelete(TourReviewVO reviewupdate)  {
-		  		return dao.InsertTourReview(reviewupdate);
+		  		return dao.DeleteTourReview(reviewupdate);
 		   }
 }
