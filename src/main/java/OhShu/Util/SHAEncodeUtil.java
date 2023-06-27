@@ -29,7 +29,7 @@ public class SHAEncodeUtil {
 	   
 	   public static void main(String[] args) {
 
-	      System.out.println(encodeSha("pwd"));
+	      System.out.println(encodeSha("user_pwd"));
 	   }
 	
 
