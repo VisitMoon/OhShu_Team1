@@ -9,6 +9,7 @@ import java.util.List;
 
 import OhShu.DAO.TourDAO;
 import OhShu.Util.DataBaseUtil;
+import OhShu.vo.TourReviewVO;
 import OhShu.vo.TourVO;
 
 
@@ -23,9 +24,7 @@ import OhShu.vo.TourVO;
 		}
 		@Override
 		public TourVO selectTour(int tour_no) {
-			
-			
-			
+						
 			String sql="SELECT tour_no\r\n"
 					+ "        ,tour_location\r\n"
 					+ "        ,tour_category\r\n"
@@ -99,7 +98,6 @@ import OhShu.vo.TourVO;
 				Connection conn = DataBaseUtil.getConnection();
 				PreparedStatement pstmt = conn.prepareStatement(sql);
 				){
-
 				ResultSet rs = pstmt.executeQuery();
 				
 				
@@ -128,5 +126,43 @@ import OhShu.vo.TourVO;
 				e.printStackTrace();
 			}
 			return list;
+		}
+		
+		public List<TourReviewVO> getTourReviewList(int tour_no){
+			
+			String sql = "SELECT  review_no, time, user_id, tour_no, review_content "
+					+ "		FROM tour_review\r\n"
+					+ "		WHERE tour_no = ?"
+					+ "                 )";
+			
+			List<TourReviewVO> list = new ArrayList<TourReviewVO>();
+			TourReviewVO vo = null;
+			
+			try(
+					Connection conn = DataBaseUtil.getConnection();
+					PreparedStatement pstmt = conn.prepareStatement(sql);
+					){
+					pstmt.setInt(1,tour_no);
+					ResultSet rs = pstmt.executeQuery();
+					
+					
+					while( rs.next() ) {
+						vo = new TourReviewVO();
+						vo.setReview_no(rs.getInt("review_no"));
+						vo.setTime(rs.getString("time"));
+						vo.setUser_id(rs.getString("user_id"));
+						vo.setTour_no(rs.getInt("tour_no"));
+						vo.setReview_content(rs.getString("review_content"));
+						
+						list.add(vo);
+					}
+					rs.close();
+					
+				
+					
+				}catch(Exception e) {
+					e.printStackTrace();
+				}
+				return list;
 		}
 	}
