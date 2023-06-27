@@ -70,11 +70,6 @@
                 return false;
             }
             
-            element = document.getElementById("iddouble");
-            if (idDuplication.value!="idCheck") {
-                alert("아이디 중복체크를 해주세요.");
-            }
-            
             element = document.getElementById("user_pwd");
             msg = 'pw 입력';
             if (!isValid(element, msg)) {
@@ -141,8 +136,13 @@
             }
 
         }
+       
+       
+       
+		        
 
     </script>
+    
 </head>
 
 <body class="sb-nav-fixed">
@@ -191,9 +191,6 @@
 							<div class="box-input">
 								<label for="id"> 아이디 : </label> <input type="text" id="user_id"
 									name="user_id">
-								<button type="text" id="iddouble" onclick="fn_dbCheckId()" class="chekId">
-								중복 확인</button>
-								<input type="hidden" name="idDuplication" value="idUncheck"/>
 								<div class="box-line-height"></div>
 		
 								

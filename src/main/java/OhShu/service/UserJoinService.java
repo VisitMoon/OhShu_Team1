@@ -5,5 +5,6 @@ import OhShu.vo.UserTableVO;
 public interface UserJoinService {
 
 	int registerUsertable(UserTableVO usertable);
+	
 
 }
