@@ -1,6 +1,5 @@
 <%@page import="org.apache.catalina.connector.Request"%>
-<%@ page language="java" contentType="text/html; charset=UTF-8"
-   pageEncoding="UTF-8"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <%@ page import="OhShu.vo.*"%>
 <%@ page import="OhShu.DAOImpl.*"%>
 <%@ page import="OhShu.DAO.*"%>
@@ -8,9 +7,9 @@
 <%@ page import="OhShu.service.*"%>
 <%@ page import="java.util.*"%>
 <%@ page import="java.net.*"%>
+
 <!DOCTYPE html>
 <html lang="ko">
-
 <head>
 <meta charset="utf-8" />
 <meta http-equiv="X-UA-Compatible" content="IE=edge" />
@@ -18,7 +17,7 @@
    content="width=device-width, initial-scale=1, shrink-to-fit=no" />
 <meta name="description" content="" />
 <meta name="author" content="" />
-<title>Tour Category Page</title>
+<title>Introduction Category Page</title>
 <link
    href="https://cdn.jsdelivr.net/npm/simple-datatables@7.1.2/dist/style.min.css"
    rel="stylesheet" />
@@ -82,16 +81,15 @@
             <div class="sb-sidenav-menu">
                <div class="nav">
 
-<div class="sb-sidenav-menu-heading">소개</div>
-                  <a class="nav-link" href="#">
-
-                     <div class="sb-nav-link-icon">
-                        <i class="fas fa-tachometer-alt"></i>
-                     </div> 개요
-
-
-                  </a> 
-
+				<div class="sb-sidenav-menu-heading">소개</div>
+                 	 <a class="nav-link" href="introduction.jsp">
+                     	<div class="sb-nav-link-icon">
+                       	 <i class="fas fa-tachometer-alt"></i></div> 충청남도의 개요 </a>
+                       	  	 
+                      <a class="nav-link" href="history.jsp">
+                     	<div class="sb-nav-link-icon">
+                       	 <i class="fas fa-tachometer-alt"></i></div> 충남오슈의 역사 </a> 
+	
                   <div class="sb-sidenav-menu-heading">카테고리</div>
                   <a class="nav-link collapsed" href="#" data-bs-toggle="collapse"
                      data-bs-target="#collapseLayouts" aria-expanded="false"
@@ -156,7 +154,6 @@
                            href="tour_allCategory_page.jsp?tourCate=휴양/온천">휴양/온천</a> <a
                            class="nav-link"
                            href="tour_allCategory_page.jsp?tourCate=특화관광지">특화관광지</a>
-
                      </nav>
                   </div>
 
@@ -188,22 +185,7 @@
                            href="food_allCategory_page.jsp?foodCate=착한가격업소">착한가격업소</a>
                      </nav>
                   </div>
-
-
-
-                  <!--    <div class="sb-sidenav-menu-heading">Addons</div>
-                  <a class="nav-link" href="#">
-                     <div class="sb-nav-link-icon">
-                        <i class="fas fa-chart-area"></i>
-                     </div> Charts
-                  </a> <a class="nav-link" href="#">
-                     <div class="sb-nav-link-icon">
-                        <i class="fas fa-table"></i>
-                     </div> Tables
-                  </a>
-                      -->
                </div>
-
             </div>
             <div class="sb-sidenav-footer">
                <div class="small">Logged in as:</div>
@@ -214,48 +196,86 @@
       <div id="layoutSidenav_content">
          <main>
             <div class="container-fluid px-4">
-
-
                <div class="card mb-4"></div>
                <div class="card mb-4">
-                  <div class="card-header"> 개요</div>
-                  <div class="card-body">
-
-                  
-
+                  <div class="card-header">충님오슈의 이야기</div>
+                  <div class="card-body">              
                         <h3>안녕하세요, 충남오슈입니다. 즐거운 여행되세요.</h3>
-                        <p>충청남도의 매력을 왕창 즐겨보시는 정보 가득한 충남오슈가 되겠습니다.</p>
-                        <br> <br>
-
+                        <p>충청남도의 매력을 왕창 즐겨보시는 정보 가득한 충남오슈가 되겠습니다.</p>    
+							<div class="container-box">
+								<div class="stay-boxs">
+							           <img src="<%= request.getContextPath()%>/img/stay/stay.jpg" style="width:20%">
+							      	<a href="#">
+							           <img src="<%= request.getContextPath()%>/img/stay/stay1.jpg" style="width:20%"></a>
+							      	<a href="#">
+							           <img src="<%= request.getContextPath()%>/img/stay/stay2.jpg" style="width:20%""></a>
+							      	<a href="#">
+							           <img src="<%= request.getContextPath()%>/img/stay/stay3.jpg" style="width:20%"></a>
+							      	<a href="#">
+							           <img src="<%= request.getContextPath()%>/img/stay/stay4.jpg" style="width:20%"></a>
+								</div>
+							</div>
+							<div class="container-box">
+								<div class="tour-boxs">
+							            <img src="<%= request.getContextPath()%>/img/tour/tour.jpg" style="width:20%">
+							         <a href="#">
+							            <img src="<%= request.getContextPath()%>/img/tour/tour1.jpg" style="width:20%"></a>
+									 <a href="#">
+							            <img src="<%= request.getContextPath()%>/img/tour/tour2.jpg" style="width:20%"></a>
+							         <a href="#">
+							            <img src="<%= request.getContextPath()%>/img/tour/tour3.jpg" style="width:20%"></a>
+							         <a href="#">
+							            <img src="<%= request.getContextPath()%>/img/tour/tour4.jpg" style="width:20%"></a>
+							         <a href="#">
+							            <img src="<%= request.getContextPath()%>/img/tour/tour5.jpg" style="width:20%"></a>
+							         <a href="#">
+							            <img src="<%= request.getContextPath()%>/img/tour/tour6.jpg" style="width:20%"></a>
+							         <a href="#">
+							            <img src="<%= request.getContextPath()%>/img/tour/tour7.jpg" style="width:20%"></a>
+							         <a href="#">
+							            <img src="<%= request.getContextPath()%>/img/tour/tour8.jpg" style="width:20%"></a>
+							         <a href="#">
+										<img src="<%= request.getContextPath()%>/img/tour/tour9.jpg" style="width:20%"></a>
+							         <a href="#">
+							            <img src="<%= request.getContextPath()%>/img/tour/tour10.jpg" style="width:20%"></a>
+							         <a href="#">
+							            <img src="<%= request.getContextPath()%>/img/tour/tour11.jpg" style="width:20%"></a>
+							         <a href="#">
+							            <img src="<%= request.getContextPath()%>/img/tour/tour12.jpg" style="width:20%"></a>
+							    </div>
+							</div>
+							<div class="container-box">
+								<div class="food-boxs">
+							           <img src="<%= request.getContextPath()%>/img/food/food.jpg" style="width:20%">
+							         <a href="#">
+							            <img src="<%= request.getContextPath()%>/img/food/food1.jpg" style="width:20%"></a>
+							         <a href="#">
+							            <img src="<%= request.getContextPath()%>/img/food/food2.jpg" style="width:20%"></a>
+							         <a href="#">
+							            <img src="<%= request.getContextPath()%>/img/food/food3.jpg" style="width:20%"></a>
+							         <a href="#">
+							            <img src="<%= request.getContextPath()%>/img/food/food4.jpg" style="width:20%"></a>
+							         <a href="#">
+							            <img src="<%= request.getContextPath()%>/img/food/food5.jpg" style="width:20%"></a>
+							         <a href="#">
+							            <img src="<%= request.getContextPath()%>/img/food/food6.jpg" style="width:20%"></a>
+								</div>
+							</div>
+							 </div>
+                             <br>
+                             <br>
+                             <br>          
                         <div>
-                           <p>충청남도의 역사 고대에는 마한의 중심지였으나, 마한이 백제에 병합된 이후 백제 후기의 도읍이 웅진과
-                              사비에 있었다. 이후 통일신라 시대에 9주 5소경 중 9주의 하나인 웅주가 있었으며, 고려 시대에 오늘날
-                              경기도, 충청북도 지역과 함께 양광도[19]로 편제되었다가, 조선이 건국되면서 양광도가 경기도와 충청도로
-                              분리되었다. 도의 명칭이 오늘날 충청북도에 해당되는 충주와 청주에서 따왔기 때문에 현 충청남도 지역은 소외된 것
-                              같지만, 홍주와 공주의 파워도 만만치 않았고, 충주와 청주가 반역향으로 강등될 때마다 청홍도, 충홍도, 공충도,
-                              홍공도 등의 다양한 이름으로 존재감이 없지 않았다. 임진왜란 이후 구한말 충청도가 남북도로 분리될 때까지 충청도
-                              감영[20] 소재지는 바로 공주였다 이후 1896년 8월 4일 충청북도와 분리되고 진위군이 경기도에 편입되었다.
-                              1914년 문의군이 충청북도에 편입되고 평택군(팽성 한정)이 경기도에 편입되었다. 1932년 공주에 있었던
-                              충남도청이 대전으로 이전되었다. 이후 도청 소재지는 1935년 대전부로 승격하고 1949년 8월 15일 대전시로
-                              개칭되었다. 1962년 12월 12일 전라북도 금산군을 편입하고, 1963년 천안시, 1986년 온양시,
-                              공주시, 대천시가 설치되었다. 1989년 서산군 서산읍이 서산시로 승격됨과 동시에 태안군이 분군되었고, 대전시와
-                              대덕군이 통합 이후 대전직할시로 분리승격했으며, 1995년 천안, 아산, 공주, 보령, 서산의 도농통합시 출범과
-                              아산시, 보령시로 명칭 변경, 이듬해인 1996년 논산시 승격으로 첫 도농복합시가 생성되었다. 2003년 9월
-                              19일 충청남도 산하 계룡출장소를 계룡시로 분리됐다. 2012년 1월 1일 당진시 승격과 동년 7월 1일
-                              세종특별자치시가 출범되면서 현행 기초자치단체로 재편되었다. 2013년 충청남도청을 비롯한 도 산하 기관이 홍성군
-                              및 예산군의 경계에 조성된 내포신도시로 이전되었다.</p>
+                        <p>충남오슈 사이트 개발자 :<br>
+                           - ᓚᘏᗢ HA ᓚᘏᗢ <br>
+                           - ᓚᘏᗢ KANG ᓚᘏᗢ <br>
+                           - ᓚᘏᗢ BANG ᓚᘏᗢ <br>
+                           - ᓚᘏᗢ PARK ᓚᘏᗢ <br>
+                           - ᓚᘏᗢ KIM ᓚᘏᗢ <br> 
+                         </p>
                         </div>
-                  
-
-
-
                   </div>
-
-
-               </div>
-
-
-
+              </div>
             </div>
       </div>
    </div>

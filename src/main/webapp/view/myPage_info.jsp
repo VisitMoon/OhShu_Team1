@@ -18,7 +18,7 @@
    content="width=device-width, initial-scale=1, shrink-to-fit=no" />
 <meta name="description" content="" />
 <meta name="author" content="" />
-<title>Tour Category Page</title>
+<title>My Page Info Page</title>
 <link
    href="https://cdn.jsdelivr.net/npm/simple-datatables@7.1.2/dist/style.min.css"
    rel="stylesheet" />
@@ -98,11 +98,9 @@
                      aria-labelledby="headingOne" data-bs-parent="#sidenavAccordion">
                      <nav class="sb-sidenav-menu-nested nav">
                         <a class="nav-link" href="myPage_info.jsp">정보</a>
-                        <a class="nav-link"
-                           href="myPage_pwdChange.jsp">비밀번호 변경</a> <a
-                           class="nav-link" href="myPage_joayo.jsp">좋아요 목록</a>
-                        <a class="nav-link"
-                           href="myPage_회원탈퇴.jsp">회원탈퇴</a> 
+                        <a class="nav-link" href="myPage_pwdChange.jsp">비밀번호 변경</a> 
+                        <a class="nav-link" href="myPage_joayo.jsp">좋아요 목록</a>
+                        <a class="nav-link" href="myPage_회원탈퇴.jsp">회원탈퇴</a> 
                      </nav>
                   </div>
 
