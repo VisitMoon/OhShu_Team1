@@ -38,9 +38,9 @@ public class DataBaseUtil {
 
 		Class.forName("oracle.jdbc.driver.OracleDriver");
 		String url = "jdbc:oracle:thin:@localhost:1521:xe";
-		String id = "c##ohshu";
+		String id = "c##OhShu";
 
-		String pwd= "ohshu";
+		String pwd= "OhShu";
 
 		return DriverManager.getConnection(url,id,pwd);
 	}
