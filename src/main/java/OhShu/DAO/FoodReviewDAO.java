@@ -4,10 +4,10 @@ import OhShu.vo.FoodReviewVO;
 
 public interface FoodReviewDAO {
 
-	int InsertFoodReview(FoodReviewVO food_review);
+	int insertFoodReview(FoodReviewVO food_review);
 
-	int DeleteFoodReview(FoodReviewVO reviewdelete);
+	int deleteFoodReview(FoodReviewVO food_review);
 	
-	int updateFoodReview(FoodReviewVO reviewupdate); 
+	int updateFoodReview(FoodReviewVO food_review); 
 
 }

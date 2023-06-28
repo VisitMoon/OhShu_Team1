@@ -16,7 +16,7 @@ public class StayReviewDAOImpl  implements StayReviewDAO{
 	}
 	
 	@Override
-	public int InsertStayReview(StayReviewVO stay_review) {
+	public int insertStayReview(StayReviewVO stayReview) {
 		int result = 0;
 		String sql="INSERT INTO stay_review ( review_no, time, user_id, stay_no, review_content)\r\n"
 				+ "            VALUES ( \r\n"
@@ -33,9 +33,9 @@ public class StayReviewDAOImpl  implements StayReviewDAO{
 			PreparedStatement pstmt = conn.prepareStatement(sql);
 			){
 			System.out.println(pstmt);
-			pstmt.setString(1, stay_review.getUser_id());
-			pstmt.setInt(2, stay_review.getStay_no());
-			pstmt.setString(3, stay_review.getReview_content());
+			pstmt.setString(1, stayReview.getUser_id());
+			pstmt.setInt(2, stayReview.getStay_no());
+			pstmt.setString(3, stayReview.getReview_content());
 			
 			
 			result = pstmt.executeUpdate();
@@ -49,7 +49,7 @@ public class StayReviewDAOImpl  implements StayReviewDAO{
 	}
 	
 	@Override
-	public int DeleteStayReview(StayReviewVO reviewdelete) {
+	public int deleteStayReview(StayReviewVO stayReview) {
 		int result = 0;
 		
 		String sql="DELETE FROM stay_review WHERE review_no = ?";
@@ -59,7 +59,7 @@ public class StayReviewDAOImpl  implements StayReviewDAO{
 			PreparedStatement pstmt = conn.prepareStatement(sql);
 			){
 			System.out.println(pstmt);
-			pstmt.setInt(1, reviewdelete.getReview_no());
+			pstmt.setInt(1, stayReview.getReview_no());
 			
 			
 			result = pstmt.executeUpdate();
@@ -72,7 +72,7 @@ public class StayReviewDAOImpl  implements StayReviewDAO{
 		
 	}
 	
-	public int updateStayReview(StayReviewVO reviewupdate) {
+	public int updateStayReview(StayReviewVO stayReview) {
 		int result = 0;
 		
 		String sql="UPDATE stay_review SET review_content = ? WHERE review_no = ?";	
@@ -82,8 +82,8 @@ public class StayReviewDAOImpl  implements StayReviewDAO{
 			PreparedStatement pstmt = conn.prepareStatement(sql);
 			){
 			System.out.println(pstmt);
-			pstmt.setString(1, reviewupdate.getReview_content());
-			pstmt.setInt(2, reviewupdate.getReview_no());
+			pstmt.setString(1, stayReview.getReview_content());
+			pstmt.setInt(2, stayReview.getReview_no());
 			
 			
 			result = pstmt.executeUpdate();
