@@ -22,7 +22,7 @@ class TourReviewTest {
 		  vo.setTour_no(50547);
 		  vo.setReview_content("살자.");
 		  System.out.println(vo);
-		  assertEquals(1, dao.InsertTourReview(vo) );
+		  assertEquals(1, dao.insertTourReview(vo) );
 	      System.out.println(vo);	      
 	  
 	}
@@ -32,7 +32,7 @@ class TourReviewTest {
 		  
 		  vo.setReview_no(14);
 		  System.out.println(vo);
-		  assertEquals(1, dao.DeleteTourReview(vo) );
+		  assertEquals(1, dao.deleteTourReview(vo) );
 	  
 	}
 	   @Test 

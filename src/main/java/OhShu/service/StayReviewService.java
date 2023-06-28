@@ -3,10 +3,10 @@ package OhShu.service;
 import OhShu.vo.StayReviewVO;
 
 public interface StayReviewService {
-	int registerstay_reviewinsert(StayReviewVO reviewinsert);
+	int registerStayReview(StayReviewVO stayReview);
 	
-	int registerstay_reviewdelete(StayReviewVO reviewdelete);
+	int deleteStayReview(StayReviewVO stayReview);
 	
-	int registerstay_reviewupdate(StayReviewVO reviewupdate);
+	int changeStayReview(StayReviewVO stayReview);
 	
 }
