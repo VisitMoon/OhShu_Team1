@@ -1,3 +1,5 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -12,17 +14,17 @@
         <nav>
             <div class="nav">
 
-                <a href="#"> <h1>CHUNG! NAM! OH! SHU!</h1> </a>
+                <a href="main.jsp"> <h1>CHUNG! NAM! OH! SHU!</h1> </a>
 
                 <div class="nav-items">
                     <div class="nav-item">
-                        <a href="#">SIGN_IN</a>
+                        <a href="http://localhost:8080/OhShu_Team1/SignIn">로그인</a>
                     </div>
                     <div class="nav-item">
-                        <a href="#">SIGN_UP</a>
+                        <a href="http://localhost:8080/OhShu_Team1/join">회원가입</a>
                     </div>
                     <div class="nav-item">
-                        MY_PAGE
+                    <a href="myPage_info.jsp">    마이페이지</a>
                     </div>
                 </div>
             </div>
@@ -35,13 +37,13 @@
         <div class="lis">
             <ul class="lis">
                 <li class="lis">
-                    <a href="#">개요</a></li>
+                    <a href="introduction.jsp">개요</a></li>
                 <li class="lis">
-                    <a href="#">음식</a></li>
+                    <a href="stay_allCategory_page.jsp">숙박</a></li>
                 <li class="lis">
-                    <a href="#">여행</a></li>
+                    <a href="tour_allCategory_page.jsp">여행</a></li>
                 <li class="lis">
-                    <a href="#">숙박</a></li>
+                    <a href="food_allCategory_page.jsp">음식</a></li>
             </ul>
         </div>
 
@@ -51,7 +53,7 @@
         <div class="row">
 
             <div class="col-md-8">
-                <img class="img-fluid-main" src="../img/shungman_slogan.jpg" alt="">
+                <img class="img-fluid-main" src="img/shungman_slogan.jpg" alt="">
                 
             </div>
 
@@ -74,7 +76,7 @@
         </div>
 
         <div class="img-boxs">
-
+            
                 <img class="img-fluid" src="https://via.placeholder.com/350x300" alt="">
                 <img class="img-fluid" src="https://via.placeholder.com/350x300" alt="">
                 <img class="img-fluid" src="https://via.placeholder.com/350x300" alt="">
@@ -84,10 +86,10 @@
     </div>
 
     <footer class="copyright">
-		<div class="copyright_div">
+      <div class="copyright_div">
             <p>저작권 : copyright ⓒ THE PROVINCE OF CHUNGCHEONGNAM-DO. All Rights Reserved.</p>
         </div>
-	</footer>
+   </footer>
 
 
 

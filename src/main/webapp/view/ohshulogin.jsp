@@ -105,7 +105,7 @@
 <body class="sb-nav-fixed">
 	<nav class="sb-topnav navbar navbar-expand navbar-dark bg-dark">
 		<!-- Navbar Brand-->
-		<a class="navbar-brand ps-3" href="메인페이지.html">충남오세유~</a>
+		<a class="navbar-brand ps-3" href="/main.jsp"">충남오세유~</a>
 		<!-- Sidebar Toggle-->
 		<button class="btn btn-link btn-sm order-1 order-lg-0 me-4 me-lg-0"
 			id="sidebarToggle" href="#!">
@@ -130,8 +130,8 @@
 					class="fas fa-user fa-fw"></i></a>
 				<ul class="dropdown-menu dropdown-menu-end"
 					aria-labelledby="navbarDropdown">
-					<li><a class="dropdown-item" href="#!">로그인</a></li>
-					<li><a class="dropdown-item" href="#!">회원가입</a></li>
+					<li><a class="dropdown-item" href="http://localhost:8080/OhShu_Team1/SignIn">로그인</a></li>
+					<li><a class="dropdown-item" href="http://localhost:8080/OhShu_Team1/join">회원가입</a></li>
 					<li><a class="dropdown-item" href="#!">마이페이지</a></li>
 					<li>
 						<hr class="dropdown-divider" />

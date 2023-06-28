@@ -73,7 +73,7 @@ public class UserLoginServlet extends HttpServlet {
 			session.setAttribute("SESS_USERNAME",usertable.getUser_name());
 			
 
-			response.sendRedirect(request.getContextPath()+"/Main");
+			response.sendRedirect(request.getContextPath()+"/view/main.jsp");
 			
 			System.out.println("session - "+session);
 			

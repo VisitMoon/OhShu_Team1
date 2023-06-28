@@ -18,8 +18,10 @@
 <meta name="description" content="" />
 <meta name="author" content="" />
 <title>OhshuJoin</title>
-<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet" type="text/css"></link>
-<link 
+<link
+	href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css"
+	rel="stylesheet" type="text/css"></link>
+<link
 	href="https://cdn.jsdelivr.net/npm/simple-datatables@7.1.2/dist/style.min.css"
 	rel="stylesheet" type="text/css"></link>
 <link href="../css/styles.css" rel="stylesheet" />
@@ -136,19 +138,46 @@
             }
 
         }
-       
-       
-       
-		        
+        </script>
 
-    </script>
-    
+<script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+<script>
+    $(function() {
+        $('#check-btn').click(function() {
+            var userId = $('#user_id').val();
+           
+            $.ajax({
+                url: '/IdCheck',
+                type: 'JSON',
+                data: {
+                	user_id: userId 
+                },
+                success: function(response) {
+                    var result = response['result'];
+                    var message = response['message'];
+                    if (result === 'exist') {
+                        alert(message);
+                    } else if (result === 'not exist') {
+                        alert(message);
+                    } else {
+                        alert('에러 발생: ' + message);
+                    }
+                },
+                error: function(xhr, status, error) {
+                    alert('서버 오류: ' + error);
+                }
+            });
+        });
+    });
+</script>
+
+
 </head>
 
 <body class="sb-nav-fixed">
 	<nav class="sb-topnav navbar navbar-expand navbar-dark bg-dark">
 		<!-- Navbar Brand-->
-		<a class="navbar-brand ps-3" href="메인페이지.html">충남오세유~</a>
+		<a class="navbar-brand ps-3" href="/main.jsp">충남오세유~</a>
 		<!-- Sidebar Toggle-->
 		<button class="btn btn-link btn-sm order-1 order-lg-0 me-4 me-lg-0"
 			id="sidebarToggle" href="#!">
@@ -161,8 +190,8 @@
 					class="fas fa-user fa-fw"></i></a>
 				<ul class="dropdown-menu dropdown-menu-end"
 					aria-labelledby="navbarDropdown">
-					<li><a class="dropdown-item" href="#!">로그인</a></li>
-					<li><a class="dropdown-item" href="#!">회원가입</a></li>
+					<li><a class="dropdown-item" href="http://localhost:8080/OhShu_Team1/SignIn">로그인</a></li>
+					<li><a class="dropdown-item" href="http://localhost:8080/OhShu_Team1/join">회원가입</a></li>
 					<li><a class="dropdown-item" href="#!">마이페이지</a></li>
 					<li>
 						<hr class="dropdown-divider" />
@@ -171,64 +200,66 @@
 				</ul></li>
 		</ul>
 	</nav>
-		<div id="layoutSidenav_content">
-			<main>
-				<div class="container-fluid px-4">
+	<div id="layoutSidenav_content">
+		<main>
+			<div class="container-fluid px-4">
 
 
-					<div class="card mb-4"></div>
-					<div class="card mb-4">
-						<div class="card-header">
-							<i class="fas fa-table me-1"></i> 회원가입
-						</div>
-						<div class="card-body"></div>
-
-
-						<form
-							action="${ pageContext.servletContext.contextPath }/join"
-							method="post">
-							<div class="header"></div>
-							<div class="box-input">
-								<label for="id"> 아이디 : </label> <input type="text" id="user_id"
-									name="user_id">
-								<div class="box-line-height"></div>
-		
-								
-								<label for="pw"> 비밀번호 : </label> <input type="password"
-									id="user_pwd" name="user_pwd">
-								<div class="box-line-height"></div>
-
-								<label for="pw-double"> 비밀번호 확인 : </label> <input
-									type="password" id="pw-double" onkeyup="double(this.value);">
-								<span id="box-span" class="box-span-on"></span>
-								<div class="box-line-height"></div>
-
-								<label for="name"> 이름 : </label> <input type="text"
-									id="user_name" name="user_name">
-								<div class="box-line-height"></div>
-
-								<label for="name"> 나이 : </label> <input type="text"
-									id="user_age" name="user_age">
-								<div class="box-line-height"></div>
-
-								<label for="jumin"> 주민번호 : </label> <input type="text"
-									id="user_jumin" name="user_jumin">
-								<div class="box-line-height"></div>
-							</div>
-
-							<div class="box-line-height"></div>
-							<div class="box-submit">
-								<input type="submit" value="전송" onclick="return verifyField();">
-								<a href="javascript:history.back();">돌아가기</a>
-							</div>
-
-						</form>
+				<div class="card mb-4"></div>
+				<div class="card mb-4">
+					<div class="card-header">
+						<i class="fas fa-table me-1"></i> 회원가입
 					</div>
+					<div class="card-body"></div>
 
 
+					<form action="${ pageContext.servletContext.contextPath }/join"
+						method="post">
+						<div class="header"></div>
+						<div class="box-input">
 
+
+							<label for="user_id">아이디: </label> <input type="text"
+								id="user_id" name="user_id" placeholder="아이디를 입력하세요">
+							<button id="check-btn" type="button">중복확인</button>
+							<div class="box-line-height"></div>
+							
+							<label for="pw"> 비밀번호 : </label> <input type="password"
+								id="user_pwd" name="user_pwd" placeholder="비밀번호를 입력하세요">
+							<div class="box-line-height"></div>
+
+							<label for="pw-double"> 비밀번호 확인 : </label> <input type="password"
+								id="pw-double" onkeyup="double(this.value);"
+								placeholder="비밀번호 확인을 입력하세요"> <span id="box-span"
+								class="box-span-on"></span>
+							<div class="box-line-height"></div>
+
+							<label for="name"> 이름 : </label> <input type="text"
+								id="user_name" name="user_name" placeholder="이름을 입력하세요">
+							<div class="box-line-height"></div>
+
+							<label for="name"> 나이 : </label> <input type="text" id="user_age"
+								name="user_age" placeholder=" 나이를 입력하세요">
+							<div class="box-line-height"></div>
+
+							<label for="jumin"> 주민번호 : </label> <input type="text"
+								id="user_jumin" name="user_jumin" placeholder="주민번호를 입력하세요">
+							<div class="box-line-height"></div>
+						</div>
+
+						<div class="box-line-height"></div>
+						<div class="box-submit">
+							<input type="submit" value="전송" onclick="return verifyField();">
+							<a href="javascript:history.back();">돌아가기</a>
+						</div>
+
+					</form>
 				</div>
-		</div>
+
+
+
+			</div>
+	</div>
 	</div>
 	</main>
 	<footer class="py-4 bg-light mt-auto">
