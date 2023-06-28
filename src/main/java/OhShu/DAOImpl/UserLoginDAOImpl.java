@@ -82,7 +82,52 @@ public class UserLoginDAOImpl implements UserLoginDAO {
 
 		}
 	}
-
-
+	
+	public String selectUserId(String user_name, String user_jumin) {
+		String sql = "SELECT user_id FROM user_tb where user_name = ? AND user_jumin = ?";
+		
+		String result = null;
+		
+		try(Connection conn = DataBaseUtil.getConnection();
+			PreparedStatement pstmt = conn.prepareStatement(sql);){
+			pstmt.setString(1, user_name);
+			pstmt.setString(2,  user_jumin);
+			
+			ResultSet rs = pstmt.executeQuery();
+			
+			if(rs.next()) {
+				result = rs.getString(1);
+			}
+		}
+		catch(Exception e) {
+			e.printStackTrace();
+		}
+		
+		return result;
+	}
+	
+	public String selectUserPwd(String user_id, String user_name, String user_jumin) {
+		String sql = "SELECT user_pwd FROM user_tb where user_id = ? AND user_name = ? AND user_jumin = ?";
+		
+		String result = null;
+		
+		try(Connection conn = DataBaseUtil.getConnection();
+			PreparedStatement pstmt = conn.prepareStatement(sql);){
+			pstmt.setString(1, user_id);
+			pstmt.setString(2, user_name);
+			pstmt.setString(3,  user_jumin);
+			
+			ResultSet rs = pstmt.executeQuery();
+			
+			if(rs.next()) {
+				result = rs.getString(1);
+			}
+		}
+		catch(Exception e) {
+			e.printStackTrace();
+		}
+		
+		return result;
+	}
 
 }

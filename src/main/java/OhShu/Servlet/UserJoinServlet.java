@@ -36,7 +36,7 @@ public class UserJoinServlet extends HttpServlet {
 	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-
+		System.out.println("doGet에 들어왔어요");
 		RequestDispatcher dispatcher = request.getRequestDispatcher("/view/ohshujoin.jsp");
 		dispatcher.forward(request, response);
 
@@ -46,6 +46,7 @@ public class UserJoinServlet extends HttpServlet {
 	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
 	 */
 	public void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		System.out.println("doPost에 들어왔어요");
 		UserTableVO usertable = new UserTableVO();
 		usertable.setUser_id(request.getParameter("user_id"));
 		usertable.setUser_pwd( SHAEncodeUtil.encodeSha(request.getParameter("user_pwd")));
@@ -53,6 +54,7 @@ public class UserJoinServlet extends HttpServlet {
 		usertable.setUser_age(Integer.parseInt(request.getParameter("user_age")));   // int형 user_age
 		usertable.setUser_jumin(request.getParameter("user_jumin"));
 		
+		System.out.println(usertable.toString());
 		int isOk= 1;
 		String msg = null;
 		if(service.registerUsertable(usertable) == isOk) {
