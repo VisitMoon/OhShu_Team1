@@ -246,7 +246,7 @@
 								<% if(foodCate==null || foodCate.equals("전체")){ %>
 								<% for(int i =0; i<list.size(); i++){  %>
 								<tr>
-									<td><a href="food_detail_page.jsp?foodNo=<%= i%>"> <img
+									<td><a href="food_detail_page.jsp?foodNo=<%=i%>"> <img
 											src="<%=list.get(i).getFood_img()%>"
 											style="border-radius: 20px; width: 200px; height: 111px;"></a>
 									</td>
@@ -262,7 +262,7 @@
 								<% for(int i =0; i<list.size(); i++){ %>
 								<% if(list.get(i).getFood_source().equals(foodCate)){ %>
 								<tr>
-									<td><a href="food_detail_page.jsp?foodNo=<%= i%>"> <img
+									<td><a href="food_detail_page.jsp?foodNo=<%=i%>"> <img
 											src="<%=list.get(i).getFood_img()%>"
 											style="border-radius: 20px; width: 200px; height: 111px;"></a>
 									</td>
