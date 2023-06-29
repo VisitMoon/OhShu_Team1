@@ -4,9 +4,9 @@ import OhShu.vo.FoodReviewVO;
 
 public interface FoodReviewService {
 
-	int registerfood_reviewinsert(FoodReviewVO reviewinsert);
+	int registerFoodReview(FoodReviewVO foodReview);
 	
-	int registerfood_reviewdelete(FoodReviewVO reviewdelete);
+	int deleteFoodReview(FoodReviewVO foodReview);
 	
-	int registerfood_reviewupdate(FoodReviewVO reviewupdate);
+	int changeFoodReview(FoodReviewVO foodReview);
 }

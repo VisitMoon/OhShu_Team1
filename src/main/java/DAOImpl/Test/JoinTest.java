@@ -27,5 +27,6 @@ UserJoinService service =  UserJoinServiceImpl.getInstance();
 		assertEquals(1, service.registerUsertable(usertable));
 		
 	}
+	
 
 }

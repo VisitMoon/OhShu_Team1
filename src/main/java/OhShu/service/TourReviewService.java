@@ -4,6 +4,9 @@ import OhShu.vo.TourReviewVO;
 
 public interface TourReviewService {
 
-	int registerstay_reviewinsert(TourReviewVO reviewinsert);
-
+	int registerTourReview(TourReviewVO tourReview);
+	
+	int changeTourReview(TourReviewVO tourReview);
+	
+	int deleteTourReview(TourReviewVO tourReview);
 }

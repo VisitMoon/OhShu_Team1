@@ -42,7 +42,7 @@ public class UserLoginServlet extends HttpServlet {
 		// TODO Auto-generated method stub
 		System.out.println(request.getParameter("msg"));
 
-		RequestDispatcher dispatcher = request.getRequestDispatcher("view/js/signin.jsp");
+		RequestDispatcher dispatcher = request.getRequestDispatcher("view/ohshulogin.jsp");
 
 		dispatcher.forward(request, response);
 		
@@ -67,13 +67,13 @@ public class UserLoginServlet extends HttpServlet {
 
 			service.getCountUsertable(usertable);
 			
-			HttpSession session = request.getSession(false);
+			HttpSession session = request.getSession();
 			session.setAttribute("SESS_AUTH",true);
 			session.setAttribute("SESS_ID",usertable.getUser_id());
 			session.setAttribute("SESS_USERNAME",usertable.getUser_name());
 			
 
-			response.sendRedirect(request.getContextPath()+"/Main");
+			response.sendRedirect(request.getContextPath()+"/view/main.jsp");
 			
 			System.out.println("session - "+session);
 			
@@ -82,7 +82,7 @@ public class UserLoginServlet extends HttpServlet {
 			// login false
 			// login success
 
-			request.getRequestDispatcher("/view/js/signin.jsp?msg=login failed, plz try again").forward(request, response);
+			request.getRequestDispatcher("view/ohshulogin.jsp?msg=login failed, plz try again").forward(request, response);
 			
 		}
 		

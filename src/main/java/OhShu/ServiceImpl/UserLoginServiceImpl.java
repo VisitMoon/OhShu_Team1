@@ -28,4 +28,13 @@ public class UserLoginServiceImpl implements UserLoginService {
 		dao.selectUsertableByIdAndPw(usertable);
 	}
 
+	@Override
+	public String findUserId(String user_name, String user_jumin) {
+		return dao.selectUserId(user_name, user_jumin);
+	}
+	
+	@Override
+	public String findUserPwd(String user_id, String user_name, String user_jumin) {
+		return dao.selectUserPwd(user_id, user_name, user_jumin);
+	}
 }
