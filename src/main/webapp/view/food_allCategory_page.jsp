@@ -7,7 +7,8 @@
 <%@ page import="OhShu.ServiceImpl.*"%>
 <%@ page import="OhShu.service.*"%>
 <%@ page import="java.util.*"%>
-
+<%@ page import="java.net.*"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <!DOCTYPE html>
 <html lang="ko">
 <head>
@@ -17,7 +18,7 @@
    content="width=device-width, initial-scale=1, shrink-to-fit=no" />
 <meta name="description" content="" />
 <meta name="author" content="" />
-<title>Food Category Page</title>
+<title>Stay Category Page</title>
 <link
    href="https://cdn.jsdelivr.net/npm/simple-datatables@7.1.2/dist/style.min.css"
    rel="stylesheet" />
@@ -34,14 +35,12 @@
    crossorigin="anonymous"></script>
 <script src="../js/datatables-simple-demo.js"></script>
 
-
-
 </head>
 
 <body class="sb-nav-fixed">
-   <nav class="sb-topnav navbar navbar-expand navbar-dark bg-dark">
+  <nav class="sb-topnav navbar navbar-expand navbar-dark bg-dark">
       <!-- Navbar Brand-->
-      <a class="navbar-brand ps-3" href="main.jsp">충남오세유~</a>
+      <a class="navbar-brand ps-3" href="main.jsp">충남오슈~</a>
       <!-- Sidebar Toggle-->
       <button class="btn btn-link btn-sm order-1 order-lg-0 me-4 me-lg-0"
          id="sidebarToggle" href="#!">
@@ -66,16 +65,22 @@
                class="fas fa-user fa-fw"></i></a>
             <ul class="dropdown-menu dropdown-menu-end"
                aria-labelledby="navbarDropdown">
-         <li><a class="dropdown-item" href="http://localhost:8080/OhShu_Team1/SignIn">로그인</a></li>
-               <li><a class="dropdown-item" href="http://localhost:8080/OhShu_Team1/join">회원가입</a></li>
-               <li><a class="dropdown-item" href="myPage_info.jsp">마이페이지</a></li>
+                <c:choose>
+                <c:when	test="${not empty sessionScope.SESS_AUTH and sessionScope.SESS_AUTH == true}">
+         <li><a class="dropdown-item" href="<%= request.getContextPath()%>/UserLogout">로그아웃</a></li>
+               <li><a class="dropdown-item"  href="myPage_info.jsp">마이페이지</a></li>
                <li>
                   <hr class="dropdown-divider" />
                </li>
-               <li><a class="dropdown-item" href="#!">로그아웃</a></li>
+               <li><a class="dropdown-item">User: ${sessionScope.SESS_ID}</a></li>
+               </c:when>
+               <c:otherwise>	
+               <li><a class="dropdown-item"href="<%= request.getContextPath()%>/SignIn">로그인</a></li>
+               <<li><a class="dropdown-item"  href="http://localhost:8080/OhShu_Team1/join">회원가입</a>
+               </c:otherwise>
+				</c:choose>
             </ul></li>
       </ul>
-      
    </nav>
    <div id="layoutSidenav">
       <div id="layoutSidenav_nav">
@@ -85,13 +90,14 @@
                <div class="nav">
                
 				<div class="sb-sidenav-menu-heading">소개</div>
-                 	 <a class="nav-link" href="#">
+                 	 <a class="nav-link" href="introduction.jsp">
                      	<div class="sb-nav-link-icon">
                        	 <i class="fas fa-tachometer-alt"></i></div> 충청남도의 개요 </a>
                        	  	 
-                      <a class="nav-link" href="#">
+                      <a class="nav-link" href="history.jsp">
                      	<div class="sb-nav-link-icon">
                        	 <i class="fas fa-tachometer-alt"></i></div> 충남오슈의 역사 </a> 
+
 
                   <div class="sb-sidenav-menu-heading">카테고리</div>
                   <a class="nav-link collapsed" href="#" data-bs-toggle="collapse"
@@ -190,6 +196,7 @@
                      </nav>
                   </div>
 
+
                <!--    <div class="sb-sidenav-menu-heading">Addons</div>
                   <a class="nav-link" href="#">
                      <div class="sb-nav-link-icon">
@@ -199,10 +206,10 @@
                      <div class="sb-nav-link-icon">
                         <i class="fas fa-table"></i>
                      </div> Tables
-                  </a>  
-                     -->
+                  </a>
+                  -->
                </div>
-            
+                
             </div>
             <div class="sb-sidenav-footer">
                <div class="small">Logged in as:</div>
@@ -237,66 +244,41 @@
                      </thead>
                      <tbody>
 
-                        <%
-                        FoodService service = FoodServiceImpl.getInstance();
-                        %>
-                        <%
-                        List<FoodVO> list = service.getFoodList();
-                        %>
-                        <%
-                        String foodCate = request.getParameter("foodCate");
-                        %>
-
-                        <%
-                        if (foodCate == null || foodCate.equals("전체")) {
-                        %>
-                        <%
-                        for (int i = 0; i < list.size(); i++) {
-                        %>
+                        <% FoodService service = FoodServiceImpl.getInstance(); %>
+                        <% List<FoodVO> list = service.getFoodList();%>
+                        <% String foodCate = request.getParameter("foodCate"); %>
+                        
+                        <% if(foodCate==null || foodCate.equals("전체")){ %>
+                        <% for(int i =0; i<list.size(); i++){  %>
                         <tr>
-                           <td><a href="food_detail_page.jsp?foodNo=<%=i%>"> <img
+                           <td><a href="food_detail_page.jsp?foodNo=<%= i%>"> <img
                                  src="<%=list.get(i).getFood_img()%>"
                                  style="border-radius: 20px; width: 200px; height: 111px;"></a>
                            </td>
-                           <td><%=list.get(i).getFood_name()%></td>
-                           <td><%=list.get(i).getFood_source()%></td>
+                           <td><%= list.get(i).getFood_name()%></td>
+                           <td><%= list.get(i).getFood_source()%></td>
                            <td><%= list.get(i).getFood_location()%></td>
                            <td><i class="fas fa-table me-1"></i></td>
                         </tr>
 
-                        <%
-                        }
-                        %>
+                        <% }%>
 
-                        <%
-                        } else {
-                        %>
-                        <%
-                        for (int i = 0; i < list.size(); i++) {
-                        %>
-                        <%
-                        if (list.get(i).getFood_source().equals(foodCate)) {
-                        %>
+                        <% }else{%>
+                        <% for(int i =0; i<list.size(); i++){ %>
+                        <% if(list.get(i).getFood_source().equals(foodCate)){ %>
                         <tr>
-                           <td><a href="food_detail_page.jsp?foodNo=<%=i%>"> <img
+                           <td><a href="food_detail_page.jsp?foodNo=<%= i%>"> <img
                                  src="<%=list.get(i).getFood_img()%>"
                                  style="border-radius: 20px; width: 200px; height: 111px;"></a>
                            </td>
-                           <td><%=list.get(i).getFood_name()%></td>
-                           <td><%=list.get(i).getFood_source()%></td>
+                           <td><%= list.get(i).getFood_name()%></td>
+                           <td><%= list.get(i).getFood_source()%></td>
                            <td><%= list.get(i).getFood_location()%></td>
                            <td><i class="fas fa-table me-1"></i></td>
                         </tr>
-                        <%
-                        }
-                        %>
-                        <%
-                        }
-                        %>
-                        <%
-                        }
-                        %>
-
+                        <% }%>
+                        <% }%>
+                        <% }%>
 
 
 

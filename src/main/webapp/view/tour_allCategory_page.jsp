@@ -1,53 +1,53 @@
 <%@page import="org.apache.catalina.connector.Request"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
-   pageEncoding="UTF-8"%>
+	pageEncoding="UTF-8"%>
 <%@ page import="OhShu.vo.*"%>
 <%@ page import="OhShu.DAOImpl.*"%>
 <%@ page import="OhShu.DAO.*"%>
 <%@ page import="OhShu.ServiceImpl.*"%>
 <%@ page import="OhShu.service.*"%>
 <%@ page import="java.util.*"%>
-
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <!DOCTYPE html>
 <html lang="ko">
 <head>
 <meta charset="utf-8" />
 <meta http-equiv="X-UA-Compatible" content="IE=edge" />
 <meta name="viewport"
-   content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+	content="width=device-width, initial-scale=1, shrink-to-fit=no" />
 <meta name="description" content="" />
 <meta name="author" content="" />
 <title>Tour Category Page</title>
 <link
-   href="https://cdn.jsdelivr.net/npm/simple-datatables@7.1.2/dist/style.min.css"
-   rel="stylesheet" />
+	href="https://cdn.jsdelivr.net/npm/simple-datatables@7.1.2/dist/style.min.css"
+	rel="stylesheet" />
 <link href="../css/styles.css" rel="stylesheet" />
 <script src="https://use.fontawesome.com/releases/v6.3.0/js/all.js"
-   crossorigin="anonymous"></script>
+	crossorigin="anonymous"></script>
 
 <script
-   src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"
-   crossorigin="anonymous"></script>
+	src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"
+	crossorigin="anonymous"></script>
 <script src="../js/scripts.js"></script>
 <script
-   src="https://cdn.jsdelivr.net/npm/simple-datatables@7.1.2/dist/umd/simple-datatables.min.js"
-   crossorigin="anonymous"></script>
+	src="https://cdn.jsdelivr.net/npm/simple-datatables@7.1.2/dist/umd/simple-datatables.min.js"
+	crossorigin="anonymous"></script>
 <script src="../js/datatables-simple-demo.js"></script>
 <script
-   src="https://openapi.map.naver.com/openapi/v3/maps.js?ncpClientId=mn7cwsrvym"></script>
+	src="https://openapi.map.naver.com/openapi/v3/maps.js?ncpClientId=mn7cwsrvym"></script>
 <style>
 .img_detail img {
-   width: 300px;
-   height: 167.250px;
+	width: 300px;
+	height: 167.250px;
 }
 </style>
 
 </head>
 
 <body class="sb-nav-fixed">
-   <nav class="sb-topnav navbar navbar-expand navbar-dark bg-dark">
+<nav class="sb-topnav navbar navbar-expand navbar-dark bg-dark">
       <!-- Navbar Brand-->
-      <a class="navbar-brand ps-3" href="main.jsp">충남오세유~</a>
+      <a class="navbar-brand ps-3" href="main.jsp">충남오슈~</a>
       <!-- Sidebar Toggle-->
       <button class="btn btn-link btn-sm order-1 order-lg-0 me-4 me-lg-0"
          id="sidebarToggle" href="#!">
@@ -72,13 +72,20 @@
                class="fas fa-user fa-fw"></i></a>
             <ul class="dropdown-menu dropdown-menu-end"
                aria-labelledby="navbarDropdown">
-            <li><a class="dropdown-item" href="http://localhost:8080/OhShu_Team1/join">로그인</a></li>
-               <li><a class="dropdown-item" href="http://localhost:8080/OhShu_Team1/SignIn">회원가입</a></li>
-               <li><a class="dropdown-item" href="myPage_info.jsp">마이페이지</a></li>
+                <c:choose>
+                <c:when	test="${not empty sessionScope.SESS_AUTH and sessionScope.SESS_AUTH == true}">
+         <li><a class="dropdown-item" href="<%= request.getContextPath()%>/UserLogout">로그아웃</a></li>
+               <li><a class="dropdown-item"  href="myPage_info.jsp">마이페이지</a></li>
                <li>
                   <hr class="dropdown-divider" />
                </li>
-               <li><a class="dropdown-item" href="#!">로그아웃</a></li>
+               <li><a class="dropdown-item">User: ${sessionScope.SESS_ID}</a></li>
+               </c:when>
+               <c:otherwise>	
+               <li><a class="dropdown-item"href="<%= request.getContextPath()%>/SignIn">로그인</a></li>
+               <<li><a class="dropdown-item"  href="http://localhost:8080/OhShu_Team1/join">회원가입</a>
+               </c:otherwise>
+				</c:choose>
             </ul></li>
       </ul>
    </nav>
@@ -90,11 +97,11 @@
                <div class="nav">
                
 				<div class="sb-sidenav-menu-heading">소개</div>
-                 	 <a class="nav-link" href="#">
+                 	 <a class="nav-link" href="introduction.jsp">
                      	<div class="sb-nav-link-icon">
                        	 <i class="fas fa-tachometer-alt"></i></div> 충청남도의 개요 </a>
                        	  	 
-                      <a class="nav-link" href="#">
+                      <a class="nav-link" href="history.jsp">
                      	<div class="sb-nav-link-icon">
                        	 <i class="fas fa-tachometer-alt"></i></div> 충남오슈의 역사 </a> 
 
@@ -207,96 +214,95 @@
                         <i class="fas fa-table"></i>
                      </div> Tables
                   </a>
-                      -->
+                  -->
                </div>
-            
+                
             </div>
-            <div class="sb-sidenav-footer">
-               <div class="small">Logged in as:</div>
-               CHUNG! NAM! OH! SHU~
-            </div>
-         </nav>
-      </div>
-      <div id="layoutSidenav_content">
-         <main>
-            <div class="container-fluid px-4">
+				<div class="sb-sidenav-footer">
+					<div class="small">Logged in as:</div>
+					CHUNG! NAM! OH! SHU~
+				</div>
+			</nav>
+		</div>
+		<div id="layoutSidenav_content">
+			<main>
+				<div class="container-fluid px-4">
 
 
-               <div class="card mb-4"></div>
-               <div class="card mb-4">
-                  <div class="card-header">
-                     <i class="fas fa-table me-1"></i> 전체
-                  </div>
-                  <div class="card-body"></div>
+					<div class="card mb-4"></div>
+					<div class="card mb-4">
+						<div class="card-header">
+							<i class="fas fa-table me-1"></i> 전체
+						</div>
+						<div class="card-body"></div>
 
 
-                  <table id="datatablesSimple">
-                     <thead>
-                        <tr>
-                           <th>사진</th>
-                           <th>여행지</th>
-                           <th>카테고리</th>
-                           <th>지역</th>
-                           <th>좋아요</th>
+						<table id="datatablesSimple">
+							<thead>
+								<tr>
+									<th>사진</th>
+									<th>여행지</th>
+									<th>카테고리</th>
+									<th>지역</th>
+									<th>좋아요</th>
 
 
-                        </tr>
-                     </thead>
-                     <tbody>
+								</tr>
+							</thead>
+							<tbody>
 
-                        <% TourService service = TourServiceImpl.getInstance(); %>
-                        <% List<TourVO> list = service.getTourList();%>
-                        <% String tourCate = request.getParameter("tourCate"); %>
+								<% TourService service = TourServiceImpl.getInstance(); %>
+								<% List<TourVO> list = service.getTourList();%>
+								<% String tourCate = request.getParameter("tourCate"); %>
 
-                        <% if(tourCate==null || tourCate.equals("전체")){ %>
-                        <% for(int i =0; i<list.size(); i++){  %>
-                        <tr>
-                           <td><a href="tour_detail_page.jsp?tourNo=<%= i%>"> <img
-                                 src="<%=list.get(i).getTour_img()%>"
-                                 style="border-radius: 20px; width: 200px; height: 111px;"></a>
-                           </td>
-                           <td><%= list.get(i).getTour_name()%></td>
-                           <td><%= list.get(i).getTour_category()%></td>
-                           <td><%= list.get(i).getTour_location()%></td>
-                           <td><i class="fas fa-table me-1"></i></td>
-                        </tr>
+								<% if(tourCate==null || tourCate.equals("전체")){ %>
+								<% for(int i =0; i<list.size(); i++){  %>
+								<tr>
+									<td><a href="tour_detail_page.jsp?tourNo=<%= i%>"> <img
+											src="<%=list.get(i).getTour_img()%>"
+											style="border-radius: 20px; width: 200px; height: 111px;"></a>
+									</td>
+									<td><%= list.get(i).getTour_name()%></td>
+									<td><%= list.get(i).getTour_category()%></td>
+									<td><%= list.get(i).getTour_location()%></td>
+									<td><i class="fas fa-table me-1"></i></td>
+								</tr>
 
-                        <% }%>
+								<% }%>
 
-                        <% }else{%>
-                        <% for(int i =0; i<list.size(); i++){ %>
-                        <% if(list.get(i).getTour_category().equals(tourCate)){ %>
-                        <tr>
-                           <td><a href="tour_detail_page.jsp?tourNo=<%= i%>"> <img
-                                 src="<%=list.get(i).getTour_img()%>"
-                                 style="border-radius: 20px; width: 200px; height: 111px;"></a>
-                           </td>
-                           <td><%= list.get(i).getTour_name()%></td>
-                           <td><%= list.get(i).getTour_category()%></td>
-                           <td><%= list.get(i).getTour_location()%></td>
-                           <td><i class="fas fa-table me-1"></i></td>
-                        </tr>
-                        <% }%>
-                        <% }%>
-                        <% }%>
-
-
-
-
-
-                     </tbody>
-                  </table>
-               </div>
+								<% }else{%>
+								<% for(int i =0; i<list.size(); i++){ %>
+								<% if(list.get(i).getTour_category().equals(tourCate)){ %>
+								<tr>
+									<td><a href="tour_detail_page.jsp?tourNo=<%= i%>"> <img
+											src="<%=list.get(i).getTour_img()%>"
+											style="border-radius: 20px; width: 200px; height: 111px;"></a>
+									</td>
+									<td><%= list.get(i).getTour_name()%></td>
+									<td><%= list.get(i).getTour_category()%></td>
+									<td><%= list.get(i).getTour_location()%></td>
+									<td><i class="fas fa-table me-1"></i></td>
+								</tr>
+								<% }%>
+								<% }%>
+								<% }%>
 
 
 
-            </div>
-      </div>
-   </div>
-   </main>
-   <footer class="py-4 bg-light mt-auto">
-      <div class="container-fluid px-4">
-         <!-- <div
+
+
+							</tbody>
+						</table>
+					</div>
+
+
+
+				</div>
+	>
+	</main>
+	<footer class="py-4 bg-light mt-auto">
+		<div class="container-fluid px-4">
+			<!-- <div
                   class="d-flex align-items-center justify-content-between small">
                   <div class="text-muted">Copyright &copy; Your Website 2023</div>
                   <div>
@@ -304,10 +310,10 @@
                         &amp; Conditions</a>
                   </div>
                </div> -->
-      </div>
-   </footer>
-   </div>
-   </div>
+		</div>
+	</footer>
+	</div>
+	</div>
 
 </body>
 

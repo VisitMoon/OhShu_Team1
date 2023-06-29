@@ -7,7 +7,7 @@
 <%@ page import="OhShu.service.*"%>
 <%@ page import="java.util.*"%>
 <%@ page import="java.net.*"%>
-
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <!DOCTYPE html>
 <html lang="ko">
 <head>
@@ -37,9 +37,9 @@
 </head>
 
 <body class="sb-nav-fixed">
-   <nav class="sb-topnav navbar navbar-expand navbar-dark bg-dark">
+  <nav class="sb-topnav navbar navbar-expand navbar-dark bg-dark">
       <!-- Navbar Brand-->
-      <a class="navbar-brand ps-3" href="main.jsp">충남오세유~</a>
+      <a class="navbar-brand ps-3" href="main.jsp">충남오슈~</a>
       <!-- Sidebar Toggle-->
       <button class="btn btn-link btn-sm order-1 order-lg-0 me-4 me-lg-0"
          id="sidebarToggle" href="#!">
@@ -64,13 +64,20 @@
                class="fas fa-user fa-fw"></i></a>
             <ul class="dropdown-menu dropdown-menu-end"
                aria-labelledby="navbarDropdown">
-            <li><a class="dropdown-item" href="http://localhost:8080/OhShu_Team1/join">로그인</a></li>
-               <li><a class="dropdown-item" href="http://localhost:8080/OhShu_Team1/SignIn">회원가입</a></li>
-               <li><a class="dropdown-item" href="myPage_info.jsp">마이페이지</a></li>
+                <c:choose>
+                <c:when	test="${not empty sessionScope.SESS_AUTH and sessionScope.SESS_AUTH == true}">
+         <li><a class="dropdown-item" href="<%= request.getContextPath()%>/UserLogout">로그아웃</a></li>
+               <li><a class="dropdown-item"  href="myPage_info.jsp">마이페이지</a></li>
                <li>
                   <hr class="dropdown-divider" />
                </li>
-               <li><a class="dropdown-item" href="#!">로그아웃</a></li>
+               <li><a class="dropdown-item">User: ${sessionScope.SESS_ID}</a></li>
+               </c:when>
+               <c:otherwise>	
+               <li><a class="dropdown-item"href="<%= request.getContextPath()%>/SignIn">로그인</a></li>
+               <<li><a class="dropdown-item"  href="http://localhost:8080/OhShu_Team1/join">회원가입</a>
+               </c:otherwise>
+				</c:choose>
             </ul></li>
       </ul>
    </nav>
@@ -80,7 +87,7 @@
             id="sidenavAccordion">
             <div class="sb-sidenav-menu">
                <div class="nav">
-
+               
 				<div class="sb-sidenav-menu-heading">소개</div>
                  	 <a class="nav-link" href="introduction.jsp">
                      	<div class="sb-nav-link-icon">
@@ -89,7 +96,8 @@
                       <a class="nav-link" href="history.jsp">
                      	<div class="sb-nav-link-icon">
                        	 <i class="fas fa-tachometer-alt"></i></div> 충남오슈의 역사 </a> 
-	
+
+
                   <div class="sb-sidenav-menu-heading">카테고리</div>
                   <a class="nav-link collapsed" href="#" data-bs-toggle="collapse"
                      data-bs-target="#collapseLayouts" aria-expanded="false"
@@ -154,6 +162,7 @@
                            href="tour_allCategory_page.jsp?tourCate=휴양/온천">휴양/온천</a> <a
                            class="nav-link"
                            href="tour_allCategory_page.jsp?tourCate=특화관광지">특화관광지</a>
+
                      </nav>
                   </div>
 
@@ -185,7 +194,21 @@
                            href="food_allCategory_page.jsp?foodCate=착한가격업소">착한가격업소</a>
                      </nav>
                   </div>
+
+
+               <!--    <div class="sb-sidenav-menu-heading">Addons</div>
+                  <a class="nav-link" href="#">
+                     <div class="sb-nav-link-icon">
+                        <i class="fas fa-chart-area"></i>
+                     </div> Charts
+                  </a> <a class="nav-link" href="#">
+                     <div class="sb-nav-link-icon">
+                        <i class="fas fa-table"></i>
+                     </div> Tables
+                  </a>
+                  -->
                </div>
+                
             </div>
             <div class="sb-sidenav-footer">
                <div class="small">Logged in as:</div>
