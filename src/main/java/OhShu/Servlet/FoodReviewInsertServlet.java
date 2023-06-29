@@ -14,13 +14,13 @@ import OhShu.vo.FoodReviewVO;
  * Servlet implementation class FoodReviewServlet
  */
 @WebServlet("/FoodReview")
-public class FoodReviewServlet extends HttpServlet {
+public class FoodReviewInsertServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        
     /**
      * @see HttpServlet#HttpServlet()
      */
-    public FoodReviewServlet() {
+    public FoodReviewInsertServlet() {
         super();
         // TODO Auto-generated constructor stub
     }
@@ -52,6 +52,6 @@ public class FoodReviewServlet extends HttpServlet {
         reviewDAO.insertFoodReview(review);
 
         // 임시로 댓글이 작성되었다는 페이지로 리다이렉트(추후 댓글 작성 후 원래 게시물로 리다이렉트 구현 필요)
-        response.sendRedirect(request.getContextPath() + "/view/food_detail_page.jsp?foodNo=" + 1 );
+        response.sendRedirect(request.getContextPath() + "/view/food_detail_page.jsp?foodNo=" + 0 );
     }
 }
