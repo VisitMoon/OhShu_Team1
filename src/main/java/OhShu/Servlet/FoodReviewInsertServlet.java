@@ -1,6 +1,8 @@
 package OhShu.Servlet;
 
 import java.io.IOException;
+import java.util.List;
+
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -8,7 +10,10 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import OhShu.DAOImpl.FoodReviewDAOImpl;
+import OhShu.ServiceImpl.FoodServiceImpl;
+import OhShu.service.FoodService;
 import OhShu.vo.FoodReviewVO;
+import OhShu.vo.FoodVO;
 
 /**
  * Servlet implementation class FoodReviewServlet
@@ -43,6 +48,17 @@ public class FoodReviewInsertServlet extends HttpServlet {
         String userId = request.getParameter("userId");
         String reviewContent = request.getParameter("reviewContent");
 
+        FoodService service = FoodServiceImpl.getInstance();
+        List<FoodVO> list = service.getFoodList();
+          int index=0;
+          
+          for(int i =0; i<list.size(); i++) {
+             if(foodNo==list.get(i).getFood_no()) {
+                index = i;
+             }
+             
+          }
+          
         FoodReviewVO review = new FoodReviewVO();
         review.setFood_no(foodNo);
         review.setUser_id(userId);
@@ -52,6 +68,6 @@ public class FoodReviewInsertServlet extends HttpServlet {
         reviewDAO.insertFoodReview(review);
 
         // 임시로 댓글이 작성되었다는 페이지로 리다이렉트(추후 댓글 작성 후 원래 게시물로 리다이렉트 구현 필요)
-        response.sendRedirect(request.getContextPath() + "/view/food_detail_page.jsp?foodNo=" + 0 );
+        response.sendRedirect(request.getContextPath() + "/view/food_detail_page.jsp?foodNo=" + index );
     }
 }

@@ -196,6 +196,7 @@ th, td {
 </style>
 </head>
 <body class="sb-nav-fixed">
+	<<<<<<< HEAD
 	<nav class="sb-topnav navbar navbar-expand navbar-dark bg-dark">
 		<!-- Navbar Brand-->
 		<a class="navbar-brand ps-3" href="main.jsp">충남오세유~</a>
@@ -204,17 +205,9 @@ th, td {
 			id="sidebarToggle" href="#!">
 			<i class="fas fa-bars"></i>
 		</button>
-		<!-- Navbar Search-->
-		<!-- <form
-         class="d-none d-md-inline-block form-inline ms-auto me-0 me-md-3 my-2 my-md-0">
-         <div class="input-group">
-            <input class="form-control" type="text" placeholder="Search for..."
-               aria-label="Search for..." aria-describedby="btnNavbarSearch" />
-            <button class="btn btn-primary" id="btnNavbarSearch" type="button">
-               <i class="fas fa-search"></i>
-            </button>
-         </div>
-      </form> -->
+
+
+
 		<!-- Navbar-->
 		<ul class="navbar-nav ms-auto ms-md-0 me-3 me-lg-4">
 			<li class="nav-item dropdown"><a
@@ -236,8 +229,10 @@ th, td {
 									${sessionScope.SESS_ID}</a></li>
 						</c:when>
 						<c:otherwise>
-							<li><a class="dropdown-item" href="<%=request.getContextPath()%>/SignIn">로그인</a></li>
-               <<li><a class="dropdown-item" href="http://localhost:8080/OhShu_Team1/join">회원가입</a>
+							<li><a class="dropdown-item"
+								href="<%=request.getContextPath()%>/SignIn">로그인</a></li>
+               <<li><a class="dropdown-item"
+								href="http://localhost:8080/OhShu_Team1/join">회원가입</a>
 						</c:otherwise>
 					</c:choose>
 				</ul></li>
@@ -251,55 +246,16 @@ th, td {
 					<div class="nav">
 
 						<div class="sb-sidenav-menu-heading">소개</div>
-						<a class="nav-link" href="#">
+						<a class="nav-link" href="introduction.jsp">
 							<div class="sb-nav-link-icon">
 								<i class="fas fa-tachometer-alt"></i>
 							</div> 충청남도의 개요
-						</a> <a class="nav-link" href="#">
+						</a> <a class="nav-link" href="history.jsp">
 							<div class="sb-nav-link-icon">
 								<i class="fas fa-tachometer-alt"></i>
 							</div> 충남오슈의 역사
 						</a>
-      <!-- Navbar-->
-        <ul class="navbar-nav ms-auto ms-md-0 me-3 me-lg-4">
-         <li class="nav-item dropdown"><a
-            class="nav-link dropdown-toggle" id="navbarDropdown" href="#"
-            role="button" data-bs-toggle="dropdown" aria-expanded="false"><i
-               class="fas fa-user fa-fw"></i></a>
-            <ul class="dropdown-menu dropdown-menu-end"
-               aria-labelledby="navbarDropdown">
-                <c:choose>
-                <c:when	test="${not empty sessionScope.SESS_AUTH and sessionScope.SESS_AUTH == true}">
-         <li><a class="dropdown-item" href="<%= request.getContextPath()%>/UserLogout">로그아웃</a></li>
-               <li><a class="dropdown-item"  href="myPage_info.jsp">마이페이지</a></li>
-               <li>
-                  <hr class="dropdown-divider" />
-               </li>
-               <li><a class="dropdown-item">User: ${sessionScope.SESS_ID}</a></li>
-               </c:when>
-               <c:otherwise>	
-               <li><a class="dropdown-item"href="<%= request.getContextPath()%>/SignIn">로그인</a></li>
-               <<li><a class="dropdown-item"  href="http://localhost:8080/OhShu_Team1/join">회원가입</a>
-               </c:otherwise>
-				</c:choose>
-            </ul></li>
-      </ul>
-   </nav>
-   <div id="layoutSidenav">
-      <div id="layoutSidenav_nav">
-         <nav class="sb-sidenav accordion sb-sidenav-dark"
-            id="sidenavAccordion">
-            <div class="sb-sidenav-menu">
-               <div class="nav">
-               
-				<div class="sb-sidenav-menu-heading">소개</div>
-                 	 <a class="nav-link" href="introduction.jsp">
-                     	<div class="sb-nav-link-icon">
-                       	 <i class="fas fa-tachometer-alt"></i></div> 충청남도의 개요 </a>
-                       	  	 
-                      <a class="nav-link" href="history.jsp">
-                     	<div class="sb-nav-link-icon">
-                       	 <i class="fas fa-tachometer-alt"></i></div> 충남오슈의 역사 </a> 
+
 
 
 						<div class="sb-sidenav-menu-heading">카테고리</div>
@@ -435,7 +391,7 @@ th, td {
 							%>
 							<p>
 								<a>전체</a><a> > </a><a><%=list.get(num).getFood_source()%></a><a>
-									 </a> <a><%=list.get(num).getFood_name()%></a>
+									> </a> <a><%=list.get(num).getFood_name()%></a>
 							</p>
 						</div>
 						<div class="card-body">
@@ -505,19 +461,22 @@ th, td {
 
 
 								</div>
-								<%String reasd = Integer.toString(list.get(num).getFood_no()); %>
-								
+								<%
+								String reasd = Integer.toString(list.get(num).getFood_no());
+								%>
+
 								<%
 								//int foodNo = 1; // replace with the correct foodNo value
 								FoodReviewDAO reviewDAO = FoodReviewDAOImpl.getInstance();
 								List<FoodReviewVO> reviewList = reviewDAO.selectFoodReviewListOf(list.get(num).getFood_no());
 								%>
 
-								
+
 
 								<div>
-															
-									<form action="<%=request.getContextPath()%>/FoodReview" method="post">
+
+									<form action="<%=request.getContextPath()%>/FoodReview"
+										method="post">
 										<input type="hidden" name="foodNo" value="<%=reasd%>" /> <label
 											for="userId">사용자 ID:</label> <input type="text" name="userId"
 											required> <br> <label for="reviewContent">댓글
@@ -528,7 +487,6 @@ th, td {
 									</form>
 								</div>
 								<div>
-									
 									<h2>댓글 목록</h2>
 									<ul>
 										<%
@@ -540,7 +498,13 @@ th, td {
 												<%=review.getUser_id()%>
 												내용:
 												<%=review.getReview_content()%>
-												<form action="<%=request.getContextPath()%>/UpdateFoodReview"
+												<%
+												String food_review_user_id = review.getUser_id();
+												String current_user_id = (String) session.getAttribute("SESS_ID");
+												if (food_review_user_id.equals(current_user_id)) {
+												%>
+												<form
+													action="<%=request.getContextPath()%>/UpdateFoodReview"
 													method="post">
 													<input type="hidden" name="reviewNo"
 														value="<%=review.getReview_no()%>" /> <input type="text"
@@ -554,6 +518,9 @@ th, td {
 														value="<%=review.getReview_no()%>" />
 													<button type="submit">댓글 삭제</button>
 												</form>
+												<%
+												}
+												%>
 											</div>
 										</li>
 										<%

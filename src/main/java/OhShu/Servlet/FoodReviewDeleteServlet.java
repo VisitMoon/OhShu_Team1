@@ -1,16 +1,27 @@
 package OhShu.Servlet;
 
 import java.io.IOException;
+import java.util.List;
+
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import OhShu.DAO.FoodReviewDAO;
+import OhShu.DAOImpl.FoodReviewDAOImpl;
+import OhShu.ServiceImpl.FoodReviewSeviceImpl;
+import OhShu.ServiceImpl.FoodServiceImpl;
+import OhShu.service.FoodReviewService;
+import OhShu.service.FoodService;
+import OhShu.vo.FoodReviewVO;
+import OhShu.vo.FoodVO;
+
 /**
  * Servlet implementation class FoodReviewDeleteServlet
  */
-@WebServlet("/FoodReviewDeleteServlet")
+@WebServlet("/DeleteFoodReview")
 public class FoodReviewDeleteServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        
@@ -34,8 +45,22 @@ public class FoodReviewDeleteServlet extends HttpServlet {
 	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		// TODO Auto-generated method stub
-		doGet(request, response);
+		 int reviewNo = Integer.parseInt(request.getParameter("reviewNo"));
+		 System.out.println(reviewNo);
+		  FoodService service = FoodServiceImpl.getInstance();
+		  service.deleteFoodReview(reviewNo);
+		  System.out.println(reviewNo);
+		  int foodNo = Integer.parseInt(request.getParameter("foodNo"));
+		  List<FoodVO> list = service.getFoodList();
+          int index=0;
+          
+          for(int i =0; i<list.size(); i++) {
+             if(foodNo==list.get(i).getFood_no()) {
+                index = i;
+             }
+             
+          }
+	            response.sendRedirect(request.getContextPath() + "/view/food_detail_page.jsp?foodNo=" + index );
+	       
+	    }
 	}
-
-}

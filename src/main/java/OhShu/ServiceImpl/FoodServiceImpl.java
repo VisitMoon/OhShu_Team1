@@ -35,4 +35,8 @@ public class FoodServiceImpl implements FoodService {
 	   public List<FoodReviewVO> getFoodReviewList(int food_no){
 		   return dao.getFoodReviewList(food_no);
 	   }
+
+	   
+
+	
 }

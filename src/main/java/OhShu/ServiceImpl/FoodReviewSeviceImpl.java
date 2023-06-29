@@ -24,7 +24,7 @@ public class FoodReviewSeviceImpl implements FoodReviewService {
 	}
 
 	@Override
-	public int deleteFoodReview(FoodReviewVO foodReview) {
+	public int deleteFoodReview(int foodReview) {
 		return dao.deleteFoodReview(foodReview);
 	}
 

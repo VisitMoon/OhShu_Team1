@@ -39,7 +39,6 @@
 </head>
 
 <body class="sb-nav-fixed">
-<<<<<<< HEAD
    <nav class="sb-topnav navbar navbar-expand navbar-dark bg-dark">
       <!-- Navbar Brand-->
       <a class="navbar-brand ps-3" href="main.jsp">충남오슈~</a>
@@ -140,7 +139,6 @@
       <div id="layoutSidenav_content">
          <main>
             <div class="container-fluid px-4">
-=======
 	<nav class="sb-topnav navbar navbar-expand navbar-dark bg-dark">
 		<!-- Navbar Brand-->
 		<a class="navbar-brand ps-3" href="main.jsp">충남오슈~</a>
@@ -184,7 +182,6 @@
 				id="sidenavAccordion">
 				<div class="sb-sidenav-menu">
 					<div class="nav">
->>>>>>> 92b25ee1c955781e3cf1680f357dee3ad2ca7dec
 
 
 						<a class="nav-link collapsed" href="#" data-bs-toggle="collapse"

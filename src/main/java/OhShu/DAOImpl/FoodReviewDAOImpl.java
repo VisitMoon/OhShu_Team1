@@ -60,30 +60,20 @@ private final static FoodReviewDAO instance = new FoodReviewDAOImpl();
 	}
 	
 	@Override
-	public int deleteFoodReview(FoodReviewVO food_review) {
-		int result = 0;
-		
-		
-		String sql="DELETE FROM food_review WHERE review_no = ?";
-				
-		
-	
-		try(
-			Connection conn = DataBaseUtil.getConnection();
-			PreparedStatement pstmt = conn.prepareStatement(sql);
-			){
-			System.out.println(pstmt);
-			pstmt.setInt(1, food_review.getReview_no());
-			
-			
-			result = pstmt.executeUpdate();
-			System.out.println("result -"+result);
-			
-		}catch(Exception e) {
-			 e.printStackTrace();
-		}
-		return result;
-		
+	public int deleteFoodReview(int review_no) { // review_no 변수명 변경
+	    int result = 0;
+	    String sql = "DELETE FROM food_review WHERE review_no = ?";
+	    
+	    try (Connection conn = DataBaseUtil.getConnection();
+	         PreparedStatement pstmt = conn.prepareStatement(sql)) {
+	        System.out.println(pstmt);
+	        pstmt.setInt(1, review_no); // review_no로 변경
+	        result = pstmt.executeUpdate();
+	        System.out.println("result -" + result);
+	    } catch (Exception e) {
+	        e.printStackTrace();
+	    }
+	    return result;
 	}
 	
 	public int updateFoodReview(FoodReviewVO food_review) {
