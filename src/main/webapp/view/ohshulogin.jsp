@@ -7,6 +7,7 @@
 <%@ page import="OhShu.ServiceImpl.*"%>
 <%@ page import="OhShu.service.*"%>
 <%@ page import="java.util.*"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <!DOCTYPE html>
 <html lang="ko">
 
@@ -124,21 +125,28 @@
       </form> -->
 		<!-- Navbar-->
 		<ul class="navbar-nav ms-auto ms-md-0 me-3 me-lg-4">
-			<li class="nav-item dropdown"><a
-				class="nav-link dropdown-toggle" id="navbarDropdown" href="#"
-				role="button" data-bs-toggle="dropdown" aria-expanded="false"><i
-					class="fas fa-user fa-fw"></i></a>
-				<ul class="dropdown-menu dropdown-menu-end"
-					aria-labelledby="navbarDropdown">
-					<li><a class="dropdown-item" href="http://localhost:8080/OhShu_Team1/SignIn">로그인</a></li>
-					<li><a class="dropdown-item" href="http://localhost:8080/OhShu_Team1/join">회원가입</a></li>
-					<li><a class="dropdown-item" href="#!">마이페이지</a></li>
-					<li>
-						<hr class="dropdown-divider" />
-					</li>
-					<li><a class="dropdown-item" href="#!">로그아웃</a></li>
-				</ul></li>
-		</ul>
+         <li class="nav-item dropdown"><a
+            class="nav-link dropdown-toggle" id="navbarDropdown" href="#"
+            role="button" data-bs-toggle="dropdown" aria-expanded="false"><i
+               class="fas fa-user fa-fw"></i></a>
+            <ul class="dropdown-menu dropdown-menu-end"
+               aria-labelledby="navbarDropdown">
+                <c:choose>
+                <c:when	test="${not empty sessionScope.SESS_AUTH and sessionScope.SESS_AUTH == true}">
+         <li><a class="dropdown-item" href="<%= request.getContextPath()%>/UserLogout">로그아웃</a></li>
+               <li><a class="dropdown-item"  href="myPage_info.jsp">마이페이지</a></li>
+               <li>
+                  <hr class="dropdown-divider" />
+               </li>
+               <li><a class="dropdown-item">User: ${sessionScope.SESS_ID}</a></li>
+               </c:when>
+               <c:otherwise>	
+               <li><a class="dropdown-item"href="<%= request.getContextPath()%>/SignIn">로그인</a></li>
+               <<li><a class="dropdown-item"  href="http://localhost:8080/OhShu_Team1/join">회원가입</a>
+               </c:otherwise>
+				</c:choose>
+            </ul></li>
+      </ul>
 	</nav>
 		<div id="layoutSidenav_content">
 			<main>
