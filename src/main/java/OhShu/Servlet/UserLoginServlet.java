@@ -67,7 +67,7 @@ public class UserLoginServlet extends HttpServlet {
 
 			service.getCountUsertable(usertable);
 			
-			HttpSession session = request.getSession(false);
+			HttpSession session = request.getSession();
 			session.setAttribute("SESS_AUTH",true);
 			session.setAttribute("SESS_ID",usertable.getUser_id());
 			session.setAttribute("SESS_USERNAME",usertable.getUser_name());

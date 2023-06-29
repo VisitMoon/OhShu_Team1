@@ -15,6 +15,10 @@ public class UserPageServiceImpl implements UserPageService{
 	
 	private UserPageServiceImpl() {}
 	
+	public static UserPageService getInstance() {
+		return instance;
+	}
+	
 	private final UserPageDAO dao = UserPageDAOImpl.getInstance();
 	
 	public UserTableVO getUserInfo(String user_id) {
