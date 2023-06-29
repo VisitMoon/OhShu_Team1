@@ -13,7 +13,7 @@ class FoodMainTest {
 
 	private final FoodMainService service = FoodMainServiceImpl.getInstance(); 
 	   
-	   @Test @Ignore
+	   @Test
 	   void testGetFoodJoayoRank() {
 	      
 	      FoodMainVO vo = new FoodMainVO();

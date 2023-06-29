@@ -40,7 +40,7 @@ public class DataBaseUtil {
 		String url = "jdbc:oracle:thin:@localhost:1521:xe";
 		String id = "c##OhShu";
 
-		String pwd= "OhShu";
+		String pwd= "ohshu";
 
 		return DriverManager.getConnection(url,id,pwd);
 	}

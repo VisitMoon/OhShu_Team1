@@ -48,7 +48,7 @@
         </div>
 
         <!-- Portfolio Item Heading -->
-        <h1 class="my-4">! WELLCOME CHUNGMANOHSHU !</h1>
+        <h1 class="my-4">! WELCOME CHUNGMANOHSHU !</h1>
 
         <div class="row">
 
