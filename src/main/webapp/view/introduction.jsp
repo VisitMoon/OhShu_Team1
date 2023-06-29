@@ -213,51 +213,27 @@
 							<br>
 							<div class="container-box">
 								<div class="stay-boxs">
-									<img src="<%=request.getContextPath()%>/img/stay/stay.jpg"
-										style="width: 18%"> <img
-										src="<%=request.getContextPath()%>/img/stay/stay1.jpg"
-										style="width: 18%"></a> <img
-										src="<%=request.getContextPath()%>/img/stay/stay2.jpg"
-										style="width: 18%""></a> <img
-										src="<%=request.getContextPath()%>/img/stay/stay3.jpg"
-										style="width: 18%"></a> <img
-										src="<%=request.getContextPath()%>/img/stay/stay4.jpg"
-										style="width: 18%"></a> <img
-										src="<%=request.getContextPath()%>/img/stay/stay5.jpg"
-										style="width: 18%"></a> <img
-										src="<%=request.getContextPath()%>/img/stay/stay6.jpg"
-										style="width: 18%"></a>
+									<a> <img src="<%=request.getContextPath()%>/img/stay/stay.jpg" style="width: 18%"> </a>
+									<a> <img src="<%=request.getContextPath()%>/img/stay/stay1.jpg" style="width: 18%"> </a>
+									<a> <img src="<%=request.getContextPath()%>/img/stay/stay2.jpg" style="width: 18%"> </a>
+									<a> <img src="<%=request.getContextPath()%>/img/stay/stay3.jpg" style="width: 18%"> </a>
+									<a> <img src="<%=request.getContextPath()%>/img/stay/stay4.jpg" style="width: 18%"> </a>
+									<a> <img src="<%=request.getContextPath()%>/img/stay/stay5.jpg" style="width: 18%"> </a>
+									<a> <img src="<%=request.getContextPath()%>/img/stay/stay6.jpg" style="width: 18%"> </a> 
 								</div>
 							</div>
 							<br>
 							<div class="container-box">
 								<div class="tour-boxs">
-									<img src="<%=request.getContextPath()%>/img/tour/tour.jpg"
-										style="width: 18%"> <img
-										src="<%=request.getContextPath()%>/img/tour/tour1.jpg"
-										style="width: 18%"></a> <img
-										src="<%=request.getContextPath()%>/img/tour/tour2.jpg"
-										style="width: 18%"></a> <img
-										src="<%=request.getContextPath()%>/img/tour/tour3.jpg"
-										style="width: 18%"></a> <img
-										src="<%=request.getContextPath()%>/img/tour/tour4.jpg"
-										style="width: 18%"></a> <img
-										src="<%=request.getContextPath()%>/img/tour/tour5.jpg"
-										style="width: 18%"></a> <img
-										src="<%=request.getContextPath()%>/img/tour/tour6.jpg"
-										style="width: 18%"></a> <img
-										src="<%=request.getContextPath()%>/img/tour/tour7.jpg"
-										style="width: 18%"></a> <img
-										src="<%=request.getContextPath()%>/img/tour/tour8.jpg"
-										style="width: 18%"></a> <img
-										src="<%=request.getContextPath()%>/img/tour/tour9.jpg"
-										style="width: 18%"></a> <img
-										src="<%=request.getContextPath()%>/img/tour/tour10.jpg"
-										style="width: 18%"></a> <img
-										src="<%=request.getContextPath()%>/img/tour/tour11.jpg"
-										style="width: 18%"></a> <img
-										src="<%=request.getContextPath()%>/img/tour/tour12.jpg"
-										style="width: 18%"></a>
+									<a> <img src="<%=request.getContextPath()%>/img/tour/tour.jpg" style="width: 18%"> </a>
+									<a> <img src="<%=request.getContextPath()%>/img/tour/tour.jpg" style="width: 18%"> </a>
+									<a> <img src="<%=request.getContextPath()%>/img/tour/tour.jpg" style="width: 18%"> </a>
+									<a> <img src="<%=request.getContextPath()%>/img/tour/tour.jpg" style="width: 18%"> </a>
+									<a> <img src="<%=request.getContextPath()%>/img/tour/tour.jpg" style="width: 18%"> </a>
+									<a> <img src="<%=request.getContextPath()%>/img/tour/tour.jpg" style="width: 18%"> </a>
+									<a> <img src="<%=request.getContextPath()%>/img/tour/tour.jpg" style="width: 18%"> </a>
+									
+
 								</div>
 							</div>
 							<br>
@@ -297,9 +273,7 @@
 	</div>
 	</main>
 	<footer class="py-4 bg-light mt-auto">
-		<div class="container-fluid px-4">
-
-		</div>
+		<div class="container-fluid px-4"></div>
 	</footer>
 	</div>
 	</div>

@@ -142,7 +142,7 @@
 						<c:otherwise>
 							<li><a class="dropdown-item"
 								href="<%= request.getContextPath()%>/SignIn">로그인</a></li>
-               <<li><a class="dropdown-item"
+							<li><a class="dropdown-item"
 								href="http://localhost:8080/OhShu_Team1/join">회원가입</a>
 						</c:otherwise>
 					</c:choose>

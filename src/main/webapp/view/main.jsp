@@ -229,8 +229,18 @@
 				src="<%=stay_vo.getStay_img()%>"></a>
 		</div>
 	</div>
-
 	<br>
+
+
+	<div class="col-md-8">
+		<img src="<%=request.getContextPath()%>/img/resoure/mascot.JPG"
+			style="width: 15%"> 
+		<img
+			src="<%=request.getContextPath()%>/img/resoure/mascot.JPG"
+			style="width: 15%">
+
+	</div>
+
 
 	<footer class="copyright">
 		<div class="copyright_div">
