@@ -36,6 +36,7 @@ public class UserJoinServlet extends HttpServlet {
 	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+
 		RequestDispatcher dispatcher = request.getRequestDispatcher("/view/ohshujoin.jsp");
 		dispatcher.forward(request, response);
 
