@@ -201,77 +201,84 @@
                   <div class="card-header">충님오슈의 이야기</div>
                   <div class="card-body">              
                         <h3>안녕하세요, 충남오슈입니다. 즐거운 여행되세요.</h3>
-                        <p>충청남도의 매력을 왕창 즐겨보시는 정보 가득한 충남오슈가 되겠습니다.</p>    
+                        <p>💛충청남도의 매력을 왕창 즐겨 볼 수 있는는 정보 가득한 충남오슈가 되겠습니다.💛</p>
+                        <p>💛충남오슈에서는 충남의 숙박, 여행장소, 음식점의 정보를 제공하는 사이트입니다.💛</p>    
+                        <br> 
 							<div class="container-box">
 								<div class="stay-boxs">
-							           <img src="<%= request.getContextPath()%>/img/stay/stay.jpg" style="width:20%">
-							      	<a href="#">
-							           <img src="<%= request.getContextPath()%>/img/stay/stay1.jpg" style="width:20%"></a>
-							      	<a href="#">
-							           <img src="<%= request.getContextPath()%>/img/stay/stay2.jpg" style="width:20%""></a>
-							      	<a href="#">
-							           <img src="<%= request.getContextPath()%>/img/stay/stay3.jpg" style="width:20%"></a>
-							      	<a href="#">
-							           <img src="<%= request.getContextPath()%>/img/stay/stay4.jpg" style="width:20%"></a>
+							           <img src="<%= request.getContextPath()%>/img/stay/stay.jpg" style="width:18%">
+							      
+							           <img src="<%= request.getContextPath()%>/img/stay/stay1.jpg" style="width:18%"></a>
+							      	
+							           <img src="<%= request.getContextPath()%>/img/stay/stay2.jpg" style="width:18%""></a>
+							      	
+							           <img src="<%= request.getContextPath()%>/img/stay/stay3.jpg" style="width:18%"></a>
+							      	
+							           <img src="<%= request.getContextPath()%>/img/stay/stay4.jpg" style="width:18%"></a>
+							           							      	
+							           <img src="<%= request.getContextPath()%>/img/stay/stay5.jpg" style="width:18%"></a>
+							           
+							           <img src="<%= request.getContextPath()%>/img/stay/stay6.jpg" style="width:18%"></a>
 								</div>
 							</div>
+							<br>
 							<div class="container-box">
 								<div class="tour-boxs">
-							            <img src="<%= request.getContextPath()%>/img/tour/tour.jpg" style="width:20%">
-							         <a href="#">
-							            <img src="<%= request.getContextPath()%>/img/tour/tour1.jpg" style="width:20%"></a>
-									 <a href="#">
-							            <img src="<%= request.getContextPath()%>/img/tour/tour2.jpg" style="width:20%"></a>
-							         <a href="#">
-							            <img src="<%= request.getContextPath()%>/img/tour/tour3.jpg" style="width:20%"></a>
-							         <a href="#">
-							            <img src="<%= request.getContextPath()%>/img/tour/tour4.jpg" style="width:20%"></a>
-							         <a href="#">
-							            <img src="<%= request.getContextPath()%>/img/tour/tour5.jpg" style="width:20%"></a>
-							         <a href="#">
-							            <img src="<%= request.getContextPath()%>/img/tour/tour6.jpg" style="width:20%"></a>
-							         <a href="#">
-							            <img src="<%= request.getContextPath()%>/img/tour/tour7.jpg" style="width:20%"></a>
-							         <a href="#">
-							            <img src="<%= request.getContextPath()%>/img/tour/tour8.jpg" style="width:20%"></a>
-							         <a href="#">
-										<img src="<%= request.getContextPath()%>/img/tour/tour9.jpg" style="width:20%"></a>
-							         <a href="#">
-							            <img src="<%= request.getContextPath()%>/img/tour/tour10.jpg" style="width:20%"></a>
-							         <a href="#">
-							            <img src="<%= request.getContextPath()%>/img/tour/tour11.jpg" style="width:20%"></a>
-							         <a href="#">
-							            <img src="<%= request.getContextPath()%>/img/tour/tour12.jpg" style="width:20%"></a>
+							            <img src="<%= request.getContextPath()%>/img/tour/tour.jpg" style="width:18%">
+							         
+							            <img src="<%= request.getContextPath()%>/img/tour/tour1.jpg" style="width:18%"></a>
+									 
+							            <img src="<%= request.getContextPath()%>/img/tour/tour2.jpg" style="width:18%"></a>
+							         
+							            <img src="<%= request.getContextPath()%>/img/tour/tour3.jpg" style="width:18%"></a>
+							         
+							            <img src="<%= request.getContextPath()%>/img/tour/tour4.jpg" style="width:18%"></a>
+							         
+							            <img src="<%= request.getContextPath()%>/img/tour/tour5.jpg" style="width:18%"></a>
+							         
+							            <img src="<%= request.getContextPath()%>/img/tour/tour6.jpg" style="width:18%"></a>
+							         
+							            <img src="<%= request.getContextPath()%>/img/tour/tour7.jpg" style="width:18%"></a>
+							         
+							            <img src="<%= request.getContextPath()%>/img/tour/tour8.jpg" style="width:18%"></a>
+							         
+										<img src="<%= request.getContextPath()%>/img/tour/tour9.jpg" style="width:18%"></a>
+							         
+							            <img src="<%= request.getContextPath()%>/img/tour/tour10.jpg" style="width:18%"></a>
+							         
+							            <img src="<%= request.getContextPath()%>/img/tour/tour11.jpg" style="width:18%"></a>
+							         
+							            <img src="<%= request.getContextPath()%>/img/tour/tour12.jpg" style="width:18%"></a>
 							    </div>
 							</div>
+							<br>
 							<div class="container-box">
 								<div class="food-boxs">
-							           <img src="<%= request.getContextPath()%>/img/food/food.jpg" style="width:20%">
-							         <a href="#">
-							            <img src="<%= request.getContextPath()%>/img/food/food1.jpg" style="width:20%"></a>
-							         <a href="#">
-							            <img src="<%= request.getContextPath()%>/img/food/food2.jpg" style="width:20%"></a>
-							         <a href="#">
-							            <img src="<%= request.getContextPath()%>/img/food/food3.jpg" style="width:20%"></a>
-							         <a href="#">
-							            <img src="<%= request.getContextPath()%>/img/food/food4.jpg" style="width:20%"></a>
-							         <a href="#">
-							            <img src="<%= request.getContextPath()%>/img/food/food5.jpg" style="width:20%"></a>
-							         <a href="#">
-							            <img src="<%= request.getContextPath()%>/img/food/food6.jpg" style="width:20%"></a>
+							           <img src="<%= request.getContextPath()%>/img/food/food.jpg" style="width:18%">
+							         
+							            <img src="<%= request.getContextPath()%>/img/food/food1.jpg" style="width:18%"></a>
+							         
+							            <img src="<%= request.getContextPath()%>/img/food/food2.jpg" style="width:18%"></a>
+							         
+							            <img src="<%= request.getContextPath()%>/img/food/food3.jpg" style="width:18%"></a>
+							         
+							            <img src="<%= request.getContextPath()%>/img/food/food4.jpg" style="width:18%"></a>
+							         
+							            <img src="<%= request.getContextPath()%>/img/food/food5.jpg" style="width:18%"></a>
+							         
+							            <img src="<%= request.getContextPath()%>/img/food/food6.jpg" style="width:18%"></a>
 								</div>
 							</div>
 							 </div>
                              <br>
-                             <br>
-                             <br>          
-                        <div>
-                        <p>충남오슈 사이트 개발자 :<br>
-                           - ᓚᘏᗢ HA ᓚᘏᗢ <br>
-                           - ᓚᘏᗢ KANG ᓚᘏᗢ <br>
-                           - ᓚᘏᗢ BANG ᓚᘏᗢ <br>
-                           - ᓚᘏᗢ PARK ᓚᘏᗢ <br>
-                           - ᓚᘏᗢ KIM ᓚᘏᗢ <br> 
+                             <br>        
+                        <div class = "p-box">
+                        <p style="font-size:12pt; color:blue;"> 충남오슈 사이트 개발자 :<br>
+                        ᓚᘏᗢ<span style="background:yellow">HA</span>ᓚᘏᗢ <br>
+                        ᓚᘏᗢ<span style="background:yellow">KANG</span>ᓚᘏᗢ <br>
+                        ᓚᘏᗢ<span style="background:yellow">BANG</span>ᓚᘏᗢ <br>
+                        ᓚᘏᗢ<span style="background:yellow">PARK</span>ᓚᘏᗢ <br>
+                        ᓚᘏᗢ<span style="background:yellow">KIM</span>ᓚᘏᗢ <br> 
                          </p>
                         </div>
                   </div>
@@ -286,7 +293,7 @@
                   class="d-flex align-items-center justify-content-between small">
                   <div class="text-muted">Copyright &copy; Your Website 2023</div>
                   <div>
-                     <a href="#">Privacy Policy</a> &middot; <a href="#">Terms
+                     Privacy Policy</a> &middot; Terms
                         &amp; Conditions</a>
                   </div>
                </div> -->

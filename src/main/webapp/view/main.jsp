@@ -99,8 +99,7 @@
 	<br>
 	<footer class="copyright">
 		<div class="copyright_div">
-			<p>저작권 : copyright ⓒ THE PROVINCE OF CHUNGCHEONGNAM-DO. All
-				Rights Reserved.</p>
+			<p>저작권 : copyright ⓒ THE PROVINCE OF CHUNGCHEONGNAM-DO. All Rights Reserved.</p>
 		</div>
 	</footer>
 
