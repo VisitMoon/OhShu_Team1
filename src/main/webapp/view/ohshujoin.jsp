@@ -141,7 +141,7 @@
         }
         </script>
 <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
- <script>
+<script>
         $(document).ready(function () {
             $("#check_id").click(function () {
                 const userId = $("#user_id").val();
@@ -184,28 +184,33 @@
 			<i class="fas fa-bars"></i>
 		</button>
 		<ul class="navbar-nav ms-auto ms-md-0 me-3 me-lg-4">
-         <li class="nav-item dropdown"><a
-            class="nav-link dropdown-toggle" id="navbarDropdown" href="#"
-            role="button" data-bs-toggle="dropdown" aria-expanded="false"><i
-               class="fas fa-user fa-fw"></i></a>
-            <ul class="dropdown-menu dropdown-menu-end"
-               aria-labelledby="navbarDropdown">
-                <c:choose>
-                <c:when	test="${not empty sessionScope.SESS_AUTH and sessionScope.SESS_AUTH == true}">
-         <li><a class="dropdown-item" href="<%= request.getContextPath()%>/UserLogout">로그아웃</a></li>
-               <li><a class="dropdown-item"  href="myPage_info.jsp">마이페이지</a></li>
-               <li>
-                  <hr class="dropdown-divider" />
-               </li>
-               <li><a class="dropdown-item">User: ${sessionScope.SESS_ID}</a></li>
-               </c:when>
-               <c:otherwise>	
-               <li><a class="dropdown-item"href="<%= request.getContextPath()%>/SignIn">로그인</a></li>
-               <<li><a class="dropdown-item"  href="http://localhost:8080/OhShu_Team1/join">회원가입</a>
-               </c:otherwise>
-				</c:choose>
-            </ul></li>
-      </ul>
+			<li class="nav-item dropdown"><a
+				class="nav-link dropdown-toggle" id="navbarDropdown" href="#"
+				role="button" data-bs-toggle="dropdown" aria-expanded="false"><i
+					class="fas fa-user fa-fw"></i></a>
+				<ul class="dropdown-menu dropdown-menu-end"
+					aria-labelledby="navbarDropdown">
+					<c:choose>
+						<c:when
+							test="${not empty sessionScope.SESS_AUTH and sessionScope.SESS_AUTH == true}">
+							<li><a class="dropdown-item"
+								href="<%= request.getContextPath()%>/UserLogout">로그아웃</a></li>
+							<li><a class="dropdown-item" href="myPage_info.jsp">마이페이지</a></li>
+							<li>
+								<hr class="dropdown-divider" />
+							</li>
+							<li><a class="dropdown-item">User:
+									${sessionScope.SESS_ID}</a></li>
+						</c:when>
+						<c:otherwise>
+							<li><a class="dropdown-item"
+								href="<%= request.getContextPath()%>/SignIn">로그인</a></li>
+							<li><a class="dropdown-item"
+								href="http://localhost:8080/OhShu_Team1/join">회원가입</a>
+						</c:otherwise>
+					</c:choose>
+				</ul></li>
+		</ul>
 	</nav>
 	<div id="layoutSidenav_content">
 		<main>
@@ -238,9 +243,9 @@
 							<label for="user_id">아이디: </label> <input type="text"
 								id="user_id" name="user_id" placeholder="아이디를 입력하세요">
 							<button type="button" id="check_id">중복 확인</button>
-       						 <p id="result"></p>
+							<p id="result"></p>
 							<div class="box-line-height"></div>
-							
+
 							<label for="pw"> 비밀번호 : </label> <input type="password"
 								id="user_pwd" name="user_pwd" placeholder="비밀번호를 입력하세요">
 							<div class="box-line-height"></div>
@@ -273,23 +278,12 @@
 					</form>
 				</div>
 
-
-
 			</div>
 	</div>
 	</div>
 	</main>
 	<footer class="py-4 bg-light mt-auto">
-		<div class="container-fluid px-4">
-			<!-- <div
-                  class="d-flex align-items-center justify-content-between small">
-                  <div class="text-muted">Copyright &copy; Your Website 2023</div>
-                  <div>
-                     <a href="#">Privacy Policy</a> &middot; <a href="#">Terms
-                        &amp; Conditions</a>
-                  </div>
-               </div> -->
-		</div>
+		<div class="container-fluid px-4"></div>
 	</footer>
 	</div>
 	</div>
