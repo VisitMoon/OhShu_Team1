@@ -41,7 +41,7 @@
 <body class="sb-nav-fixed">
    <nav class="sb-topnav navbar navbar-expand navbar-dark bg-dark">
       <!-- Navbar Brand-->
-      <a class="navbar-brand ps-3" href="main.jsp">충남오세유~</a>
+      <a class="navbar-brand ps-3" href="main.jsp">충남오슈~</a>
       <!-- Sidebar Toggle-->
       <button class="btn btn-link btn-sm order-1 order-lg-0 me-4 me-lg-0"
          id="sidebarToggle" href="#!">
@@ -110,7 +110,7 @@
                            href="myPage_pwdChange.jsp">비밀번호 변경</a> <a
                            class="nav-link" href="myPage_joayo.jsp">좋아요 목록</a>
                         <a class="nav-link"
-                           href="myPage_회원탈퇴.jsp">회원탈퇴</a> 
+                           href="mYpage_회원탈퇴.jsp">회원탈퇴</a> 
                      </nav>
                   </div>
 

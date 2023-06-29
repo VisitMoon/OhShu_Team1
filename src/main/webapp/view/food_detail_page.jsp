@@ -197,7 +197,7 @@ border:solid;
 <body class="sb-nav-fixed">
    <nav class="sb-topnav navbar navbar-expand navbar-dark bg-dark">
       <!-- Navbar Brand-->
-      <a class="navbar-brand ps-3" href="main.jsp">충남오세유~</a>
+      <a class="navbar-brand ps-3" href="main.jsp">충남오슈~</a>
       <!-- Sidebar Toggle-->
       <button class="btn btn-link btn-sm order-1 order-lg-0 me-4 me-lg-0"
          id="sidebarToggle" href="#!">
@@ -247,11 +247,11 @@ border:solid;
                <div class="nav">
                
 				<div class="sb-sidenav-menu-heading">소개</div>
-                 	 <a class="nav-link" href="#">
+                 	 <a class="nav-link" href="introduction.jsp">
                      	<div class="sb-nav-link-icon">
                        	 <i class="fas fa-tachometer-alt"></i></div> 충청남도의 개요 </a>
                        	  	 
-                      <a class="nav-link" href="#">
+                      <a class="nav-link" href="history.jsp">
                      	<div class="sb-nav-link-icon">
                        	 <i class="fas fa-tachometer-alt"></i></div> 충남오슈의 역사 </a> 
 

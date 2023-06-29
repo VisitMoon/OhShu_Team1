@@ -39,7 +39,7 @@
 <body class="sb-nav-fixed">
    <nav class="sb-topnav navbar navbar-expand navbar-dark bg-dark">
       <!-- Navbar Brand-->
-      <a class="navbar-brand ps-3" href="main.jsp">충남오세유~</a>
+      <a class="navbar-brand ps-3" href="main.jsp">충남오슈~</a>
       <!-- Sidebar Toggle-->
       <button class="btn btn-link btn-sm order-1 order-lg-0 me-4 me-lg-0"
          id="sidebarToggle" href="#!">
@@ -57,7 +57,7 @@
          </div>
       </form> -->
       <!-- Navbar-->
-       <ul class="navbar-nav ms-auto ms-md-0 me-3 me-lg-4">
+      <ul class="navbar-nav ms-auto ms-md-0 me-3 me-lg-4">
          <li class="nav-item dropdown"><a
             class="nav-link dropdown-toggle" id="navbarDropdown" href="#"
             role="button" data-bs-toggle="dropdown" aria-expanded="false"><i
@@ -87,7 +87,7 @@
             id="sidenavAccordion">
             <div class="sb-sidenav-menu">
                <div class="nav">
-
+               
 				<div class="sb-sidenav-menu-heading">소개</div>
                  	 <a class="nav-link" href="introduction.jsp">
                      	<div class="sb-nav-link-icon">
@@ -96,7 +96,8 @@
                       <a class="nav-link" href="history.jsp">
                      	<div class="sb-nav-link-icon">
                        	 <i class="fas fa-tachometer-alt"></i></div> 충남오슈의 역사 </a> 
-	
+
+
                   <div class="sb-sidenav-menu-heading">카테고리</div>
                   <a class="nav-link collapsed" href="#" data-bs-toggle="collapse"
                      data-bs-target="#collapseLayouts" aria-expanded="false"
@@ -195,8 +196,7 @@
                   </div>
 
 
-
-                  <!--    <div class="sb-sidenav-menu-heading">Addons</div>
+               <!--    <div class="sb-sidenav-menu-heading">Addons</div>
                   <a class="nav-link" href="#">
                      <div class="sb-nav-link-icon">
                         <i class="fas fa-chart-area"></i>
@@ -206,9 +206,9 @@
                         <i class="fas fa-table"></i>
                      </div> Tables
                   </a>
-                      -->
+                  -->
                </div>
-
+                
             </div>
             <div class="sb-sidenav-footer">
                <div class="small">Logged in as:</div>
