@@ -81,7 +81,9 @@
                </c:otherwise>
 				</c:choose>
             </ul></li>
-      </ul>   </nav>
+      </ul>
+      
+         </nav>
    <div id="layoutSidenav">
       <div id="layoutSidenav_nav">
          <nav class="sb-sidenav accordion sb-sidenav-dark"
