@@ -205,7 +205,7 @@
                            href="myPage_pwdChange.jsp">비밀번호 변경</a> <a
                            class="nav-link" href="myPage_joayo.jsp">좋아요 목록</a>
                         <a class="nav-link"
-                           href="myPage_회원탈퇴.jsp">회원탈퇴</a> 
+                           href="mYpage_회원탈퇴.jsp">회원탈퇴</a> 
                      </nav>
                   </div>
 

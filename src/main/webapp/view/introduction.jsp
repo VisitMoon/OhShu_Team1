@@ -227,15 +227,10 @@
                         <p>충청남도의 매력을 왕창 즐겨보시는 정보 가득한 충남오슈가 되겠습니다.</p>    
 							<div class="container-box">
 								<div class="stay-boxs">
-							           <img src="<%= request.getContextPath()%>/img/stay/stay.jpg" style="width:20%">
-							      	<a href="#">
-							           <img src="<%= request.getContextPath()%>/img/stay/stay1.jpg" style="width:20%"></a>
-							      	<a href="#">
-							           <img src="<%= request.getContextPath()%>/img/stay/stay2.jpg" style="width:20%""></a>
-							      	<a href="#">
-							           <img src="<%= request.getContextPath()%>/img/stay/stay3.jpg" style="width:20%"></a>
-							      	<a href="#">
-							           <img src="<%= request.getContextPath()%>/img/stay/stay4.jpg" style="width:20%"></a>
+									<p><img src="<%= request.getContextPath()%>/img/stay/stay.jpg" style="width:18%"></p>
+									<p><img src="<%= request.getContextPath()%>/img/stay/stay1.jpg" style="width:18%"></p>
+							           
+
 								</div>
 							</div>
 							<div class="container-box">

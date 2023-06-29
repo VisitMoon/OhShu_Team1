@@ -265,7 +265,7 @@
 									<td><%= list.get(i).getTour_name()%></td>
 									<td><%= list.get(i).getTour_category()%></td>
 									<td><%= list.get(i).getTour_location()%></td>
-									<td><i class="fas fa-table me-1"></i></td>
+									<td> <input type="submit" value="좋아요" ></td>
 								</tr>
 
 								<% }%>
@@ -281,7 +281,7 @@
 									<td><%= list.get(i).getTour_name()%></td>
 									<td><%= list.get(i).getTour_category()%></td>
 									<td><%= list.get(i).getTour_location()%></td>
-									<td><i class="fas fa-table me-1"></i></td>
+									<td> <input type="submit" value="좋아요" ></td>
 								</tr>
 								<% }%>
 								<% }%>
