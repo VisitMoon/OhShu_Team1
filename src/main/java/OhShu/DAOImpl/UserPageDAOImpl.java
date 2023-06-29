@@ -104,7 +104,7 @@ public class UserPageDAOImpl implements UserPageDAO{
 		return list;
 	}
 	public List<TourVO> selectUserTourJoayo(String user_id){
-		String sql = "SELECT t.tour_no, f.tour_location, f.tour_category, f.tour_name \r\n"
+		String sql = "SELECT t.tour_no, t.tour_location, t.tour_category, t.tour_name \r\n"
 				+ "FROM tour t\r\n"
 				+ "WHERE t.tour_no in (\r\n"
 				+ "  SELECT tj.tour_no \r\n"
@@ -121,10 +121,10 @@ public class UserPageDAOImpl implements UserPageDAO{
 			
 			while(rs.next()) {
 				vo = new TourVO();
-				vo.setTour_no(rs.getInt("food_no"));
-				vo.setTour_location(rs.getString("food_location"));
-				vo.setTour_category(rs.getString("food_category"));
-				vo.setTour_name(rs.getString("food_name"));
+				vo.setTour_no(rs.getInt("tour_no"));
+				vo.setTour_location(rs.getString("tour_location"));
+				vo.setTour_category(rs.getString("tour_category"));
+				vo.setTour_name(rs.getString("tour_name"));
 				
 				list.add(vo);
 			}
@@ -153,10 +153,10 @@ public class UserPageDAOImpl implements UserPageDAO{
 			
 			while(rs.next()) {
 				vo = new StayVO();
-				vo.setStay_no(rs.getInt("food_no"));
-				vo.setStay_location(rs.getString("food_location"));
-				vo.setStay_category(rs.getString("food_category"));
-				vo.setStay_name(rs.getString("food_name"));
+				vo.setStay_no(rs.getInt("stay_no"));
+				vo.setStay_location(rs.getString("stay_location"));
+				vo.setStay_category(rs.getString("stay_category"));
+				vo.setStay_name(rs.getString("stay_name"));
 				
 				list.add(vo);
 			}

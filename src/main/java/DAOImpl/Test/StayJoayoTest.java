@@ -15,8 +15,8 @@ public class StayJoayoTest {
 	void testPushJoayo() {
 		StayJoayoVO vo = new StayJoayoVO();
 		
-		vo.setUser_id("jihol Park");
-		vo.setStay_no(9708);
+		vo.setUser_id("user05");
+		vo.setStay_no(9854);
 		vo.setJoayo(1);
 		
 		assertNotEquals(1, service.pushStayJoayo(vo));

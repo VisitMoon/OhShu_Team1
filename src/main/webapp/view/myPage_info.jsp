@@ -35,7 +35,17 @@
 	src="https://cdn.jsdelivr.net/npm/simple-datatables@7.1.2/dist/umd/simple-datatables.min.js"
 	crossorigin="anonymous"></script>
 <script src="../js/datatables-simple-demo.js"></script>
-
+<style>
+  table {
+    width: 100%;
+    border-top: 1px solid #444444;
+    border-collapse: collapse;
+  }
+  th, td {
+    border-bottom: 1px solid #444444;
+    padding: 10px;
+  }
+</style>
 </head>
 
 <body class="sb-nav-fixed">
@@ -122,12 +132,40 @@
 					<div class="card mb-4"></div>
 					<div class="card mb-4">
 						<div class="card-header">전체 > 정보</div>
-						<div class="card-body">이름 : ----------------- 주민번호 :
-							-----------------</div>
-					</div>
+						<div class="card-body">
+						<table id="userInfoTable">
+                     	<thead>
+                        
+                     </thead>
+                     <tbody>
+						<% String user_id = (String)session.getAttribute("SESS_ID"); %>						
+						<% UserPageService service = UserPageServiceImpl.getInstance(); %>
+						<% UserTableVO vo = service.getUserInfo(user_id);%>
 
+               			<tr>
+               					<td>사용자명</td>
+              					<td><%= vo.getUser_name()%></td>
+          				</tr>
+          				<tr>
+               					<td>아이디</td>
+              					<td><%=vo.getUser_id()%></td>
+          				</tr>
+          				<tr>
+               					<td>패스워드</td>
+              					<td><%=vo.getUser_id()%></td>
+          				</tr>
+          				<tr>
+               					<td>나이</td>
+              					<td><%=vo.getUser_age()%></td>
+          				</tr>
+          				<tr>
+               					<td>주민번호</td>
+              					<td><%=vo.getUser_jumin()%></td>
+          				</tr>
+                     </tbody>
+                  </table>
 				</div>
-		</div>
+			</div>
 	</div>
 	</main>
 	<footer class="py-4 bg-light mt-auto">
