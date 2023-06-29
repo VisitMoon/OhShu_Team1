@@ -66,20 +66,13 @@
                class="fas fa-user fa-fw"></i></a>
             <ul class="dropdown-menu dropdown-menu-end"
                aria-labelledby="navbarDropdown">
-                <c:choose>
-                <c:when	test="${not empty sessionScope.SESS_AUTH and sessionScope.SESS_AUTH == true}">
-         <li><a class="dropdown-item" href="<%= request.getContextPath()%>/UserLogout">로그아웃</a></li>
-               <li><a class="dropdown-item"  href="myPage_info.jsp">마이페이지</a></li>
+            <li><a class="dropdown-item" href="http://localhost:8080/OhShu_Team1/join">로그인</a></li>
+               <li><a class="dropdown-item" href="http://localhost:8080/OhShu_Team1/SignIn">회원가입</a></li>
+               <li><a class="dropdown-item" href="myPage_info.jsp">마이페이지</a></li>
                <li>
                   <hr class="dropdown-divider" />
                </li>
-               <li><a class="dropdown-item">User: ${sessionScope.SESS_ID}</a></li>
-               </c:when>
-               <c:otherwise>	
-               <li><a class="dropdown-item"href="<%= request.getContextPath()%>/SignIn">로그인</a></li>
-               <<li><a class="dropdown-item"  href="http://localhost:8080/OhShu_Team1/join">회원가입</a>
-               </c:otherwise>
-				</c:choose>
+               <li><a class="dropdown-item" href="#!">로그아웃</a></li>
             </ul></li>
       </ul>
    </nav>
@@ -159,50 +152,22 @@
                         </tr>
                      </thead>
                      <tbody>
-
-                        <% UserPageService service = UserPageServiceImpl.getInstance(); %>
-                        <% List<StayVO> list = service.getStayList();%>
-                        <% String stayCate = request.getParameter("stayCate"); %>
-                        <% System.out.println(stayCate); %>
-                        
-
-
-
-                        <% if(stayCate==null || stayCate.equals("전체")){ %>
-                        <% for(int i =0; i<list.size(); i++){  %>
-                        <tr>
-                           <td><a href="stay_detail_page.jsp?stayNo=<%= i%>"> <img
-                                 src="<%=list.get(i).getStay_img()%>"
-                                 style="border-radius: 20px; width: 200px; height: 111px;"></a>
-                           </td>
-                           <td><%= list.get(i).getStay_name()%></td>
-                           <td><%= list.get(i).getStay_category()%></td>
-                           <td><%= list.get(i).getStay_location()%></td>
-                           <td><i class="fas fa-table me-1"></i></td>
-                        </tr>
+						<% String user_id = (String)session.getAttribute("SESS_ID"); %>
+						<% UserPageService service = UserPageServiceImpl.getInstance(); %>
+               			<% List<StayVO> staylist = service.getUserStayJoayo(user_id);%>                        			
+                   			<% for(int i =0; i<staylist.size(); i++){  %>
+                   				<tr>
+                   					<td><a href="stay_detail_page.jsp?stayNo=<%= i%>"> <img
+                         				src="<%=staylist.get(i).getStay_no()%>"
+                         				style="border-radius: 20px; width: 200px; height: 111px;"></a>
+                   					</td>
+		                           <td><%= staylist.get(i).getStay_location()%></td>
+		                           <td><%= staylist.get(i).getStay_category()%></td>
+		                           <td><%= staylist.get(i).getStay_name()%></td>
+		                           <td><i class="fas fa-table me-1"></i></td>
+                   				</tr>
 
                         <% }%>
-
-                        <% }else{%>
-                        <% for(int i =0; i<list.size(); i++){ %>
-                        <% if(list.get(i).getStay_category().equals(stayCate)){ %>
-                        <tr>
-                           <td><a href="stay_detail_page.jsp?stayNo=<%= i%>"> <img
-                                 src="<%=list.get(i).getStay_img()%>"
-                                 style="border-radius: 20px; width: 200px; height: 111px;"></a>
-                           </td>
-                           <td><%= list.get(i).getStay_name()%></td>
-                           <td><%= list.get(i).getStay_category()%></td>
-                           <td><%= list.get(i).getStay_location()%></td>
-                           <td><i class="fas fa-table me-1"></i></td>
-                        </tr>
-                        <% }%>
-                        <% }%>
-                        <% }%>
-
-
-
-
                      </tbody>
                   </table>
                   </div>
