@@ -4154,9 +4154,27 @@ textarea.form-control-lg {
   overflow-y: visible;
 }
 
+
+<!--   -->
+<!--   -->
+<!--   -->
+<!--   -->
+<!--   -->
+<!--   -->
+<!--   -->
+<!--   -->
+<!--   -->
+<!--   -->
+<!--   -->
+<!--   -->
+<!--   -->
+<!--   -->
+
+
+
 .navbar-dark {
-  --bs-navbar-color: rgba(255, 255, 255, 0.55);
-  --bs-navbar-hover-color: rgba(255, 255, 255, 0.75);
+  --bs-navbar-color: rgba(255, 248, 21, 1);
+  --bs-navbar-hover-color: rgba(245, 0, 0, 1);
   --bs-navbar-disabled-color: rgba(255, 255, 255, 0.25);
   --bs-navbar-active-color: #fff;
   --bs-navbar-brand-color: #fff;
@@ -11018,12 +11036,27 @@ body {
   flex-shrink: 0;
 }
 
+
+<!--    -->
+<!--    -->
+<!--    -->
+<!--    -->
+<!--    -->
+<!--    -->
+<!--    -->
+<!--    -->
+<!--    -->
+<!--    -->
+<!--    -->
+<!--    -->
+
+
 .sb-sidenav-dark {
-  background-color: rgb(0, 0, 255);
-  color: rgba(255, 255, 255, 0.5);
+  background-color: rgb(0, 82, 25);
+  color: rgba(255, 255, 255, 1);
 }
 .sb-sidenav-dark .sb-sidenav-menu .sb-sidenav-menu-heading {
-  color: rgba(255, 255, 255, 0.25);
+  color: rgba(255, 255, 255, 1);
 }
 .sb-sidenav-dark .sb-sidenav-menu .nav-link {
   color: rgba(255, 255, 255);
@@ -11043,8 +11076,9 @@ body {
 .sb-sidenav-dark .sb-sidenav-menu .nav-link.active .sb-nav-link-icon {
   color: #fff;
 }
+
 .sb-sidenav-dark .sb-sidenav-footer {
-  background-color: rgb(0, 0, 128);
+  background-color: rgb(0, 53, 1);
 }
 
 .sb-sidenav-light {

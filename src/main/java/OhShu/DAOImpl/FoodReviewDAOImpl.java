@@ -2,6 +2,10 @@ package OhShu.DAOImpl;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+import java.util.ArrayList;
+import java.util.List;
 
 import OhShu.DAO.FoodReviewDAO;
 import OhShu.DAO.StayReviewDAO;
@@ -108,7 +112,31 @@ private final static FoodReviewDAO instance = new FoodReviewDAOImpl();
 		return result;
 		
 	}
+	public List<FoodReviewVO> selectFoodReviewListOf(int foodNo) {
+        List<FoodReviewVO> reviewList = new ArrayList<>();
+        String sql = "SELECT review_content, user_id, time FROM food_review WHERE food_no = ?";
 
+        try (Connection conn = DataBaseUtil.getConnection();
+             PreparedStatement pstmt = conn.prepareStatement(sql)) {
+            pstmt.setInt(1, foodNo);
+            try (ResultSet rs = pstmt.executeQuery()) {
+                while (rs.next()) {
+                    FoodReviewVO reviewVO = new FoodReviewVO();
+                    reviewVO.setReview_content(rs.getString("review_content"));
+                    reviewVO.setUser_id(rs.getString("user_id"));
+                    reviewVO.setTime(rs.getString("time"));
+                    reviewList.add(reviewVO);
+                }
+            }
+        } catch (ClassNotFoundException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+        return reviewList;
+    }
 
 }
 
