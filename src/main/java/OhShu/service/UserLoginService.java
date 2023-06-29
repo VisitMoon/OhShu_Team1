@@ -8,5 +8,7 @@ public interface UserLoginService {
 
 	void getUsertableByIdAndPw(UserTableVO usertable);
 
-
+	String findUserId(String user_name, String user_jumin);
+	
+	String findUserPwd(String user_id, String user_name, String user_jumin);
 }

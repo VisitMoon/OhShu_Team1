@@ -4,9 +4,9 @@ import OhShu.vo.TourReviewVO;
 
 public interface TourReviewDAO {
 
-	int InsertTourReview(TourReviewVO tour_review);
+	int insertTourReview(TourReviewVO tourReview);
 
-	int DeleteTourReview(TourReviewVO reviewudelete);
+	int deleteTourReview(TourReviewVO tourReview);
 
-	int updateTourReview(TourReviewVO reviewupdate);
+	int updateTourReview(TourReviewVO tourReview);
 }

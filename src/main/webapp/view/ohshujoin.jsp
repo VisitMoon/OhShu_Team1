@@ -139,37 +139,36 @@
 
         }
         </script>
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+ <script>
+        $(document).ready(function () {
+            $("#check_id").click(function () {
+                const userId = $("#user_id").val();
 
-<script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
-<script>
-    $(function() {
-        $('#check-btn').click(function() {
-            var userId = $('#user_id').val();
-           
-            $.ajax({
-                url: '/IdCheck',
-                type: 'JSON',
-                data: {
-                	user_id: userId 
-                },
-                success: function(response) {
-                    var result = response['result'];
-                    var message = response['message'];
-                    if (result === 'exist') {
-                        alert(message);
-                    } else if (result === 'not exist') {
-                        alert(message);
-                    } else {
-                        alert('에러 발생: ' + message);
-                    }
-                },
-                error: function(xhr, status, error) {
-                    alert('서버 오류: ' + error);
+                if (userId === '') {
+                    $("#result").text("아이디를 입력해주세요.");
+                    return;
                 }
+
+                $.ajax({
+                    url: "/OhShu_Team1/IdCheck", // 서블릿 주소, 여기서는 IdCheckServlet을 맵핑했습니다.
+                    type: "POST",
+                    data: { user_id: userId },
+                    dataType: "json",
+                    success: function (response) {
+                        if (response.is_duplicate) {
+                            $("#result").text("이미 사용 중인 아이디입니다. 다른 아이디를 입력해주세요.");
+                        } else {
+                            $("#result").text("사용 가능한 아이디입니다.");
+                        }
+                    },
+                    error: function () {
+                        $("#result").text("오류 발생: 아이디 중복 확인에 실패했습니다.");
+                    }
+                });
             });
         });
-    });
-</script>
+    </script>
 
 
 </head>
@@ -177,7 +176,7 @@
 <body class="sb-nav-fixed">
 	<nav class="sb-topnav navbar navbar-expand navbar-dark bg-dark">
 		<!-- Navbar Brand-->
-		<a class="navbar-brand ps-3" href="/main.jsp">충남오세유~</a>
+		<a class="navbar-brand ps-3" href="view/main.jsp">충남오세유~</a>
 		<!-- Sidebar Toggle-->
 		<button class="btn btn-link btn-sm order-1 order-lg-0 me-4 me-lg-0"
 			id="sidebarToggle" href="#!">
@@ -212,7 +211,16 @@
 					</div>
 					<div class="card-body"></div>
 
-
+					<script>
+					$(document).ready(function () {
+						  $('form').submit(function (event) {
+						    if ($('#result').text() === '') {
+						      alert('아이디 중복확인을 해주세요.');
+						      event.preventDefault();
+						    }
+						  });
+						});
+					</script>
 					<form action="${ pageContext.servletContext.contextPath }/join"
 						method="post">
 						<div class="header"></div>
@@ -221,7 +229,8 @@
 
 							<label for="user_id">아이디: </label> <input type="text"
 								id="user_id" name="user_id" placeholder="아이디를 입력하세요">
-							<button id="check-btn" type="button">중복확인</button>
+							<button type="button" id="check_id">중복 확인</button>
+       						 <p id="result"></p>
 							<div class="box-line-height"></div>
 							
 							<label for="pw"> 비밀번호 : </label> <input type="password"

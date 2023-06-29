@@ -8,9 +8,9 @@
 <%@ page import="OhShu.service.*"%>
 <%@ page import="java.util.*"%>
 <%@ page import="java.net.*"%>
+
 <!DOCTYPE html>
 <html lang="ko">
-
 <head>
 <meta charset="utf-8" />
 <meta http-equiv="X-UA-Compatible" content="IE=edge" />
@@ -18,7 +18,7 @@
    content="width=device-width, initial-scale=1, shrink-to-fit=no" />
 <meta name="description" content="" />
 <meta name="author" content="" />
-<title>Tour Category Page</title>
+<title>Stay Category Page</title>
 <link
    href="https://cdn.jsdelivr.net/npm/simple-datatables@7.1.2/dist/style.min.css"
    rel="stylesheet" />
@@ -81,15 +81,16 @@
             id="sidenavAccordion">
             <div class="sb-sidenav-menu">
                <div class="nav">
-                  <div class="sb-sidenav-menu-heading">소개</div>
-                  <a class="nav-link" href="introduction.jsp">
+               
+				<div class="sb-sidenav-menu-heading">소개</div>
+                 	 <a class="nav-link" href="#">
+                     	<div class="sb-nav-link-icon">
+                       	 <i class="fas fa-tachometer-alt"></i></div> 충청남도의 개요 </a>
+                       	  	 
+                      <a class="nav-link" href="#">
+                     	<div class="sb-nav-link-icon">
+                       	 <i class="fas fa-tachometer-alt"></i></div> 충남오슈의 역사 </a> 
 
-                     <div class="sb-nav-link-icon">
-                        <i class="fas fa-tachometer-alt"></i>
-                     </div> 개요
-
-
-                  </a> 
 
                   <div class="sb-sidenav-menu-heading">카테고리</div>
                   <a class="nav-link collapsed" href="#" data-bs-toggle="collapse"

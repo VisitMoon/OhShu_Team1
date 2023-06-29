@@ -20,7 +20,7 @@ private final static FoodReviewDAO instance = new FoodReviewDAOImpl();
 	}
 	
 	@Override
-	public int InsertFoodReview(FoodReviewVO food_review) {
+	public int insertFoodReview(FoodReviewVO food_review) {
 		int result = 0;
 		
 		
@@ -56,7 +56,7 @@ private final static FoodReviewDAO instance = new FoodReviewDAOImpl();
 	}
 	
 	@Override
-	public int DeleteFoodReview(FoodReviewVO reviewdelete) {
+	public int deleteFoodReview(FoodReviewVO food_review) {
 		int result = 0;
 		
 		
@@ -69,7 +69,7 @@ private final static FoodReviewDAO instance = new FoodReviewDAOImpl();
 			PreparedStatement pstmt = conn.prepareStatement(sql);
 			){
 			System.out.println(pstmt);
-			pstmt.setInt(1, reviewdelete.getReview_no());
+			pstmt.setInt(1, food_review.getReview_no());
 			
 			
 			result = pstmt.executeUpdate();
@@ -82,7 +82,7 @@ private final static FoodReviewDAO instance = new FoodReviewDAOImpl();
 		
 	}
 	
-	public int updateFoodReview(FoodReviewVO reviewupdate) {
+	public int updateFoodReview(FoodReviewVO food_review) {
 		int result = 0;
 		
 		
@@ -95,8 +95,8 @@ private final static FoodReviewDAO instance = new FoodReviewDAOImpl();
 			PreparedStatement pstmt = conn.prepareStatement(sql);
 			){
 			System.out.println(pstmt);
-			pstmt.setString(1, reviewupdate.getReview_content());
-			pstmt.setInt(2, reviewupdate.getReview_no());
+			pstmt.setString(1, food_review.getReview_content());
+			pstmt.setInt(2, food_review.getReview_no());
 			
 			
 			result = pstmt.executeUpdate();

@@ -19,7 +19,7 @@ private final static TourReviewDAO instance = new TourReviewDAOImpl();
 	}
 	
 	@Override
-	public int InsertTourReview(TourReviewVO tour_review) {
+	public int insertTourReview(TourReviewVO tourReview) {
 		int result = 0;
 		
 		
@@ -39,9 +39,9 @@ private final static TourReviewDAO instance = new TourReviewDAOImpl();
 			PreparedStatement pstmt = conn.prepareStatement(sql);
 			){
 			System.out.println(pstmt);
-			pstmt.setString(1, tour_review.getUser_id());
-			pstmt.setInt(2, tour_review.getTour_no());
-			pstmt.setString(3, tour_review.getReview_content());
+			pstmt.setString(1, tourReview.getUser_id());
+			pstmt.setInt(2, tourReview.getTour_no());
+			pstmt.setString(3, tourReview.getReview_content());
 			
 			
 			result = pstmt.executeUpdate();
@@ -55,7 +55,7 @@ private final static TourReviewDAO instance = new TourReviewDAOImpl();
 	}
 	
 	@Override
-	public int DeleteTourReview(TourReviewVO reviewdelete) {
+	public int deleteTourReview(TourReviewVO tourReview) {
 		int result = 0;
 		
 		
@@ -68,7 +68,7 @@ private final static TourReviewDAO instance = new TourReviewDAOImpl();
 			PreparedStatement pstmt = conn.prepareStatement(sql);
 			){
 			System.out.println(pstmt);
-			pstmt.setInt(1, reviewdelete.getReview_no());
+			pstmt.setInt(1, tourReview.getReview_no());
 			
 			
 			result = pstmt.executeUpdate();
@@ -81,7 +81,7 @@ private final static TourReviewDAO instance = new TourReviewDAOImpl();
 		
 	}
 	
-	public int updateTourReview(TourReviewVO reviewupdate) {
+	public int updateTourReview(TourReviewVO tourReview) {
 		int result = 0;
 		
 		
@@ -94,8 +94,8 @@ private final static TourReviewDAO instance = new TourReviewDAOImpl();
 			PreparedStatement pstmt = conn.prepareStatement(sql);
 			){
 			System.out.println(pstmt);
-			pstmt.setString(1, reviewupdate.getReview_content());
-			pstmt.setInt(2, reviewupdate.getReview_no());
+			pstmt.setString(1, tourReview.getReview_content());
+			pstmt.setInt(2, tourReview.getReview_no());
 			
 			
 			result = pstmt.executeUpdate();

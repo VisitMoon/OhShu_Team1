@@ -21,14 +21,20 @@ a{
     margin-left: 10px;
   }
   
-  .lis {
+  .lis{
     display: flex;
     font-size: 20pt;
     margin-left: auto;
     margin-right: 100px;
   }
   
-  .my-4, .row, .row-box {
+  .row-main{
+   display: flex;
+   margin-left: 80px;
+   margin-right: auto;
+  }
+  
+ .my-4, .row, .row-box{
     text-align: center;
   }
 
@@ -41,5 +47,4 @@ a{
     font-style: grey;
     font-size: small;
 }
-
 

@@ -7,9 +7,9 @@
 <%@ page import="OhShu.ServiceImpl.*"%>
 <%@ page import="OhShu.service.*"%>
 <%@ page import="java.util.*"%>
+
 <!DOCTYPE html>
 <html lang="ko">
-
 <head>
 <meta charset="utf-8" />
 <meta http-equiv="X-UA-Compatible" content="IE=edge" />
@@ -17,7 +17,7 @@
    content="width=device-width, initial-scale=1, shrink-to-fit=no" />
 <meta name="description" content="" />
 <meta name="author" content="" />
-<title>Tour Category Page</title>
+<title>Food Category Page</title>
 <link
    href="https://cdn.jsdelivr.net/npm/simple-datatables@7.1.2/dist/style.min.css"
    rel="stylesheet" />
@@ -66,8 +66,8 @@
                class="fas fa-user fa-fw"></i></a>
             <ul class="dropdown-menu dropdown-menu-end"
                aria-labelledby="navbarDropdown">
-         <li><a class="dropdown-item" href="http://localhost:8080/OhShu_Team1/join">로그인</a></li>
-               <li><a class="dropdown-item" href="http://localhost:8080/OhShu_Team1/SignIn">회원가입</a></li>
+         <li><a class="dropdown-item" href="http://localhost:8080/OhShu_Team1/SignIn">로그인</a></li>
+               <li><a class="dropdown-item" href="http://localhost:8080/OhShu_Team1/join">회원가입</a></li>
                <li><a class="dropdown-item" href="myPage_info.jsp">마이페이지</a></li>
                <li>
                   <hr class="dropdown-divider" />
@@ -75,6 +75,7 @@
                <li><a class="dropdown-item" href="#!">로그아웃</a></li>
             </ul></li>
       </ul>
+      
    </nav>
    <div id="layoutSidenav">
       <div id="layoutSidenav_nav">
@@ -82,15 +83,15 @@
             id="sidenavAccordion">
             <div class="sb-sidenav-menu">
                <div class="nav">
-                  <div class="sb-sidenav-menu-heading">소개</div>
-                  <a class="nav-link" href="introduction.jsp">
-
-                     <div class="sb-nav-link-icon">
-                        <i class="fas fa-tachometer-alt"></i>
-                     </div> 개요
-
-
-                  </a> 
+               
+				<div class="sb-sidenav-menu-heading">소개</div>
+                 	 <a class="nav-link" href="#">
+                     	<div class="sb-nav-link-icon">
+                       	 <i class="fas fa-tachometer-alt"></i></div> 충청남도의 개요 </a>
+                       	  	 
+                      <a class="nav-link" href="#">
+                     	<div class="sb-nav-link-icon">
+                       	 <i class="fas fa-tachometer-alt"></i></div> 충남오슈의 역사 </a> 
 
                   <div class="sb-sidenav-menu-heading">카테고리</div>
                   <a class="nav-link collapsed" href="#" data-bs-toggle="collapse"

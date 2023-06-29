@@ -36,7 +36,6 @@ public class UserJoinServlet extends HttpServlet {
 	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-
 		RequestDispatcher dispatcher = request.getRequestDispatcher("/view/ohshujoin.jsp");
 		dispatcher.forward(request, response);
 
@@ -53,6 +52,7 @@ public class UserJoinServlet extends HttpServlet {
 		usertable.setUser_age(Integer.parseInt(request.getParameter("user_age")));   // int형 user_age
 		usertable.setUser_jumin(request.getParameter("user_jumin"));
 		
+		System.out.println(usertable.toString());
 		int isOk= 1;
 		String msg = null;
 		if(service.registerUsertable(usertable) == isOk) {

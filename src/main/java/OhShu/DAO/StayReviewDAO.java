@@ -6,10 +6,10 @@ import OhShu.vo.StayVO;
 
 public interface StayReviewDAO {
 
-	int InsertStayReview(StayReviewVO stay_review);
+	int insertStayReview(StayReviewVO stayReview);
 
-	int DeleteStayReview(StayReviewVO reviewdelete);
+	int deleteStayReview(StayReviewVO stayReview);
 
-	int updateStayReview(StayReviewVO reviewupdate);
+	int updateStayReview(StayReviewVO stayReview);
 
 }

@@ -5,29 +5,32 @@ import OhShu.DAOImpl.StayReviewDAOImpl;
 import OhShu.service.StayReviewService;
 import OhShu.vo.StayReviewVO;
 
-public class StayReviewServiceImpl  implements StayReviewService{
-	  
-	   private final StayReviewDAO dao = StayReviewDAOImpl.getInstance();
-	  
-	   private static final StayReviewService instance = new StayReviewServiceImpl();
-	   
-	   private StayReviewServiceImpl() {
-		   
-	   }
-	   
-	   public static StayReviewService getInstance() {
-		   return instance;
-	   }
-	   
-	   
-	   @Override
-	      public int registerstay_reviewinsert(StayReviewVO reviewinsert)  {
-	  		return dao.InsertStayReview(reviewinsert);
-	   }
-	   	  public int registerstay_reviewupdate(StayReviewVO reviewdelete)  {
-	  		return dao.InsertStayReview(reviewdelete);
-	   }
-	   	  public int registerstay_reviewdelete(StayReviewVO reviewupdate)  {
-		  		return dao.InsertStayReview(reviewupdate);
-		   }
+public class StayReviewServiceImpl implements StayReviewService {
+
+	private final StayReviewDAO dao = StayReviewDAOImpl.getInstance();
+
+	private static final StayReviewService instance = new StayReviewServiceImpl();
+
+	private StayReviewServiceImpl() {
+
+	}
+
+	public static StayReviewService getInstance() {
+		return instance;
+	}
+
+	@Override
+	public int registerStayReview(StayReviewVO stayReview) {
+		return dao.insertStayReview(stayReview);
+	}
+
+	@Override
+	public int changeStayReview(StayReviewVO stayReview) {
+		return dao.updateStayReview(stayReview);
+	}
+
+	@Override
+	public int deleteStayReview(StayReviewVO stayReview) {
+		return dao.deleteStayReview(stayReview);
+	}
 }

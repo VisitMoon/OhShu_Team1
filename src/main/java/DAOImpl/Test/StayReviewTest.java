@@ -23,13 +23,13 @@ class StayReviewTest {
 		  vo.setStay_no(9708);
 		  vo.setReview_content("안녕하세요 반갑습니다.");
 
-	      assertNotEquals(1, dao.InsertStayReview(vo) );
+	      assertNotEquals(1, dao.insertStayReview(vo) );
 
 		  vo.setUser_id("1");
 		  vo.setStay_no(9739);
 		  vo.setReview_content("살자.");
 		  System.out.println(vo);
-		  assertEquals(1, dao.InsertStayReview(vo) );
+		  assertEquals(1, dao.insertStayReview(vo) );
 	      System.out.println(vo);
 	   
 	  
@@ -40,7 +40,7 @@ class StayReviewTest {
 		  
 		  vo.setReview_no(9);
 		  System.out.println(vo);
-		  assertEquals(1, dao.DeleteStayReview(vo) );
+		  assertEquals(1, dao.deleteStayReview(vo) );
 	      
 	  
 	}
