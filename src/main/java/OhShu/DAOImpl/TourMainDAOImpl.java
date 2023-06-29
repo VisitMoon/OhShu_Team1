@@ -19,7 +19,8 @@ public class TourMainDAOImpl implements TourMainDAO{
 	}
 	
 	@Override
-	public TourMainVO selectTourJoayoRank(int rank) {
+	public TourMainVO selectTourJoa
+	yoRank(int rank) {
 		
 		String sql = "SELECT tour.tour_no,tour_name, tour.tour_img,joayo_amount\r\n"
 				+ "FROM tour\r\n"

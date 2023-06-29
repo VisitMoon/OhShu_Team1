@@ -140,9 +140,9 @@
                    전체 > 정보      </div>
                   <div class="card-body">
                   
-                  <div>숙박 좋아요</div>
+                  <div>음식점 좋아요</div>
                   <div>
-                  <table id="stayJoayoTable">
+                  <table id="foodJoayoTable">
                      <thead>
                         <tr>
                            <th>No.</th>
@@ -152,14 +152,75 @@
                         </tr>
                      </thead>
                      <tbody>
-						<% String user_id = (String)session.getAttribute("SESS_ID"); %>
+						<% String user_id = (String)session.getAttribute("SESS_ID"); %>						
 						<% UserPageService service = UserPageServiceImpl.getInstance(); %>
+						
+               			<% List<FoodVO> foodlist = service.getUserFoodJoayo(user_id);%> 
+               			<% System.out.println(foodlist.size()); %>                       			
+                   			<% for(int i =0; i<foodlist.size(); i++){  %>
+                   				<% System.out.println(foodlist.get(i).toString()); %>
+                   				<tr>
+                   					<td><a href="stay_detail_page.jsp?stayNo=<%= foodlist.get(i).getFood_no()%>"> 
+                   					<%=foodlist.get(i).getFood_no()%>"></a>
+                   					</td>
+		                           <td><%= foodlist.get(i).getFood_location()%></td>
+		                           <td><%= foodlist.get(i).getFood_source()%></td>
+		                           <td><%= foodlist.get(i).getFood_name()%></td>
+		                           <td><i class="fas fa-table me-1"></i></td>
+                   				</tr>
+
+                        <% }%>
+                     </tbody>
+                  </table>
+                  </div>
+                  <div>여행 좋아요</div>
+                  <div>
+                  <table id="stayJoayoTable">
+                     <thead>
+                        <tr>
+                           <th>No.</th>
+                           <th>지역</th>
+                           <th>카테고리</th>
+                           <th>여행지명</th>
+                        </tr>
+                     </thead>
+                     <tbody>
+
+               			<% List<TourVO> tourlist = service.getUserTourJoayo(user_id);%>                        			
+                   			<% for(int i =0; i<tourlist.size(); i++){  %>
+                   				<tr>
+                   					<td><a href="stay_detail_page.jsp?stayNo=<%=tourlist.get(i).getTour_no()%>">
+                         				<%=tourlist.get(i).getTour_no()%>
+                         				</a>
+                   					</td>
+		                           <td><%= tourlist.get(i).getTour_location()%></td>
+		                           <td><%= tourlist.get(i).getTour_category()%></td>
+		                           <td><%= tourlist.get(i).getTour_name()%></td>
+		                           <td><i class="fas fa-table me-1"></i></td>
+                   				</tr>
+                        <% }%>
+                     </tbody>
+                  </table>
+                  </div>
+                  <div>숙박 좋아요</div>
+                  <div>
+                  <table id="stayJoayoTable">
+                     <thead>
+                        <tr>
+                           <th>No.</th>
+                           <th>지역</th>
+                           <th>카테고리</th>
+                           <th>숙박업소명</th>
+                        </tr>
+                     </thead>
+                     <tbody>
+
                			<% List<StayVO> staylist = service.getUserStayJoayo(user_id);%>                        			
                    			<% for(int i =0; i<staylist.size(); i++){  %>
                    				<tr>
-                   					<td><a href="stay_detail_page.jsp?stayNo=<%= i%>"> <img
-                         				src="<%=staylist.get(i).getStay_no()%>"
-                         				style="border-radius: 20px; width: 200px; height: 111px;"></a>
+                   					<td><a href="stay_detail_page.jsp?stayNo=<%=staylist.get(i).getStay_no()%>">
+                         				<%=staylist.get(i).getStay_no()%>
+                         				</a>
                    					</td>
 		                           <td><%= staylist.get(i).getStay_location()%></td>
 		                           <td><%= staylist.get(i).getStay_category()%></td>
@@ -171,10 +232,6 @@
                      </tbody>
                   </table>
                   </div>
-                  <div>여행 좋아요</div>
-                  <div>움식 좋아요</div>
-                  
-                  
                   </div>
 
             

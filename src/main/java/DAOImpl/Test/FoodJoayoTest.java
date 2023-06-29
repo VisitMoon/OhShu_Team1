@@ -15,8 +15,8 @@ public class FoodJoayoTest {
 	void testPushJoayo() {
 		FoodJoayoVO vo = new FoodJoayoVO();
 		
-		vo.setUser_id("jihol Park");
-		vo.setFood_no(52021);
+		vo.setUser_id("user05");
+		vo.setFood_no(52011);
 		vo.setJoayo(1);
 		
 		assertNotEquals(1, service.pushFoodJoayo(vo));

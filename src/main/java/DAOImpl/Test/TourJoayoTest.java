@@ -15,8 +15,8 @@ public class TourJoayoTest {
 	void testPushJoayo() {
 		TourJoayoVO vo = new TourJoayoVO();
 		
-		vo.setUser_id("jihol Park");
-		vo.setTour_no(50561);
+		vo.setUser_id("user05");
+		vo.setTour_no(50469);
 		vo.setJoayo(1);
 		
 		assertNotEquals(1, service.pushTourJoayo(vo));
