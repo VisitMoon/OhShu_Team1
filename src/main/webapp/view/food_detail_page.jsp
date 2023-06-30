@@ -514,6 +514,7 @@ th, td {
 													<input type="hidden" name="reviewNo"
 														value="<%=review.getReview_no()%>" />
 													<button type="submit">댓글 삭제</button>
+													<input type="hidden" name="foodNo" value="<%=reasd%>" />
 												</form>
 												<%
 												}

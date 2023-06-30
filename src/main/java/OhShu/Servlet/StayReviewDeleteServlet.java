@@ -47,7 +47,7 @@ public class StayReviewDeleteServlet extends HttpServlet {
 		request.setCharacterEncoding("UTF-8");
 
 	    String reviewNoStr = request.getParameter("reviewNo");
-
+	    
 	    if (reviewNoStr == null) {
 	        response.sendError(HttpServletResponse.SC_BAD_REQUEST, "Invalid parameters");
 	        return;

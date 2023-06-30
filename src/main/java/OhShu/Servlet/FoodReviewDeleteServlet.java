@@ -49,18 +49,19 @@ public class FoodReviewDeleteServlet extends HttpServlet {
 
 		    String reviewNoStr = request.getParameter("reviewNo");
 
+		    
 		    if (reviewNoStr == null) {
 		        response.sendError(HttpServletResponse.SC_BAD_REQUEST, "Invalid parameters");
 		        return;
 		    }
 		    
+		   
 		    int reviewNo = Integer.parseInt(reviewNoStr);
-		   System.out.println(reviewNo);
+		   
 		   FoodReviewService service = new FoodReviewSeviceImpl();
 		    service.deleteFoodReview(reviewNo);
 		    
 		    int foodNo = Integer.parseInt(request.getParameter("foodNo"));
-		    
 		    
 		    FoodService service1 = FoodServiceImpl.getInstance();
 	        List<FoodVO> list = service1.getFoodList();

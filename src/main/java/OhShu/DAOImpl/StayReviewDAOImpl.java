@@ -57,7 +57,7 @@ public class StayReviewDAOImpl  implements StayReviewDAO{
 	@Override
 	 public void deleteTourReview(int review_no) {
        try (Connection conn = DataBaseUtil.getConnection();
-            PreparedStatement pstmt = conn.prepareStatement("DELETE FROM tour_review WHERE review_no=?")) {
+            PreparedStatement pstmt = conn.prepareStatement("DELETE FROM stay_review WHERE review_no=?")) {
 
            pstmt.setInt(1, review_no);
 
