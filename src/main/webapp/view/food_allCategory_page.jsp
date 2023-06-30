@@ -242,8 +242,8 @@
 								<% FoodService service = FoodServiceImpl.getInstance(); %>
 								<% List<FoodVO> list = service.getFoodList();%>
 								<% String foodCate = request.getParameter("foodCate"); %>
-								<%String user_id = (String) session.getAttribute("userId");%>
-								<%String food_no = request.getParameter("foodNo");%>
+								<% String currentUser = (String) session.getAttribute("SESS_ID");%>
+								<% String food_no = request.getParameter("foodNo");%>
 								<% if(foodCate==null || foodCate.equals("전체")){ %>
 								<% for(int i =0; i<list.size(); i++){  %>
 								<tr>
@@ -255,7 +255,7 @@
 									<td><%= list.get(i).getFood_source()%></td>
 									<td><%= list.get(i).getFood_location()%></td>
 									<td><form action="/OhShu_Team1/ToggleFoodJoayo" method="POST">
-  										<input type="hidden" name="userId" value="<%=user_id%>" />
+  										<input type="hidden" name="userId" value="<%=currentUser%>" />
  										 <input type="hidden" name="foodNo" value="<%=list.get(i).getFood_no()%>" />
  										 <input type="submit" value="좋아요" />
 										</form></td>
@@ -275,7 +275,7 @@
 									<td><%= list.get(i).getFood_source()%></td>
 									<td><%= list.get(i).getFood_location()%></td>
 									<td><form action="/OhShu_Team1/ToggleFoodJoayo" method="POST">
-  										<input type="hidden" name="userId" value="<%=user_id%>" />
+  										<input type="hidden" name="userId" value="<%=currentUser%>" />
  										 <input type="hidden" name="foodNo" value="<%=list.get(i).getFood_no()%>" />
  										 <input type="submit" value="좋아요" />
 										</form></td>

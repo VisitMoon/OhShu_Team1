@@ -7,20 +7,20 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import OhShu.DAOImpl.FoodJoayoDAOImpl;
-import OhShu.vo.FoodJoayoVO;
+import OhShu.DAOImpl.StayJoayoDAOImpl;
+import OhShu.vo.StayJoayoVO;
 
 /**
- * Servlet implementation class FoodJoayoServlet
+ * Servlet implementation class StayJoayoServlet
  */
-@WebServlet("/ToggleFoodJoayo")
-public class FoodJoayoServlet extends HttpServlet {
+@WebServlet("/ToggleStayJoayo")
+public class StayJoayoServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        
     /**
      * @see HttpServlet#HttpServlet()
      */
-    public FoodJoayoServlet() {
+    public StayJoayoServlet() {
         super();
         // TODO Auto-generated constructor stub
     }
@@ -37,21 +37,23 @@ public class FoodJoayoServlet extends HttpServlet {
 	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		// TODO Auto-generated method stub
 		request.setCharacterEncoding("UTF-8");
 
         String userId = request.getParameter("userId");
-        int foodNo = Integer.parseInt(request.getParameter("foodNo"));
+        int stayNo = Integer.parseInt(request.getParameter("stayNo"));
 
         // Create FoodJoayoVO instance
-        FoodJoayoVO foodJoayo = new FoodJoayoVO();
-        foodJoayo.setUser_id(userId);
-        foodJoayo.setFood_no(foodNo);
-        foodJoayo.setJoayo(1);
+        StayJoayoVO stayJoayo = new StayJoayoVO();
+        stayJoayo.setUser_id(userId);
+        stayJoayo.setStay_no(stayNo);
+        stayJoayo.setJoayo(1);
 
         // Toggle food joayo using FoodJoayoDAOImpl
-        FoodJoayoDAOImpl.getInstance().toggleFoodJoayo(foodJoayo);
+        StayJoayoDAOImpl.getInstance().toggleStayJoayo(stayJoayo);
 
         // Redirect user back to the food_detail_page.jsp
-        response.sendRedirect(request.getContextPath() + "/view/food_allCategory_page.jsp");
-    }
+        response.sendRedirect(request.getContextPath() + "/view/stay_allCategory_page.jsp");
+	}
+
 }

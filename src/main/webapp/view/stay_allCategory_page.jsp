@@ -223,19 +223,11 @@
 							</thead>
 							<tbody>
 
-								<%
-								StayService service = StayServiceImpl.getInstance();
-								%>
-								<%
-								List<StayVO> list = service.getStayList();
-								%>
-								<%
-								String stayCate = request.getParameter("stayCate");
-								%>
-								<%
-								System.out.println(stayCate);
-								%>
-
+								<% StayService service = StayServiceImpl.getInstance();%>
+								<% List<StayVO> list = service.getStayList();%>
+								<% String stayCate = request.getParameter("stayCate");%>
+								<% String currentUser = (String) session.getAttribute("SESS_ID");%>
+								<% String stay_no = request.getParameter("stayNo");%>
 
 								<%
 								if (stayCate == null || stayCate.equals("전체")) {
@@ -251,7 +243,11 @@
 									<td><%=list.get(i).getStay_name()%></td>
 									<td><%=list.get(i).getStay_category()%></td>
 									<td><%=list.get(i).getStay_location()%></td>
-									<td><i class="fas fa-table me-1"></i></td>
+									<td><form action="/OhShu_Team1/ToggleStayJoayo" method="POST">
+  										<input type="hidden" name="userId" value="<%=currentUser%>" />
+ 										 <input type="hidden" name="stayNo" value="<%=list.get(i).getStay_no()%>" />
+ 										 <input type="submit" value="좋아요" />
+										</form></td>
 								</tr>
 
 								<%
@@ -275,7 +271,11 @@
 									<td><%=list.get(i).getStay_name()%></td>
 									<td><%=list.get(i).getStay_category()%></td>
 									<td><%=list.get(i).getStay_location()%></td>
-									<td><i class="fas fa-table me-1"></i></td>
+									<td><form action="/OhShu_Team1/ToggleFoodJoayo" method="POST">
+  										<input type="hidden" name="userId" value="<%=currentUser%>" />
+ 										 <input type="hidden" name="stayNo" value="<%=list.get(i).getStay_no()%>" />
+ 										 <input type="submit" value="좋아요" />
+										</form></td>
 								</tr>
 								<%
 								}
