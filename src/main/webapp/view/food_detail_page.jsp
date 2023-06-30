@@ -461,6 +461,7 @@ th, td {
 
 
 								</div>
+
 								<%
 								String reasd = Integer.toString(list.get(num).getFood_no());
 								%>
@@ -468,18 +469,21 @@ th, td {
 								<%
 								//int foodNo = 1; // replace with the correct foodNo value
 								FoodReviewDAO reviewDAO = FoodReviewDAOImpl.getInstance();
-								List<FoodReviewVO> reviewList = reviewDAO.selectFoodReviewListOf(list.get(num).getFood_no());
+								List<FoodReviewVO> reviewList = reviewDAO.selectFoodReview(list.get(num).getFood_no());
 								%>
 
 
+								<% String currentUser = (String) session.getAttribute("SESS_ID");%>
 
+								<% if(currentUser != null) { %>
 								<div>
 
 									<form action="<%=request.getContextPath()%>/FoodReview"
 										method="post">
 										<input type="hidden" name="foodNo" value="<%=reasd%>" /> <label
-											for="userId">사용자 ID:</label> <input type="text" name="userId"
-											required> <br> <label for="reviewContent">댓글
+											for="userId">사용자 ID:</label> <input type="text" name="userId" value="<%=currentUser%>" readonly>
+										<br>		
+							 <label for="reviewContent">댓글
 											내용:</label>
 										<textarea name="reviewContent" cols="30" rows="4" required></textarea>
 										<br>
@@ -497,20 +501,13 @@ th, td {
 												작성자:
 												<%=review.getUser_id()%>
 												내용:
-												<%=review.getReview_content()%>
+												<%=review.getReview_content()%><br>
+												작성 시간: <%=review.getTime()%> <br>
 												<%
 												String food_review_user_id = review.getUser_id();
 												String current_user_id = (String) session.getAttribute("SESS_ID");
 												if (food_review_user_id.equals(current_user_id)) {
 												%>
-												<form
-													action="<%=request.getContextPath()%>/UpdateFoodReview"
-													method="post">
-													<input type="hidden" name="reviewNo"
-														value="<%=review.getReview_no()%>" /> <input type="text"
-														name="newReviewContent" required />
-													<button type="submit">댓글 수정</button>
-												</form>
 												<form
 													action="<%=request.getContextPath()%>/DeleteFoodReview"
 													method="post">
@@ -528,6 +525,10 @@ th, td {
 										%>
 									</ul>
 								</div>
+								<% } else { %>
+
+								<p>로그인 후 댓글을 작성하실 수 있습니다.</p>
+								<% } %>
 							</div>
 			</main>
 			<footer class="py-4 bg-light mt-auto">

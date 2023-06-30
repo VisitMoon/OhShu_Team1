@@ -60,21 +60,18 @@ private final static FoodReviewDAO instance = new FoodReviewDAOImpl();
 	}
 	
 	@Override
-	public int deleteFoodReview(int review_no) { // review_no 변수명 변경
-	    int result = 0;
-	    String sql = "DELETE FROM food_review WHERE review_no = ?";
-	    
-	    try (Connection conn = DataBaseUtil.getConnection();
-	         PreparedStatement pstmt = conn.prepareStatement(sql)) {
-	        System.out.println(pstmt);
-	        pstmt.setInt(1, review_no); // review_no로 변경
-	        result = pstmt.executeUpdate();
-	        System.out.println("result -" + result);
-	    } catch (Exception e) {
-	        e.printStackTrace();
-	    }
-	    return result;
-	}
+	 public void deleteFoodReview(int review_no) {
+        try (Connection conn = DataBaseUtil.getConnection();
+             PreparedStatement pstmt = conn.prepareStatement("DELETE FROM food_review WHERE review_no=?")) {
+
+            pstmt.setInt(1, review_no);
+
+            pstmt.executeUpdate();
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+    }
+
 	
 	public int updateFoodReview(FoodReviewVO food_review) {
 		int result = 0;
@@ -102,9 +99,9 @@ private final static FoodReviewDAO instance = new FoodReviewDAOImpl();
 		return result;
 		
 	}
-	public List<FoodReviewVO> selectFoodReviewListOf(int foodNo) {
+	public List<FoodReviewVO> selectFoodReview(int foodNo) {
         List<FoodReviewVO> reviewList = new ArrayList<>();
-        String sql = "SELECT review_content, user_id, time FROM food_review WHERE food_no = ?";
+        String sql = "SELECT review_no, review_content, user_id, time FROM food_review WHERE food_no = ?";
 
         try (Connection conn = DataBaseUtil.getConnection();
              PreparedStatement pstmt = conn.prepareStatement(sql)) {
@@ -112,6 +109,7 @@ private final static FoodReviewDAO instance = new FoodReviewDAOImpl();
             try (ResultSet rs = pstmt.executeQuery()) {
                 while (rs.next()) {
                     FoodReviewVO reviewVO = new FoodReviewVO();
+                    reviewVO.setReview_no(rs.getInt("review_no"));
                     reviewVO.setReview_content(rs.getString("review_content"));
                     reviewVO.setUser_id(rs.getString("user_id"));
                     reviewVO.setTime(rs.getString("time"));

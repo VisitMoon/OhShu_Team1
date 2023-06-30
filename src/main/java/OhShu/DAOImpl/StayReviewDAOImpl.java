@@ -2,8 +2,14 @@ package OhShu.DAOImpl;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+import java.util.ArrayList;
+import java.util.List;
+
 import OhShu.DAO.StayReviewDAO;
 import OhShu.Util.DataBaseUtil;
+import OhShu.vo.FoodReviewVO;
 import OhShu.vo.StayReviewVO;
 
 
@@ -49,28 +55,17 @@ public class StayReviewDAOImpl  implements StayReviewDAO{
 	}
 	
 	@Override
-	public int deleteStayReview(StayReviewVO stayReview) {
-		int result = 0;
-		
-		String sql="DELETE FROM stay_review WHERE review_no = ?";
-				
-		try(
-			Connection conn = DataBaseUtil.getConnection();
-			PreparedStatement pstmt = conn.prepareStatement(sql);
-			){
-			System.out.println(pstmt);
-			pstmt.setInt(1, stayReview.getReview_no());
-			
-			
-			result = pstmt.executeUpdate();
-			System.out.println("result -"+result);
-			
-		}catch(Exception e) {
-			 e.printStackTrace();
-		}
-		return result;
-		
-	}
+	 public void deleteTourReview(int review_no) {
+       try (Connection conn = DataBaseUtil.getConnection();
+            PreparedStatement pstmt = conn.prepareStatement("DELETE FROM tour_review WHERE review_no=?")) {
+
+           pstmt.setInt(1, review_no);
+
+           pstmt.executeUpdate();
+       } catch (Exception e) {
+           e.printStackTrace();
+       }
+   }
 	
 	public int updateStayReview(StayReviewVO stayReview) {
 		int result = 0;
@@ -94,7 +89,31 @@ public class StayReviewDAOImpl  implements StayReviewDAO{
 		}
 		return result;
 		
-	}
+	}public List<StayReviewVO> selectStayReview(int StayNo) {
+        List<StayReviewVO> reviewList = new ArrayList<>();
+        String sql = "SELECT review_no, review_content, user_id, time FROM stay_review WHERE stay_no = ?";
 
+        try (Connection conn = DataBaseUtil.getConnection();
+             PreparedStatement pstmt = conn.prepareStatement(sql)) {
+            pstmt.setInt(1, StayNo);
+            try (ResultSet rs = pstmt.executeQuery()) {
+                while (rs.next()) {
+                    StayReviewVO reviewVO = new StayReviewVO();
+                    reviewVO.setReview_no(rs.getInt("review_no"));
+                    reviewVO.setReview_content(rs.getString("review_content"));
+                    reviewVO.setUser_id(rs.getString("user_id"));
+                    reviewVO.setTime(rs.getString("time"));
+                    reviewList.add(reviewVO);
+                }
+            }
+        } catch (ClassNotFoundException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+        return reviewList;
+    }
 
 }

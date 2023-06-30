@@ -10,7 +10,7 @@ public class TourReviewServiceImpl implements TourReviewService {
 
 	private static final TourReviewService instance = new TourReviewServiceImpl();
 
-	private TourReviewServiceImpl() {
+	public TourReviewServiceImpl() {
 
 	}
 
@@ -29,7 +29,7 @@ public class TourReviewServiceImpl implements TourReviewService {
 	}
 
 	@Override
-	public int deleteTourReview(TourReviewVO tourReview) {
-		return dao.deleteTourReview(tourReview);
+	public void deleteTourReview(int review_no) {
+		 dao.deleteTourReview(review_no);
 	}
 }

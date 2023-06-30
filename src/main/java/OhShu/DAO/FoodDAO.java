@@ -11,5 +11,5 @@ public interface FoodDAO {
 	
 	List<FoodVO> selectFoodList();
 	
-	List<FoodReviewVO> getFoodReviewList(int food_no);
+	
 }

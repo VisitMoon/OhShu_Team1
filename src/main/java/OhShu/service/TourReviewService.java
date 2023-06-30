@@ -8,5 +8,5 @@ public interface TourReviewService {
 	
 	int changeTourReview(TourReviewVO tourReview);
 	
-	int deleteTourReview(TourReviewVO tourReview);
+	void deleteTourReview(int review_no);
 }

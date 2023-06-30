@@ -9,23 +9,25 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import OhShu.DAOImpl.FoodReviewDAOImpl;
-import OhShu.ServiceImpl.FoodServiceImpl;
-import OhShu.service.FoodService;
-import OhShu.vo.FoodReviewVO;
-import OhShu.vo.FoodVO;
+import OhShu.ServiceImpl.StayReviewServiceImpl;
+import OhShu.ServiceImpl.StayServiceImpl;
+import OhShu.service.StayReviewService;
+import OhShu.service.StayService;
+import OhShu.vo.StayVO;
+
+
 
 /**
- * Servlet implementation class FoodReviewServlet
+ * Servlet implementation class StayReviewDeleteServlet
  */
-@WebServlet("/FoodReview")
-public class FoodReviewInsertServlet extends HttpServlet {
+@WebServlet("/DeleteStayReview")
+public class StayReviewDeleteServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        
     /**
      * @see HttpServlet#HttpServlet()
      */
-    public FoodReviewInsertServlet() {
+    public StayReviewDeleteServlet() {
         super();
         // TODO Auto-generated constructor stub
     }
@@ -43,31 +45,32 @@ public class FoodReviewInsertServlet extends HttpServlet {
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		request.setCharacterEncoding("UTF-8");
-		
-        int foodNo = Integer.parseInt(request.getParameter("foodNo"));
-        String userId = request.getParameter("userId");
-        String reviewContent = request.getParameter("reviewContent");
 
-        FoodService service = FoodServiceImpl.getInstance();
-        List<FoodVO> list = service.getFoodList();
+	    String reviewNoStr = request.getParameter("reviewNo");
+
+	    if (reviewNoStr == null) {
+	        response.sendError(HttpServletResponse.SC_BAD_REQUEST, "Invalid parameters");
+	        return;
+	    }
+	    
+	    int reviewNo = Integer.parseInt(reviewNoStr);
+	    
+	    
+	    int StayNo = Integer.parseInt(request.getParameter("stayNo"));
+	    StayReviewService service = new StayReviewServiceImpl();
+	    service.deleteStayReview(reviewNo);
+	    
+	    StayService service1 = StayServiceImpl.getInstance();
+        List<StayVO> list = service1.getStayList();
           int index=0;
           
           for(int i =0; i<list.size(); i++) {
-             if(foodNo==list.get(i).getFood_no()) {
+             if(StayNo==list.get(i).getStay_no()) {
                 index = i;
              }
              
           }
-          
-        FoodReviewVO review = new FoodReviewVO();
-        review.setFood_no(foodNo);
-        review.setUser_id(userId);
-        review.setReview_content(reviewContent);
 
-        FoodReviewDAOImpl reviewDAO = new FoodReviewDAOImpl();
-        reviewDAO.insertFoodReview(review);
-
-        
-        response.sendRedirect(request.getContextPath() + "/view/food_detail_page.jsp?foodNo=" + index );
-    }
+          response.sendRedirect(request.getContextPath() + "/view/stay_detail_page.jsp?stayNo=" + index );
+	}
 }

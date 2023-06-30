@@ -11,7 +11,7 @@ public class StayReviewServiceImpl implements StayReviewService {
 
 	private static final StayReviewService instance = new StayReviewServiceImpl();
 
-	private StayReviewServiceImpl() {
+	public StayReviewServiceImpl() {
 
 	}
 
@@ -30,7 +30,7 @@ public class StayReviewServiceImpl implements StayReviewService {
 	}
 
 	@Override
-	public int deleteStayReview(StayReviewVO stayReview) {
-		return dao.deleteStayReview(stayReview);
+	public void deleteStayReview(int stayReview) {
+		dao.deleteTourReview(stayReview);
 	}
 }
