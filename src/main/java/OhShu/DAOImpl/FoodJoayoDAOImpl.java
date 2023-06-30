@@ -4,7 +4,7 @@ import java.sql.Connection;
 import java.sql.PreparedStatement;
 
 import OhShu.DAO.FoodJoayoDAO;
-import OhShu.Util.DataBaseUtil;
+import OhShu.Util.DBCP2Util;
 import OhShu.vo.FoodJoayoVO;
 
 public class FoodJoayoDAOImpl implements FoodJoayoDAO{
@@ -38,7 +38,7 @@ public class FoodJoayoDAOImpl implements FoodJoayoDAO{
 		
 		String sql = "SELECT * from Food_joayo where user_id = ? and Food_no = ? and joayo = ?";
 
-		try (Connection conn = DataBaseUtil.getConnection(); PreparedStatement pstmt = conn.prepareStatement(sql);) {
+		try (Connection conn = DBCP2Util.getConnection(); PreparedStatement pstmt = conn.prepareStatement(sql);) {
 
 			String user_id = foodJoayo.getUser_id();
 			int food_no = foodJoayo.getFood_no();
@@ -65,7 +65,7 @@ public class FoodJoayoDAOImpl implements FoodJoayoDAO{
 		+ "            ,?\r\n" 
 		+ "            )";
 
-		try (Connection conn = DataBaseUtil.getConnection(); PreparedStatement pstmt = conn.prepareStatement(sql);) {
+		try (Connection conn = DBCP2Util.getConnection(); PreparedStatement pstmt = conn.prepareStatement(sql);) {
 
 			String user_id = foodJoayo.getUser_id();
 			int food_no = foodJoayo.getFood_no();
@@ -91,7 +91,7 @@ public class FoodJoayoDAOImpl implements FoodJoayoDAO{
 
 		String sql = "DELETE FROM Food_joayo WHERE user_id = ? and Food_no = ?";
 
-		try (Connection conn = DataBaseUtil.getConnection(); PreparedStatement pstmt = conn.prepareStatement(sql);) {
+		try (Connection conn = DBCP2Util.getConnection(); PreparedStatement pstmt = conn.prepareStatement(sql);) {
 
 			String user_id = foodJoayo.getUser_id();
 			int food_no = foodJoayo.getFood_no();

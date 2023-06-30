@@ -5,7 +5,7 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 
 import OhShu.DAO.TourMainDAO;
-import OhShu.Util.DataBaseUtil;
+import OhShu.Util.DBCP2Util;
 import OhShu.vo.TourMainVO;
 
 public class TourMainDAOImpl implements TourMainDAO{
@@ -41,7 +41,7 @@ public class TourMainDAOImpl implements TourMainDAO{
 		TourMainVO vo = null;
 		
 		try (
-				Connection conn = DataBaseUtil.getConnection();
+				Connection conn = DBCP2Util.getConnection();
 				PreparedStatement pstmt = conn.prepareStatement(sql);
 				){
 			pstmt.setInt(1, rank);

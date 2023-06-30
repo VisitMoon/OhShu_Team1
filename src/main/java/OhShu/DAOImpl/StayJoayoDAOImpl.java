@@ -4,7 +4,7 @@ import java.sql.Connection;
 import java.sql.PreparedStatement;
 
 import OhShu.DAO.StayJoayoDAO;
-import OhShu.Util.DataBaseUtil;
+import OhShu.Util.DBCP2Util;
 import OhShu.vo.StayJoayoVO;
 import OhShu.vo.StayReviewVO;
 
@@ -51,7 +51,7 @@ public class StayJoayoDAOImpl implements StayJoayoDAO {
 		
 		String sql = "SELECT * from stay_joayo where user_id = ? and stay_no = ? and joayo = ?";
 
-		try (Connection conn = DataBaseUtil.getConnection(); PreparedStatement pstmt = conn.prepareStatement(sql);) {
+		try (Connection conn = DBCP2Util.getConnection(); PreparedStatement pstmt = conn.prepareStatement(sql);) {
 
 			String user_id = stayJoayo.getUser_id();
 			int stay_no = stayJoayo.getStay_no();
@@ -78,7 +78,7 @@ public class StayJoayoDAOImpl implements StayJoayoDAO {
 		+ "            ,?\r\n" 
 		+ "            )";
 
-		try (Connection conn = DataBaseUtil.getConnection(); PreparedStatement pstmt = conn.prepareStatement(sql);) {
+		try (Connection conn = DBCP2Util.getConnection(); PreparedStatement pstmt = conn.prepareStatement(sql);) {
 
 			String user_id = stayJoayo.getUser_id();
 			int stay_no = stayJoayo.getStay_no();
@@ -104,7 +104,7 @@ public class StayJoayoDAOImpl implements StayJoayoDAO {
 
 		String sql = "DELETE FROM stay_joayo WHERE user_id = ? and stay_no = ?";
 
-		try (Connection conn = DataBaseUtil.getConnection(); PreparedStatement pstmt = conn.prepareStatement(sql);) {
+		try (Connection conn = DBCP2Util.getConnection(); PreparedStatement pstmt = conn.prepareStatement(sql);) {
 
 			String user_id = stayJoayo.getUser_id();
 			int stay_no = stayJoayo.getStay_no();

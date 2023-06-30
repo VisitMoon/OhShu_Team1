@@ -7,7 +7,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 import OhShu.DAO.UserPageDAO;
-import OhShu.Util.DataBaseUtil;
+import OhShu.Util.DBCP2Util;
 import OhShu.vo.FoodVO;
 import OhShu.vo.StayVO;
 import OhShu.vo.TourVO;
@@ -26,7 +26,7 @@ public class UserPageDAOImpl implements UserPageDAO{
       UserTableVO vo = null;
       
       try(
-            Connection conn = DataBaseUtil.getConnection();
+            Connection conn = DBCP2Util.getConnection();
             PreparedStatement pstmt = conn.prepareStatement(sql);
             ){
             pstmt.setString(1, user_id);
@@ -56,7 +56,7 @@ public class UserPageDAOImpl implements UserPageDAO{
       
       String sql = "UPDATE user_tb SET user_pwd = ? WHERE user_id = ? AND user_pwd = ?";
       
-      try( Connection conn = DataBaseUtil.getConnection();
+      try( Connection conn = DBCP2Util.getConnection();
             PreparedStatement pstmt = conn.prepareStatement(sql);){
          pstmt.setString(1, changed_pwd);
          pstmt.setString(2,  user_id);
@@ -82,7 +82,7 @@ public class UserPageDAOImpl implements UserPageDAO{
       FoodVO vo = null;
       List<FoodVO> list = new ArrayList<FoodVO>();
       
-      try(Connection conn = DataBaseUtil.getConnection();
+      try(Connection conn = DBCP2Util.getConnection();
             PreparedStatement pstmt = conn.prepareStatement(sql);){
          pstmt.setString(1,  user_id);
          ResultSet rs = pstmt.executeQuery();
@@ -114,7 +114,7 @@ public class UserPageDAOImpl implements UserPageDAO{
       TourVO vo = null;
       List<TourVO> list = new ArrayList<TourVO>();
       
-      try(Connection conn = DataBaseUtil.getConnection();
+      try(Connection conn = DBCP2Util.getConnection();
             PreparedStatement pstmt = conn.prepareStatement(sql);){
          pstmt.setString(1,  user_id);
          ResultSet rs = pstmt.executeQuery();
@@ -146,7 +146,7 @@ public class UserPageDAOImpl implements UserPageDAO{
       StayVO vo = null;
       List<StayVO> list = new ArrayList<StayVO>();
       
-      try(Connection conn = DataBaseUtil.getConnection();
+      try(Connection conn = DBCP2Util.getConnection();
             PreparedStatement pstmt = conn.prepareStatement(sql);){
          pstmt.setString(1,  user_id);
          ResultSet rs = pstmt.executeQuery();

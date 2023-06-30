@@ -6,7 +6,7 @@ import java.sql.ResultSet;
 
 import OhShu.DAO.UserLoginDAO;
 import OhShu.vo.UserTableVO;
-import OhShu.Util.DataBaseUtil;
+import OhShu.Util.DBCP2Util;
 
 
 public class UserLoginDAOImpl implements UserLoginDAO {
@@ -29,7 +29,7 @@ public class UserLoginDAOImpl implements UserLoginDAO {
 
 		try (
 
-				Connection conn = DataBaseUtil.getConnection(); // DBCP2Util
+				Connection conn = DBCP2Util.getConnection(); // DBCP2Util
 				PreparedStatement pstmt = conn.prepareStatement(sql);
 
 		) {
@@ -61,7 +61,7 @@ public class UserLoginDAOImpl implements UserLoginDAO {
 
 		try (
 
-				Connection conn = DataBaseUtil.getConnection(); // DBCP2Util
+				Connection conn = DBCP2Util.getConnection(); // DBCP2Util
 				PreparedStatement pstmt = conn.prepareStatement(sql);
 
 		) {
@@ -90,7 +90,7 @@ public class UserLoginDAOImpl implements UserLoginDAO {
 		
 		String result = null;
 		
-		try(Connection conn = DataBaseUtil.getConnection();
+		try(Connection conn = DBCP2Util.getConnection();
 			PreparedStatement pstmt = conn.prepareStatement(sql);){
 			pstmt.setString(1, user_name);
 			pstmt.setString(2,  user_jumin);
@@ -114,7 +114,7 @@ public class UserLoginDAOImpl implements UserLoginDAO {
 		
 		String result = null;
 		
-		try(Connection conn = DataBaseUtil.getConnection();
+		try(Connection conn = DBCP2Util.getConnection();
 			PreparedStatement pstmt = conn.prepareStatement(sql);){
 			pstmt.setString(1, user_id);
 			pstmt.setString(2, user_name);

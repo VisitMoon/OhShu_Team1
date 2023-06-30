@@ -5,7 +5,7 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 
 import OhShu.DAO.FoodMainDAO;
-import OhShu.Util.DataBaseUtil;
+import OhShu.Util.DBCP2Util;
 import OhShu.vo.FoodMainVO;
 
 public class FoodMainDAOImpl implements FoodMainDAO {
@@ -42,7 +42,7 @@ public class FoodMainDAOImpl implements FoodMainDAO {
 		FoodMainVO food = null;
 
 		try (
-				Connection conn = DataBaseUtil.getConnection(); // DBCP2Util, DataBaseUtil
+				Connection conn = DBCP2Util.getConnection(); // DBCP2Util, DBCP2Util
 				PreparedStatement pstmt = conn.prepareStatement(sql);
 				){
 			pstmt.setInt(1, rank);

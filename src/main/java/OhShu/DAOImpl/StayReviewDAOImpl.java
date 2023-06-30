@@ -8,7 +8,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 import OhShu.DAO.StayReviewDAO;
-import OhShu.Util.DataBaseUtil;
+import OhShu.Util.DBCP2Util;
 import OhShu.vo.FoodReviewVO;
 import OhShu.vo.StayReviewVO;
 
@@ -35,7 +35,7 @@ public class StayReviewDAOImpl  implements StayReviewDAO{
 				;
 
 		try(
-			Connection conn = DataBaseUtil.getConnection();
+			Connection conn = DBCP2Util.getConnection();
 			PreparedStatement pstmt = conn.prepareStatement(sql);
 			){
 			System.out.println(pstmt);
@@ -56,7 +56,7 @@ public class StayReviewDAOImpl  implements StayReviewDAO{
 	
 	@Override
 	 public void deleteTourReview(int review_no) {
-       try (Connection conn = DataBaseUtil.getConnection();
+       try (Connection conn = DBCP2Util.getConnection();
             PreparedStatement pstmt = conn.prepareStatement("DELETE FROM stay_review WHERE review_no=?")) {
 
            pstmt.setInt(1, review_no);
@@ -73,7 +73,7 @@ public class StayReviewDAOImpl  implements StayReviewDAO{
 		String sql="UPDATE stay_review SET review_content = ? WHERE review_no = ?";	
 		
 		try(
-			Connection conn = DataBaseUtil.getConnection();
+			Connection conn = DBCP2Util.getConnection();
 			PreparedStatement pstmt = conn.prepareStatement(sql);
 			){
 			System.out.println(pstmt);
@@ -93,7 +93,7 @@ public class StayReviewDAOImpl  implements StayReviewDAO{
         List<StayReviewVO> reviewList = new ArrayList<>();
         String sql = "SELECT review_no, review_content, user_id, time FROM stay_review WHERE stay_no = ?";
 
-        try (Connection conn = DataBaseUtil.getConnection();
+        try (Connection conn = DBCP2Util.getConnection();
              PreparedStatement pstmt = conn.prepareStatement(sql)) {
             pstmt.setInt(1, StayNo);
             try (ResultSet rs = pstmt.executeQuery()) {
@@ -106,10 +106,7 @@ public class StayReviewDAOImpl  implements StayReviewDAO{
                     reviewList.add(reviewVO);
                 }
             }
-        } catch (ClassNotFoundException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		} catch (SQLException e) {
+        }catch (SQLException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}

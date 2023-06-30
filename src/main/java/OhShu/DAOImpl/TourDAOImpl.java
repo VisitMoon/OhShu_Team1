@@ -8,7 +8,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 import OhShu.DAO.TourDAO;
-import OhShu.Util.DataBaseUtil;
+import OhShu.Util.DBCP2Util;
 import OhShu.vo.TourReviewVO;
 import OhShu.vo.TourVO;
 
@@ -42,7 +42,7 @@ import OhShu.vo.TourVO;
 			
 			TourVO vo = null;
 			try(
-				Connection conn = DataBaseUtil.getConnection();
+				Connection conn = DBCP2Util.getConnection();
 				PreparedStatement pstmt = conn.prepareStatement(sql);
 				){
 				pstmt.setInt(1, tour_no);
@@ -95,7 +95,7 @@ import OhShu.vo.TourVO;
 			List<TourVO> list = new ArrayList<TourVO>();
 			TourVO vo = null;
 			try(
-				Connection conn = DataBaseUtil.getConnection();
+				Connection conn = DBCP2Util.getConnection();
 				PreparedStatement pstmt = conn.prepareStatement(sql);
 				){
 				ResultSet rs = pstmt.executeQuery();
@@ -139,7 +139,7 @@ import OhShu.vo.TourVO;
 			TourReviewVO vo = null;
 			
 			try(
-					Connection conn = DataBaseUtil.getConnection();
+					Connection conn = DBCP2Util.getConnection();
 					PreparedStatement pstmt = conn.prepareStatement(sql);
 					){
 					pstmt.setInt(1,tour_no);

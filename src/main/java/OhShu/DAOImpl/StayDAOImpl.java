@@ -9,7 +9,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 import OhShu.DAO.StayDAO;
-import OhShu.Util.DataBaseUtil;
+import OhShu.Util.DBCP2Util;
 import OhShu.vo.StayReviewVO;
 import OhShu.vo.StayVO;
 
@@ -43,7 +43,7 @@ public class StayDAOImpl implements StayDAO{
 		
 		StayVO vo = null;
 		try(
-			Connection conn = DataBaseUtil.getConnection();
+			Connection conn = DBCP2Util.getConnection();
 			PreparedStatement pstmt = conn.prepareStatement(sql);
 			){
 			pstmt.setInt(1, stay_no);
@@ -97,7 +97,7 @@ public class StayDAOImpl implements StayDAO{
 		StayVO vo = null;
 		List<StayVO> list = new ArrayList<StayVO>();
 		try(
-			Connection conn = DataBaseUtil.getConnection();
+			Connection conn = DBCP2Util.getConnection();
 			PreparedStatement pstmt = conn.prepareStatement(sql);
 			){
 			ResultSet rs = pstmt.executeQuery();
@@ -141,7 +141,7 @@ public class StayDAOImpl implements StayDAO{
 		StayReviewVO vo = null;
 		
 		try(
-				Connection conn = DataBaseUtil.getConnection();
+				Connection conn = DBCP2Util.getConnection();
 				PreparedStatement pstmt = conn.prepareStatement(sql);
 				){
 				pstmt.setInt(1,stay_no);

@@ -7,7 +7,7 @@ import java.sql.SQLException;
 
 import OhShu.DAO.UserJoinDAO;
 import OhShu.vo.UserTableVO;
-import OhShu.Util.DataBaseUtil;
+import OhShu.Util.DBCP2Util;
 
 
 public class UserJoinDAOImpl implements UserJoinDAO {
@@ -36,7 +36,7 @@ public class UserJoinDAOImpl implements UserJoinDAO {
 
 		try (
 				
-				Connection conn = DataBaseUtil.getConnection(); 
+				Connection conn = DBCP2Util.getConnection(); 
 				PreparedStatement pstmt = conn.prepareStatement(sql);
 
 		) {

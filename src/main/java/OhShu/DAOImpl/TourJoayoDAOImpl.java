@@ -4,7 +4,7 @@ import java.sql.Connection;
 import java.sql.PreparedStatement;
 
 import OhShu.DAO.TourJoayoDAO;
-import OhShu.Util.DataBaseUtil;
+import OhShu.Util.DBCP2Util;
 import OhShu.vo.TourJoayoVO;
 
 public class TourJoayoDAOImpl implements TourJoayoDAO {
@@ -38,7 +38,7 @@ public class TourJoayoDAOImpl implements TourJoayoDAO {
 		
 		String sql = "SELECT * from tour_joayo where user_id = ? and tour_no = ? and joayo = ?";
 		
-		try (Connection conn = DataBaseUtil.getConnection(); PreparedStatement pstmt = conn.prepareStatement(sql);) {
+		try (Connection conn = DBCP2Util.getConnection(); PreparedStatement pstmt = conn.prepareStatement(sql);) {
 
 			String user_id = TourJoayo.getUser_id();
 			int tour_no = TourJoayo.getTour_no();
@@ -64,7 +64,7 @@ public class TourJoayoDAOImpl implements TourJoayoDAO {
 		+ "            ,?\r\n" 
 		+ "            )";
 		
-		try (Connection conn = DataBaseUtil.getConnection(); PreparedStatement pstmt = conn.prepareStatement(sql);) {
+		try (Connection conn = DBCP2Util.getConnection(); PreparedStatement pstmt = conn.prepareStatement(sql);) {
 			System.out.println("insert문 들어옴");
 			String user_id = TourJoayo.getUser_id();
 			int tour_no = TourJoayo.getTour_no();
@@ -89,7 +89,7 @@ public class TourJoayoDAOImpl implements TourJoayoDAO {
 
 		String sql = "DELETE FROM tour_joayo WHERE user_id = ? and tour_no = ?";
 
-		try (Connection conn = DataBaseUtil.getConnection(); PreparedStatement pstmt = conn.prepareStatement(sql);) {
+		try (Connection conn = DBCP2Util.getConnection(); PreparedStatement pstmt = conn.prepareStatement(sql);) {
 			String user_id = TourJoayo.getUser_id();
 			int tour_no = TourJoayo.getTour_no();
 			pstmt.setString(1, user_id);
