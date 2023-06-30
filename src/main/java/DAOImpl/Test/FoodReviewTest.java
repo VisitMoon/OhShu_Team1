@@ -15,28 +15,28 @@ class FoodReviewTest {
 	FoodReviewDAO dao = FoodReviewDAOImpl.getInstance();
 	  
 	  
-//	   @Test @Ignore
-//	   void testinsertFood_review() {
-//		  FoodReviewVO vo = new FoodReviewVO();
-//		  
-//		  vo.setUser_id("1");
-//		  vo.setFood_no(16212);
-//		  vo.setReview_content("살자.");
-//		  System.out.println(vo);
-//		  assertEquals(1, dao.InsertFoodReview(vo) );
-//	      System.out.println(vo);	      
+	   @Test @Ignore
+	   void testinsertFood_review() {
+		  FoodReviewVO vo = new FoodReviewVO();
+		  
+		  vo.setUser_id("1");
+		  vo.setFood_no(16212);
+		  vo.setReview_content("살자.");
+		  System.out.println(vo);
+		  assertEquals(1, dao.insertFoodReview(vo) );
+	      System.out.println(vo);	      
 	  
-//	}
-//	   @Test @Ignore
-//	   void testdeleteFood_review() {
-//		  FoodReviewVO vo = new FoodReviewVO();
-//		  
-//		  vo.setReview_no(16);
-//		  System.out.println(vo);
-//		  assertEquals(1, dao.DeleteFoodReview(vo) );
-//	  
-//	}
-	  @Test 
+	}
+	   @Test
+	   void testdeleteFood_review() {
+		  FoodReviewVO vo = new FoodReviewVO();
+		  
+		  vo.setReview_no(16);
+		  System.out.println(vo);
+		  assertEquals(1, dao.deleteFoodReview(vo) );
+	  
+	}
+	  @Test @Ignore
 	   void testupdateFood_review() {
 		  FoodReviewVO vo = new FoodReviewVO();
 		  
