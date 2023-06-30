@@ -146,17 +146,17 @@
                         </tr>
                      </thead>
                      <tbody>
-						<% String user_id = (String)session.getAttribute("SESS_ID"); %>						
-						<% UserPageService service = UserPageServiceImpl.getInstance(); %>
-						
-               			<% List<FoodVO> foodlist = service.getUserFoodJoayo(user_id);%>                      			
-                   			<% for(int i =0; i<foodlist.size(); i++){  %>
-                   				<tr>
-                   					<td><%=foodlist.get(i).getFood_no()%></td>
-		                           <td><%= foodlist.get(i).getFood_location()%></td>
-		                           <td><%= foodlist.get(i).getFood_source()%></td>
-		                           <td><%= foodlist.get(i).getFood_name()%></td>
-                   				</tr>
+                  <% String user_id = (String)session.getAttribute("SESS_ID"); %>                  
+                  <% UserPageService service = UserPageServiceImpl.getInstance(); %>
+                  
+                        <% List<FoodVO> foodlist = service.getUserFoodJoayo(user_id);%>                               
+                            <% for(int i =0; i<foodlist.size(); i++){  %>
+                               <tr>
+                                  <td><%=foodlist.get(i).getFood_no()%></td>
+                                 <td><%= foodlist.get(i).getFood_location()%></td>
+                                 <td><%= foodlist.get(i).getFood_source()%></td>
+                                 <td><%= foodlist.get(i).getFood_name()%></td>
+                               </tr>
 
                         <% }%>
                      </tbody>
@@ -176,21 +176,21 @@
                      </thead>
                      <tbody>
 
-               			<% List<TourVO> tourlist = service.getUserTourJoayo(user_id);%>                        			
-                   			<% for(int i =0; i<tourlist.size(); i++){  %>
-                   				<tr>
-                   					<td><%=tourlist.get(i).getTour_no()%></td>
-		                           <td><%= tourlist.get(i).getTour_location()%></td>
-		                           <td><%= tourlist.get(i).getTour_category()%></td>
-		                           <td><%= tourlist.get(i).getTour_name()%></td>
-                   				</tr>
+                        <% List<TourVO> tourlist = service.getUserTourJoayo(user_id);%>                                 
+                            <% for(int i =0; i<tourlist.size(); i++){  %>
+                               <tr>
+                                  <td><%=tourlist.get(i).getTour_no()%></td>
+                                 <td><%= tourlist.get(i).getTour_location()%></td>
+                                 <td><%= tourlist.get(i).getTour_category()%></td>
+                                 <td><%= tourlist.get(i).getTour_name()%></td>
+                               </tr>
                         <% }%>
                      </tbody>
                   </table>
                   </div>
                   <br><br>
                      <div>숙박업소 좋아요</div>
-						<div>
+                  <div>
                   <table id="stayJoayoTable">
                      <thead>
                         <tr>
@@ -202,14 +202,14 @@
                      </thead>
                      <tbody>
 
-               			<% List<StayVO> staylist = service.getUserStayJoayo(user_id);%>                        			
-                   			<% for(int i =0; i<staylist.size(); i++){  %>
-                   				<tr>
-                   					<td><%=staylist.get(i).getStay_no()%></td>
-		                           <td><%= staylist.get(i).getStay_location()%></td>
-		                           <td><%= staylist.get(i).getStay_category()%></td>
-		                           <td><%= staylist.get(i).getStay_name()%></td>
-                   				</tr>
+                        <% List<StayVO> staylist = service.getUserStayJoayo(user_id);%>                                 
+                            <% for(int i =0; i<staylist.size(); i++){  %>
+                               <tr>
+                                  <td><%=staylist.get(i).getStay_no()%></td>
+                                 <td><%= staylist.get(i).getStay_location()%></td>
+                                 <td><%= staylist.get(i).getStay_category()%></td>
+                                 <td><%= staylist.get(i).getStay_name()%></td>
+                               </tr>
 
                         <% }%>
                      </tbody>

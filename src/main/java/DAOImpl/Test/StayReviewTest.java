@@ -34,26 +34,26 @@ class StayReviewTest {
 	   
 	  
 	}
-	   @Test @Ignore
-	   void testdeleteStay_review() {
-		  StayReviewVO vo = new StayReviewVO();
-		  
-		  vo.setReview_no(9);
-		  System.out.println(vo);
-		  assertEquals(1, dao.deleteStayReview(vo) );
-	      
-	  
-	}
-	   @Test @Ignore
-	   void testupdateStay_review() {
-		  StayReviewVO vo = new StayReviewVO();
-		  
-		  vo.setReview_content("변경 성공");
-		  vo.setReview_no(12);
-		  System.out.println(vo);
-		  assertEquals(1, dao.updateStayReview(vo) );
-	          
-	  
-	}
+//	   @Test @Ignore
+//	   void testdeleteStay_review() {
+//		  StayReviewVO vo = new StayReviewVO();
+//		  
+//		  vo.setReview_no(9);
+//		  System.out.println(vo);
+//		  assertEquals(1, dao.deleteStayReview(vo) );
+//	      
+//	  
+//	}
+//	   @Test @Ignore
+//	   void testupdateStay_review() {
+//		  StayReviewVO vo = new StayReviewVO();
+//		  
+//		  vo.setReview_content("변경 성공");
+//		  vo.setReview_no(12);
+//		  System.out.println(vo);
+//		  assertEquals(1, dao.updateStayReview(vo) );
+//	          
+//	  
+//	}
 	  
 }

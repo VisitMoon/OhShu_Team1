@@ -26,15 +26,15 @@ class TourReviewTest {
 	      System.out.println(vo);	      
 	  
 	}
-	   @Test @Ignore
-	   void testdeleteTour_review() {
-		  TourReviewVO vo = new TourReviewVO();
-		  
-		  vo.setReview_no(14);
-		  System.out.println(vo);
-		  assertEquals(1, dao.deleteTourReview(vo) );
-	  
-	}
+//	   @Test @Ignore
+//	   void testdeleteTour_review() {
+//		  TourReviewVO vo = new TourReviewVO();
+//		  
+//		  vo.setReview_no(14);
+//		  System.out.println(vo);
+//		  assertEquals(1, dao.deleteTourReview(vo) );
+//	  
+//	}
 	   @Test 
 	   void testupdateTour_review() {
 		  TourReviewVO vo = new TourReviewVO();
