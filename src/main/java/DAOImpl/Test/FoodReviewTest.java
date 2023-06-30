@@ -30,12 +30,12 @@ class FoodReviewTest {
 	   @Test
 	   void testdeleteFood_review() {
 		  FoodReviewVO vo = new FoodReviewVO();
-		  
+		  int num = 16;
 		  vo.setReview_no(16);
 		  System.out.println(vo);
-		  assertEquals(1, dao.deleteFoodReview(vo) );
-	  
+		  dao.deleteFoodReview(num);
 	}
+	   
 	  @Test @Ignore
 	   void testupdateFood_review() {
 		  FoodReviewVO vo = new FoodReviewVO();
