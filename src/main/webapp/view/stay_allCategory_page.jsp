@@ -280,14 +280,15 @@
                            <td><%=list.get(i).getStay_location()%></td>
                            <td><c:choose>
 									<c:when
-										test="${not empty sessionScope.SESS_AUTH and sessionScope.SESS_AUTH == true}"><form action="/OhShu_Team1/ToggleFoodJoayo" method="POST">
+										test="${not empty sessionScope.SESS_AUTH and sessionScope.SESS_AUTH == true}">
+										<form action="/OhShu_Team1/ToggleFoodJoayo" method="POST">
                                 <input type="hidden" name="userId" value="<%=currentUser%>" />
                                 <input type="hidden" name="stayNo" value="<%=list.get(i).getStay_no()%>" />
                                 <input type="submit" value="좋아요" />
                               </form>
                               </c:when>
 										<c:otherwise>
-										<p>로그인이 필요한 서비스입니</p>
+										<p>로그인이 필요한 서비스입니다</p>
 										</c:otherwise>
 										</c:choose></td>
                         </tr>

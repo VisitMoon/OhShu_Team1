@@ -7,6 +7,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 import OhShu.DAO.FoodDAO;
+import OhShu.Util.DBCP2Util;
 import OhShu.Util.DataBaseUtil;
 import OhShu.vo.FoodReviewVO;
 import OhShu.vo.FoodVO;
@@ -44,7 +45,7 @@ import OhShu.vo.FoodReviewVO;
 			
 			FoodVO vo = null;
 			try(
-				Connection conn = DataBaseUtil.getConnection();
+				Connection conn = DBCP2Util.getConnection();
 				PreparedStatement pstmt = conn.prepareStatement(sql);
 				){
 				pstmt.setInt(1, food_no);
@@ -97,7 +98,7 @@ import OhShu.vo.FoodReviewVO;
 			FoodVO vo = null;
 			List<FoodVO> list = new ArrayList<FoodVO>();
 			try(
-				Connection conn = DataBaseUtil.getConnection();
+				Connection conn = DBCP2Util.getConnection();
 				PreparedStatement pstmt = conn.prepareStatement(sql);
 				){
 				
