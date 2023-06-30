@@ -256,11 +256,7 @@
 									</td>
 									<td><%= list.get(i).getFood_name()%></td>
 									<td><%= list.get(i).getFood_source()%></td>
-									<td><%= list.get(i).getFood_location()%></td>
-
-									<td><form action="/OhShu_Team1/ToggleFoodJoayo" method="POST">
-
-								
+									<td><%= list.get(i).getFood_location()%></td>							
 									<td>
 										<c:choose>
 									<c:when
@@ -293,10 +289,8 @@
 									<td><%= list.get(i).getFood_name()%></td>
 									<td><%= list.get(i).getFood_source()%></td>
 									<td><%= list.get(i).getFood_location()%></td>
-									
-									<td><form action="/OhShu_Team1/ToggleFoodJoayo" method="POST">
-
-									<td>	<c:choose>
+									<td>	
+									<c:choose>
 									<c:when
 										test="${not empty sessionScope.SESS_AUTH and sessionScope.SESS_AUTH == true}">
 									<form action="/OhShu_Team1/ToggleFoodJoayo" method="POST">
@@ -320,13 +314,11 @@
 						</table>
 					</div>
 				</div>
-		</div>
-	</div>
-	</main>
+	
 	<footer class="py-4 bg-light mt-auto">
 		<div class="container-fluid px-4"></div>
 	</footer>
-	</div>
+		</div>
 	</div>
 
 </body>

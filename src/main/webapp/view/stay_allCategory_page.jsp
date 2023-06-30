@@ -222,84 +222,14 @@
                         </tr>
                      </thead>
                      <tbody>
-
-<<<<<<< HEAD
-								<% StayService service = StayServiceImpl.getInstance();%>
-								<% List<StayVO> list = service.getStayList();%>
-								<% String stayCate = request.getParameter("stayCate");%>
-								<% String currentUser = (String) session.getAttribute("SESS_ID");%>
-								<% String stay_no = request.getParameter("stayNo");%>
-
-								<%
-								if (stayCate == null || stayCate.equals("전체")) {
-								%>
-								<%
-								for (int i = 0; i < list.size(); i++) {
-								%>
-								<tr>
-									<td><a href="stay_detail_page.jsp?stayNo=<%=i%>"> <img
-											src="<%=list.get(i).getStay_img()%>"
-											style="border-radius: 20px; width: 200px; height: 111px;"></a>
-									</td>
-									<td><%=list.get(i).getStay_name()%></td>
-									<td><%=list.get(i).getStay_category()%></td>
-									<td><%=list.get(i).getStay_location()%></td>
-									<td><form action="/OhShu_Team1/ToggleStayJoayo" method="POST">
-  										<input type="hidden" name="userId" value="<%=currentUser%>" />
- 										 <input type="hidden" name="stayNo" value="<%=list.get(i).getStay_no()%>" />
- 										 <input type="submit" value="좋아요" />
-										</form></td>
-								</tr>
-
-								<%
-								}
-								%>
-
-								<%
-								} else {
-								%>
-								<%
-								for (int i = 0; i < list.size(); i++) {
-								%>
-								<%
-								if (list.get(i).getStay_category().equals(stayCate)) {
-								%>
-								<tr>
-									<td><a href="stay_detail_page.jsp?stayNo=<%=i%>"> <img
-											src="<%=list.get(i).getStay_img()%>"
-											style="border-radius: 20px; width: 200px; height: 111px;"></a>
-									</td>
-									<td><%=list.get(i).getStay_name()%></td>
-									<td><%=list.get(i).getStay_category()%></td>
-									<td><%=list.get(i).getStay_location()%></td>
-									<td><form action="/OhShu_Team1/ToggleFoodJoayo" method="POST">
-  										<input type="hidden" name="userId" value="<%=currentUser%>" />
- 										 <input type="hidden" name="stayNo" value="<%=list.get(i).getStay_no()%>" />
- 										 <input type="submit" value="좋아요" />
-										</form></td>
-								</tr>
-								<%
-								}
-								%>
-								<%
-								}
-								%>
-								<%
-								}
-								%>
-=======
                         <% StayService service = StayServiceImpl.getInstance();%>
                         <% List<StayVO> list = service.getStayList();%>
                         <% String stayCate = request.getParameter("stayCate");%>
                         <% String currentUser = (String) session.getAttribute("SESS_ID");%>
                         <% String stay_no = request.getParameter("stayNo");%>
 
-                        <%
-                        if (stayCate == null || stayCate.equals("전체")) {
-                        %>
-                        <%
-                        for (int i = 0; i < list.size(); i++) {
-                        %>
+                        <%if (stayCate == null || stayCate.equals("전체")) {%>
+                        <%for (int i = 0; i < list.size(); i++) {%>
                         <tr>
                            <td><a href="stay_detail_page.jsp?stayNo=<%=i%>"> <img
                                  src="<%=list.get(i).getStay_img()%>"
@@ -322,19 +252,11 @@
 										</c:choose></td>
                         </tr>
 
-                        <%
-                        }
-                        %>
+                        <%}%>
 
-                        <%
-                        } else {
-                        %>
-                        <%
-                        for (int i = 0; i < list.size(); i++) {
-                        %>
-                        <%
-                        if (list.get(i).getStay_category().equals(stayCate)) {
-                        %>
+                        <%} else {%>
+                        <%for (int i = 0; i < list.size(); i++) {%>
+                        <%if (list.get(i).getStay_category().equals(stayCate)) {%>
                         <tr>
                            <td><a href="stay_detail_page.jsp?stayNo=<%=i%>"> <img
                                  src="<%=list.get(i).getStay_img()%>"
@@ -355,18 +277,23 @@
 										<c:otherwise>
 										<p>로그인이 필요한 서비스입니다</p>
 										</c:otherwise>
-										</c:choose></td>
-                        </tr>
-                        <%
-                        }
-                        %>
-                        <%
-                        }
-                        %>
-                        <%
-                        }
-                        %>
->>>>>>> b2652d8ff146af568b9818f41f6632792456476a
+										</c:choose>
+							   			</td>
+                       		   </tr>
+                       		   <%}%>
+                   			   <%}%>
+          					   <%}%>
+                        		</tbody>
+						</table>
+					</div>
+				</div>
+			</main>
+			<footer class="py-4 bg-light mt-auto">
+				<div class="container-fluid px-4"></div>
+			</footer>
+		</div>
+	</div>
+                        
 
 
 </body>

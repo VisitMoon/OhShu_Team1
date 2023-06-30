@@ -288,7 +288,8 @@
 										<c:otherwise>
 										<p>로그인이 필요한 서비스입니다</p>
 										</c:otherwise>
-										</c:choose></td>
+										</c:choose>
+										</td>
 								</tr>
 								<% }%>
 								<% }%>
