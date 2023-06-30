@@ -4,6 +4,7 @@ import java.sql.Connection;
 import java.sql.PreparedStatement;
 
 import OhShu.DAO.StayJoayoDAO;
+import OhShu.Util.DBCP2Util;
 import OhShu.Util.DataBaseUtil;
 import OhShu.vo.StayJoayoVO;
 import OhShu.vo.StayReviewVO;

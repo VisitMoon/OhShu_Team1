@@ -5,6 +5,7 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 
 import OhShu.DAO.StayMainDAO;
+import OhShu.Util.DBCP2Util;
 import OhShu.Util.DataBaseUtil;
 import OhShu.vo.StayMainVO;
 
@@ -42,7 +43,7 @@ public class StayMainDAOImpl implements StayMainDAO{
 		StayMainVO stay = null;
 
 		try (
-				Connection conn = DataBaseUtil.getConnection(); // DBCP2Util, DataBaseUtil
+				Connection conn = DataBaseUtil.getConnection(); // DBCP2Util, DBCP2Util
 				PreparedStatement pstmt = conn.prepareStatement(sql);
 				){
 			pstmt.setInt(1, rank);

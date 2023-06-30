@@ -15,8 +15,7 @@ import OhShu.vo.StayJoayoVO;
  */
 @WebServlet("/ToggleStayJoayo")
 public class StayJoayoServlet extends HttpServlet {
-   private static final long serialVersionUID = 1L;
-       
+   private static final long serialVersionUID = 1L;       
     /**
      * @see HttpServlet#HttpServlet()
      */
@@ -24,7 +23,6 @@ public class StayJoayoServlet extends HttpServlet {
         super();
         // TODO Auto-generated constructor stub
     }
-
    /**
     * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
     */
@@ -55,5 +53,4 @@ public class StayJoayoServlet extends HttpServlet {
         // Redirect user back to the food_detail_page.jsp
         response.sendRedirect(request.getContextPath() + "/view/stay_allCategory_page.jsp");
    }
-
 }

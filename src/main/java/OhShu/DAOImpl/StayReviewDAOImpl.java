@@ -8,6 +8,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 import OhShu.DAO.StayReviewDAO;
+import OhShu.Util.DBCP2Util;
 import OhShu.Util.DataBaseUtil;
 import OhShu.vo.FoodReviewVO;
 import OhShu.vo.StayReviewVO;
@@ -106,12 +107,12 @@ public class StayReviewDAOImpl  implements StayReviewDAO{
                     reviewList.add(reviewVO);
                 }
             }
-        } catch (ClassNotFoundException e) {
+        }catch (SQLException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
-		} catch (SQLException e) {
+		} catch (ClassNotFoundException e1) {
 			// TODO Auto-generated catch block
-			e.printStackTrace();
+			e1.printStackTrace();
 		}
         return reviewList;
     }

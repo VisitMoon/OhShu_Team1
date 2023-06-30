@@ -8,6 +8,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 import OhShu.DAO.TourReviewDAO;
+import OhShu.Util.DBCP2Util;
 import OhShu.Util.DataBaseUtil;
 import OhShu.vo.TourReviewVO;
 import OhShu.vo.TourVO;
@@ -59,7 +60,7 @@ private final static TourReviewDAO instance = new TourReviewDAOImpl();
 	
 	@Override
 	 public void deleteTourReview(int review_no) {
-       try (Connection conn = DataBaseUtil.getConnection();
+       try (Connection conn = DBCP2Util.getConnection();
             PreparedStatement pstmt = conn.prepareStatement("DELETE FROM tour_review WHERE review_no=?")) {
 
            pstmt.setInt(1, review_no);
@@ -113,12 +114,12 @@ private final static TourReviewDAO instance = new TourReviewDAOImpl();
                     reviewList.add(reviewVO);
                 }
             }
-        } catch (ClassNotFoundException e) {
+        }catch (SQLException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
-		} catch (SQLException e) {
+		} catch (ClassNotFoundException e1) {
 			// TODO Auto-generated catch block
-			e.printStackTrace();
+			e1.printStackTrace();
 		}
         return reviewList;
     }

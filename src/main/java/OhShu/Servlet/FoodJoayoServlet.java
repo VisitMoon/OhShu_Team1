@@ -50,8 +50,7 @@ public class FoodJoayoServlet extends HttpServlet {
 
 	        // Toggle food joayo using FoodJoayoDAOImpl
 	        FoodJoayoDAOImpl.getInstance().toggleFoodJoayo(foodJoayo);
-
 	        // Redirect user back to the food_detail_page.jsp
 	        response.sendRedirect(request.getContextPath() + "/view/food_allCategory_page.jsp");
-	    }
+	}
 }

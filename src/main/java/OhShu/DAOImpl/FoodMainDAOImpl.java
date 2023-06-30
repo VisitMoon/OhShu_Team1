@@ -43,7 +43,7 @@ public class FoodMainDAOImpl implements FoodMainDAO {
 		FoodMainVO food = null;
 
 		try (
-				Connection conn = DBCP2Util.getConnection(); // DBCP2Util, DataBaseUtil
+				Connection conn = DataBaseUtil.getConnection(); // DBCP2Util, DataBaseUtil
 				PreparedStatement pstmt = conn.prepareStatement(sql);
 				){
 			pstmt.setInt(1, rank);

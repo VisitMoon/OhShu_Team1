@@ -8,6 +8,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 import OhShu.DAO.TourDAO;
+import OhShu.Util.DBCP2Util;
 import OhShu.Util.DataBaseUtil;
 import OhShu.vo.TourReviewVO;
 import OhShu.vo.TourVO;

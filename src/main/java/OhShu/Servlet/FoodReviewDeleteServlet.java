@@ -61,7 +61,8 @@ public class FoodReviewDeleteServlet extends HttpServlet {
 		   FoodReviewService service = new FoodReviewSeviceImpl();
 		    service.deleteFoodReview(reviewNo);
 		    
-		    int foodNo = Integer.parseInt(request.getParameter("foodNo"));
+		    String foodNoStr = request.getParameter("foodNo");
+		    int foodNo = Integer.parseInt(foodNoStr);
 		    
 		    FoodService service1 = FoodServiceImpl.getInstance();
 	        List<FoodVO> list = service1.getFoodList();

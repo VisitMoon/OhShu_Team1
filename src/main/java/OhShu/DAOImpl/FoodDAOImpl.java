@@ -45,7 +45,7 @@ import OhShu.vo.FoodReviewVO;
 			
 			FoodVO vo = null;
 			try(
-				Connection conn = DBCP2Util.getConnection();
+				Connection conn = DataBaseUtil.getConnection();
 				PreparedStatement pstmt = conn.prepareStatement(sql);
 				){
 				pstmt.setInt(1, food_no);
@@ -98,7 +98,7 @@ import OhShu.vo.FoodReviewVO;
 			FoodVO vo = null;
 			List<FoodVO> list = new ArrayList<FoodVO>();
 			try(
-				Connection conn = DBCP2Util.getConnection();
+				Connection conn = DataBaseUtil.getConnection();
 				PreparedStatement pstmt = conn.prepareStatement(sql);
 				){
 				
