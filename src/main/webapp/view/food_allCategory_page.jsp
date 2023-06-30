@@ -243,7 +243,11 @@
 								<% List<FoodVO> list = service.getFoodList();%>
 								<% String foodCate = request.getParameter("foodCate"); %>
 								<% String currentUser = (String) session.getAttribute("SESS_ID");%>
+<<<<<<< HEAD
 								<% String food_no = request.getParameter("foodNo");%>
+=======
+								<%String food_no = request.getParameter("foodNo");%>
+>>>>>>> b2652d8ff146af568b9818f41f6632792456476a
 								<% if(foodCate==null || foodCate.equals("전체")){ %>
 								<% for(int i =0; i<list.size(); i++){  %>
 								<tr>
@@ -254,11 +258,27 @@
 									<td><%= list.get(i).getFood_name()%></td>
 									<td><%= list.get(i).getFood_source()%></td>
 									<td><%= list.get(i).getFood_location()%></td>
+<<<<<<< HEAD
 									<td><form action="/OhShu_Team1/ToggleFoodJoayo" method="POST">
+=======
+								
+									<td>
+										<c:choose>
+									<c:when
+										test="${not empty sessionScope.SESS_AUTH and sessionScope.SESS_AUTH == true}">
+									<form action="/OhShu_Team1/ToggleFoodJoayo" method="POST">
+>>>>>>> b2652d8ff146af568b9818f41f6632792456476a
   										<input type="hidden" name="userId" value="<%=currentUser%>" />
  										 <input type="hidden" name="foodNo" value="<%=list.get(i).getFood_no()%>" />
  										 <input type="submit" value="좋아요" />
-										</form></td>
+										</form>
+										</c:when>
+										<c:otherwise>
+										<p>로그인이 필요한 서비스입니</p>
+										</c:otherwise>
+										</c:choose>
+										</td>
+										
 								</tr>
 
 								<% }%>
@@ -274,11 +294,24 @@
 									<td><%= list.get(i).getFood_name()%></td>
 									<td><%= list.get(i).getFood_source()%></td>
 									<td><%= list.get(i).getFood_location()%></td>
+<<<<<<< HEAD
 									<td><form action="/OhShu_Team1/ToggleFoodJoayo" method="POST">
+=======
+									<td>	<c:choose>
+									<c:when
+										test="${not empty sessionScope.SESS_AUTH and sessionScope.SESS_AUTH == true}">
+									<form action="/OhShu_Team1/ToggleFoodJoayo" method="POST">
+>>>>>>> b2652d8ff146af568b9818f41f6632792456476a
   										<input type="hidden" name="userId" value="<%=currentUser%>" />
  										 <input type="hidden" name="foodNo" value="<%=list.get(i).getFood_no()%>" />
  										 <input type="submit" value="좋아요" />
-										</form></td>
+										</form>
+										</c:when>
+										<c:otherwise>
+										<p>로그인이 필요한 서비스입니</p>
+										</c:otherwise>
+										</c:choose>
+										</td>
 								</tr>
 								<% }%>
 								<% }%>

@@ -15,8 +15,7 @@ import OhShu.vo.StayJoayoVO;
  */
 @WebServlet("/ToggleStayJoayo")
 public class StayJoayoServlet extends HttpServlet {
-	private static final long serialVersionUID = 1L;
-       
+   private static final long serialVersionUID = 1L;       
     /**
      * @see HttpServlet#HttpServlet()
      */
@@ -24,21 +23,20 @@ public class StayJoayoServlet extends HttpServlet {
         super();
         // TODO Auto-generated constructor stub
     }
+   /**
+    * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
+    */
+   protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+      // TODO Auto-generated method stub
+      response.getWriter().append("Served at: ").append(request.getContextPath());
+   }
 
-	/**
-	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
-	 */
-	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		// TODO Auto-generated method stub
-		response.getWriter().append("Served at: ").append(request.getContextPath());
-	}
-
-	/**
-	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
-	 */
-	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		// TODO Auto-generated method stub
-		request.setCharacterEncoding("UTF-8");
+   /**
+    * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
+    */
+   protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+      // TODO Auto-generated method stub
+      request.setCharacterEncoding("UTF-8");
 
         String userId = request.getParameter("userId");
         int stayNo = Integer.parseInt(request.getParameter("stayNo"));
@@ -54,6 +52,5 @@ public class StayJoayoServlet extends HttpServlet {
 
         // Redirect user back to the food_detail_page.jsp
         response.sendRedirect(request.getContextPath() + "/view/stay_allCategory_page.jsp");
-	}
-
+   }
 }

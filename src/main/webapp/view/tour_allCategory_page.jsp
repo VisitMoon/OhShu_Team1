@@ -234,7 +234,8 @@
 								<% TourService service = TourServiceImpl.getInstance(); %>
 								<% List<TourVO> list = service.getTourList();%>
 								<% String tourCate = request.getParameter("tourCate"); %>
-
+								<% String currentUser = (String) session.getAttribute("SESS_ID");%>
+								<%String tour_no = request.getParameter("tourNo");%>
 								<% if(tourCate==null || tourCate.equals("전체")){ %>
 								<% for(int i =0; i<list.size(); i++){  %>
 								<tr>
@@ -245,7 +246,20 @@
 									<td><%= list.get(i).getTour_name()%></td>
 									<td><%= list.get(i).getTour_category()%></td>
 									<td><%= list.get(i).getTour_location()%></td>
-									<td> <input type="submit" value="좋아요" ></td>
+									<td>
+									<c:choose>
+									<c:when
+										test="${not empty sessionScope.SESS_AUTH and sessionScope.SESS_AUTH == true}">
+									<form action="/OhShu_Team1/ToggleTourJoayo" method="POST">
+  										<input type="hidden" name="userId" value="<%=currentUser%>" />
+ 										 <input type="hidden" name="tourNo" value="<%=list.get(i).getTour_no()%>" />
+ 										 <input type="submit" value="좋아요" />
+ 										 </form>
+ 										  </c:when>
+										<c:otherwise>
+										<p>로그인이 필요한 서비스입니</p>
+										</c:otherwise>
+										</c:choose></td>
 								</tr>
 
 								<% }%>
@@ -261,7 +275,20 @@
 									<td><%= list.get(i).getTour_name()%></td>
 									<td><%= list.get(i).getTour_category()%></td>
 									<td><%= list.get(i).getTour_location()%></td>
-									<td> <input type="submit" value="좋아요" ></td>
+									<td>
+									<c:choose>
+									<c:when
+										test="${not empty sessionScope.SESS_AUTH and sessionScope.SESS_AUTH == true}">
+									<form action="/OhShu_Team1/ToggleTourJoayo" method="POST">
+  										<input type="hidden" name="userId" value="<%=currentUser%>" />
+ 										 <input type="hidden" name="tourNo" value="<%=list.get(i).getTour_no()%>" />
+ 										 <input type="submit" value="좋아요" />
+ 										 </form>
+ 										  </c:when>
+										<c:otherwise>
+										<p>로그인이 필요한 서비스입니다</p>
+										</c:otherwise>
+										</c:choose></td>
 								</tr>
 								<% }%>
 								<% }%>

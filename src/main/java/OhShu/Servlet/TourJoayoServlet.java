@@ -7,20 +7,20 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import OhShu.DAOImpl.FoodJoayoDAOImpl;
-import OhShu.vo.FoodJoayoVO;
+import OhShu.DAOImpl.TourJoayoDAOImpl;
+import OhShu.vo.TourJoayoVO;
 
 /**
- * Servlet implementation class FoodJoayoServlet
+ * Servlet implementation class TourJoayoServlet
  */
-@WebServlet("/ToggleFoodJoayo")
-public class FoodJoayoServlet extends HttpServlet {
+@WebServlet("/ToggleTourJoayo")
+public class TourJoayoServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        
     /**
      * @see HttpServlet#HttpServlet()
      */
-    public FoodJoayoServlet() {
+    public TourJoayoServlet() {
         super();
         // TODO Auto-generated constructor stub
     }
@@ -40,17 +40,18 @@ public class FoodJoayoServlet extends HttpServlet {
 	      request.setCharacterEncoding("UTF-8");
 
 	        String userId = request.getParameter("userId");
-	        int foodNo = Integer.parseInt(request.getParameter("foodNo"));
+	        int TourNo = Integer.parseInt(request.getParameter("tourNo"));
 
 	        // Create FoodJoayoVO instance
-	        FoodJoayoVO foodJoayo = new FoodJoayoVO();
-	        foodJoayo.setUser_id(userId);
-	        foodJoayo.setFood_no(foodNo);
-	        foodJoayo.setJoayo(1);
+	        TourJoayoVO TourJoayo = new TourJoayoVO();
+	        TourJoayo.setUser_id(userId);
+	        TourJoayo.setTour_no(TourNo);
+	        TourJoayo.setJoayo(1);
 
 	        // Toggle food joayo using FoodJoayoDAOImpl
-	        FoodJoayoDAOImpl.getInstance().toggleFoodJoayo(foodJoayo);
+	        TourJoayoDAOImpl.getInstance().toggleTourJoayo(TourJoayo);
+
 	        // Redirect user back to the food_detail_page.jsp
-	        response.sendRedirect(request.getContextPath() + "/view/food_allCategory_page.jsp");
-	}
+	        response.sendRedirect(request.getContextPath() + "/view/tour_allCategory_page.jsp");
+	    }
 }
