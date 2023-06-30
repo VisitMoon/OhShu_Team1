@@ -131,40 +131,5 @@ import OhShu.vo.FoodReviewVO;
 			return list;
 		}
 		
-		public List<FoodReviewVO> getFoodReviewList(int food_no){
-			String sql = "SELECT  review_no, time, user_id, food_no, review_content "
-					+ "		FROM food_review\r\n"
-					+ "		WHERE food_no = ?"
-					+ "                 )";
-			
-			List<FoodReviewVO> list = new ArrayList<FoodReviewVO>();
-			FoodReviewVO vo = null;
-			
-			try(
-					Connection conn = DataBaseUtil.getConnection();
-					PreparedStatement pstmt = conn.prepareStatement(sql);
-					){
-					pstmt.setInt(1,food_no);
-					ResultSet rs = pstmt.executeQuery();
-					
-					
-					while( rs.next() ) {
-						vo = new FoodReviewVO();
-						vo.setReview_no(rs.getInt("review_no"));
-						vo.setTime(rs.getString("time"));
-						vo.setUser_id(rs.getString("user_id"));
-						vo.setFood_no(rs.getInt("food_no"));
-						vo.setReview_content(rs.getString("review_content"));
-						
-						list.add(vo);
-					}
-					rs.close();
-					
-				
-					
-				}catch(Exception e) {
-					e.printStackTrace();
-				}
-				return list;
-		}
+		
 	}

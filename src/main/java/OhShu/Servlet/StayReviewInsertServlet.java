@@ -1,26 +1,32 @@
 package OhShu.Servlet;
 
 import java.io.IOException;
+import java.util.List;
+
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import OhShu.DAOImpl.FoodReviewDAOImpl;
-import OhShu.vo.FoodReviewVO;
+import OhShu.DAOImpl.StayReviewDAOImpl;
+import OhShu.DAOImpl.TourReviewDAOImpl;
+import OhShu.ServiceImpl.StayServiceImpl;
+import OhShu.service.StayService;
+import OhShu.vo.StayReviewVO;
+import OhShu.vo.StayVO;
 
 /**
- * Servlet implementation class FoodReviewServlet
+ * Servlet implementation class StayReviewInsertServlet
  */
-@WebServlet("/FoodReview")
-public class FoodReviewServlet extends HttpServlet {
+@WebServlet("/StayReview")
+public class StayReviewInsertServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        
     /**
      * @see HttpServlet#HttpServlet()
      */
-    public FoodReviewServlet() {
+    public StayReviewInsertServlet() {
         super();
         // TODO Auto-generated constructor stub
     }
@@ -37,21 +43,33 @@ public class FoodReviewServlet extends HttpServlet {
 	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+
 		request.setCharacterEncoding("UTF-8");
 		
-        int foodNo = Integer.parseInt(request.getParameter("foodNo"));
+        int StayNo = Integer.parseInt(request.getParameter("stayNo"));
         String userId = request.getParameter("userId");
         String reviewContent = request.getParameter("reviewContent");
 
-        FoodReviewVO review = new FoodReviewVO();
-        review.setFood_no(foodNo);
+        StayService service = StayServiceImpl.getInstance();
+        List<StayVO> list = service.getStayList();
+          int index=0;
+          
+          for(int i =0; i<list.size(); i++) {
+             if(StayNo==list.get(i).getStay_no()) {
+                index = i;
+             }
+             
+          }
+          
+        StayReviewVO review = new StayReviewVO();
+        review.setStay_no(StayNo);
         review.setUser_id(userId);
         review.setReview_content(reviewContent);
 
-        FoodReviewDAOImpl reviewDAO = new FoodReviewDAOImpl();
-        reviewDAO.insertFoodReview(review);
+        StayReviewDAOImpl reviewDAO = new StayReviewDAOImpl();
+        reviewDAO.insertStayReview(review);
 
-        // 임시로 댓글이 작성되었다는 페이지로 리다이렉트(추후 댓글 작성 후 원래 게시물로 리다이렉트 구현 필요)
-        response.sendRedirect(request.getContextPath() + "/view/food_detail_page.jsp?foodNo=" + 1 );
+        
+        response.sendRedirect(request.getContextPath() + "/view/stay_detail_page.jsp?stayNo=" + index );
     }
 }

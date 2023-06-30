@@ -8,9 +8,9 @@ public interface FoodReviewDAO {
 
 	int insertFoodReview(FoodReviewVO food_review);
 
-	int deleteFoodReview(FoodReviewVO food_review);
+	void deleteFoodReview(int food_review);
 	
 	int updateFoodReview(FoodReviewVO food_review); 
 
-	List<FoodReviewVO> selectFoodReviewListOf(int foodNo);
+	List<FoodReviewVO> selectFoodReview(int foodNo);
 }

@@ -49,7 +49,10 @@
 </head>
 
 <body class="sb-nav-fixed">
+<<<<<<< HEAD
+=======
 
+>>>>>>> 6c45793e2ee2775faf0fc52f1761c31774acc2fb
    <nav class="sb-topnav navbar navbar-expand navbar-dark bg-dark">
       <!-- Navbar Brand-->
       <a class="navbar-brand ps-3" href="main.jsp">충남오슈~</a>
@@ -128,6 +131,52 @@
       <div id="layoutSidenav_content">
          <main>
             <div class="container-fluid px-4">
+<<<<<<< HEAD
+	<nav class="sb-topnav navbar navbar-expand navbar-dark bg-dark">
+		<!-- Navbar Brand-->
+		<a class="navbar-brand ps-3" href="main.jsp">충남오슈~</a>
+		<!-- Sidebar Toggle-->
+		<button class="btn btn-link btn-sm order-1 order-lg-0 me-4 me-lg-0"
+			id="sidebarToggle" href="#!">
+			<i class="fas fa-bars"></i>
+		</button>
+		<ul class="navbar-nav ms-auto ms-md-0 me-3 me-lg-4">
+			<li class="nav-item dropdown"><a
+				class="nav-link dropdown-toggle" id="navbarDropdown" href="#"
+				role="button" data-bs-toggle="dropdown" aria-expanded="false"><i
+					class="fas fa-user fa-fw"></i></a>
+				<ul class="dropdown-menu dropdown-menu-end"
+					aria-labelledby="navbarDropdown">
+					<c:choose>
+						<c:when
+							test="${not empty sessionScope.SESS_AUTH and sessionScope.SESS_AUTH == true}">
+							<li><a class="dropdown-item"
+								href="<%=request.getContextPath()%>/UserLogout">로그아웃</a></li>
+							<li><a class="dropdown-item" href="myPage_info.jsp">마이페이지</a></li>
+							<li>
+								<hr class="dropdown-divider" />
+							</li>
+							<li><a class="dropdown-item">User:
+									${sessionScope.SESS_ID}</a></li>
+						</c:when>
+						<c:otherwise>
+							<li><a class="dropdown-item"
+								href="<%=request.getContextPath()%>/SignIn">로그인</a></li>
+               <<li><a class="dropdown-item"
+								href="http://localhost:8080/OhShu_Team1/join">회원가입</a>
+						</c:otherwise>
+					</c:choose>
+				</ul></li>
+		</ul>
+	</nav>
+	<div id="layoutSidenav">
+		<div id="layoutSidenav_nav">
+			<nav class="sb-sidenav accordion sb-sidenav-dark"
+				id="sidenavAccordion">
+				<div class="sb-sidenav-menu">
+					<div class="nav">
+=======
+>>>>>>> 6c45793e2ee2775faf0fc52f1761c31774acc2fb
 
 
                <div class="card mb-4"></div>

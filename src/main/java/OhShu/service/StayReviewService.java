@@ -5,7 +5,7 @@ import OhShu.vo.StayReviewVO;
 public interface StayReviewService {
 	int registerStayReview(StayReviewVO stayReview);
 	
-	int deleteStayReview(StayReviewVO stayReview);
+	void deleteStayReview(int stayReview);
 	
 	int changeStayReview(StayReviewVO stayReview);
 	

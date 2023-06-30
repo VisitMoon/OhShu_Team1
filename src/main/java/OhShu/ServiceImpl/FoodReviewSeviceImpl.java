@@ -10,7 +10,7 @@ public class FoodReviewSeviceImpl implements FoodReviewService {
 
 	private static final FoodReviewService instance = new FoodReviewSeviceImpl();
 
-	private FoodReviewSeviceImpl() {
+	public FoodReviewSeviceImpl() {
 
 	}
 
@@ -24,9 +24,9 @@ public class FoodReviewSeviceImpl implements FoodReviewService {
 	}
 
 	@Override
-	public int deleteFoodReview(FoodReviewVO foodReview) {
-		return dao.deleteFoodReview(foodReview);
-	}
+	public void deleteFoodReview(int review_no) {
+        dao.deleteFoodReview(review_no);
+    }
 
 	@Override
 	public int changeFoodReview(FoodReviewVO foodReview) {

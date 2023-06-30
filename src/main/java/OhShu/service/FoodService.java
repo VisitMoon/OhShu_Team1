@@ -10,5 +10,6 @@ public interface FoodService {
 	
 	List<FoodVO> getFoodList();
 	
-	List<FoodReviewVO> getFoodReviewList(int food_no);
+	
+	
 }

@@ -196,7 +196,7 @@ th, td {
 </style>
 </head>
 <body class="sb-nav-fixed">
-<<<<<<< HEAD
+	<<<<<<< HEAD
 	<nav class="sb-topnav navbar navbar-expand navbar-dark bg-dark">
 		<!-- Navbar Brand-->
 		<a class="navbar-brand ps-3" href="main.jsp">충남오세유~</a>
@@ -205,49 +205,56 @@ th, td {
 			id="sidebarToggle" href="#!">
 			<i class="fas fa-bars"></i>
 		</button>
-	
 
-		
-      <!-- Navbar-->
-        <ul class="navbar-nav ms-auto ms-md-0 me-3 me-lg-4">
-         <li class="nav-item dropdown"><a
-            class="nav-link dropdown-toggle" id="navbarDropdown" href="#"
-            role="button" data-bs-toggle="dropdown" aria-expanded="false"><i
-               class="fas fa-user fa-fw"></i></a>
-            <ul class="dropdown-menu dropdown-menu-end"
-               aria-labelledby="navbarDropdown">
-                <c:choose>
-                <c:when	test="${not empty sessionScope.SESS_AUTH and sessionScope.SESS_AUTH == true}">
-         <li><a class="dropdown-item" href="<%= request.getContextPath()%>/UserLogout">로그아웃</a></li>
-               <li><a class="dropdown-item"  href="myPage_info.jsp">마이페이지</a></li>
-               <li>
-                  <hr class="dropdown-divider" />
-               </li>
-               <li><a class="dropdown-item">User: ${sessionScope.SESS_ID}</a></li>
-               </c:when>
-               <c:otherwise>	
-               <li><a class="dropdown-item"href="<%= request.getContextPath()%>/SignIn">로그인</a></li>
-               <<li><a class="dropdown-item"  href="http://localhost:8080/OhShu_Team1/join">회원가입</a>
-               </c:otherwise>
-				</c:choose>
-            </ul></li>
-      </ul>
-   </nav>
-   <div id="layoutSidenav">
-      <div id="layoutSidenav_nav">
-         <nav class="sb-sidenav accordion sb-sidenav-dark"
-            id="sidenavAccordion">
-            <div class="sb-sidenav-menu">
-               <div class="nav">
-               
-				<div class="sb-sidenav-menu-heading">소개</div>
-                 	 <a class="nav-link" href="introduction.jsp">
-                     	<div class="sb-nav-link-icon">
-                       	 <i class="fas fa-tachometer-alt"></i></div> 충청남도의 개요 </a>
-                       	  	 
-                      <a class="nav-link" href="history.jsp">
-                     	<div class="sb-nav-link-icon">
-                       	 <i class="fas fa-tachometer-alt"></i></div> 충남오슈의 역사 </a> 
+
+
+		<!-- Navbar-->
+		<ul class="navbar-nav ms-auto ms-md-0 me-3 me-lg-4">
+			<li class="nav-item dropdown"><a
+				class="nav-link dropdown-toggle" id="navbarDropdown" href="#"
+				role="button" data-bs-toggle="dropdown" aria-expanded="false"><i
+					class="fas fa-user fa-fw"></i></a>
+				<ul class="dropdown-menu dropdown-menu-end"
+					aria-labelledby="navbarDropdown">
+					<c:choose>
+						<c:when
+							test="${not empty sessionScope.SESS_AUTH and sessionScope.SESS_AUTH == true}">
+							<li><a class="dropdown-item"
+								href="<%=request.getContextPath()%>/UserLogout">로그아웃</a></li>
+							<li><a class="dropdown-item" href="myPage_info.jsp">마이페이지</a></li>
+							<li>
+								<hr class="dropdown-divider" />
+							</li>
+							<li><a class="dropdown-item">User:
+									${sessionScope.SESS_ID}</a></li>
+						</c:when>
+						<c:otherwise>
+							<li><a class="dropdown-item"
+								href="<%=request.getContextPath()%>/SignIn">로그인</a></li>
+               <<li><a class="dropdown-item"
+								href="http://localhost:8080/OhShu_Team1/join">회원가입</a>
+						</c:otherwise>
+					</c:choose>
+				</ul></li>
+		</ul>
+	</nav>
+	<div id="layoutSidenav">
+		<div id="layoutSidenav_nav">
+			<nav class="sb-sidenav accordion sb-sidenav-dark"
+				id="sidenavAccordion">
+				<div class="sb-sidenav-menu">
+					<div class="nav">
+
+						<div class="sb-sidenav-menu-heading">소개</div>
+						<a class="nav-link" href="introduction.jsp">
+							<div class="sb-nav-link-icon">
+								<i class="fas fa-tachometer-alt"></i>
+							</div> 충청남도의 개요
+						</a> <a class="nav-link" href="history.jsp">
+							<div class="sb-nav-link-icon">
+								<i class="fas fa-tachometer-alt"></i>
+							</div> 충남오슈의 역사
+						</a>
 
 
 
@@ -454,22 +461,29 @@ th, td {
 
 
 								</div>
-								<%String reasd = Integer.toString(list.get(num).getFood_no()); %>
-								
+
+								<%
+								String reasd = Integer.toString(list.get(num).getFood_no());
+								%>
+
 								<%
 								//int foodNo = 1; // replace with the correct foodNo value
 								FoodReviewDAO reviewDAO = FoodReviewDAOImpl.getInstance();
-								List<FoodReviewVO> reviewList = reviewDAO.selectFoodReviewListOf(list.get(num).getFood_no());
+								List<FoodReviewVO> reviewList = reviewDAO.selectFoodReview(list.get(num).getFood_no());
 								%>
 
-								
 
+								<% String currentUser = (String) session.getAttribute("SESS_ID");%>
+
+								<% if(currentUser != null) { %>
 								<div>
-															
-									<form action="<%=request.getContextPath()%>/FoodReview" method="post">
+
+									<form action="<%=request.getContextPath()%>/FoodReview"
+										method="post">
 										<input type="hidden" name="foodNo" value="<%=reasd%>" /> <label
-											for="userId">사용자 ID:</label> <input type="text" name="userId"
-											required> <br> <label for="reviewContent">댓글
+											for="userId">사용자 ID:</label> <input type="text" name="userId" value="<%=currentUser%>" readonly>
+										<br>		
+							 <label for="reviewContent">댓글
 											내용:</label>
 										<textarea name="reviewContent" cols="30" rows="4" required></textarea>
 										<br>
@@ -487,14 +501,13 @@ th, td {
 												작성자:
 												<%=review.getUser_id()%>
 												내용:
-												<%=review.getReview_content()%>
-												<form action="<%=request.getContextPath()%>/UpdateFoodReview"
-													method="post">
-													<input type="hidden" name="reviewNo"
-														value="<%=review.getReview_no()%>" /> <input type="text"
-														name="newReviewContent" required />
-													<button type="submit">댓글 수정</button>
-												</form>
+												<%=review.getReview_content()%><br>
+												작성 시간: <%=review.getTime()%> <br>
+												<%
+												String food_review_user_id = review.getUser_id();
+												String current_user_id = (String) session.getAttribute("SESS_ID");
+												if (food_review_user_id.equals(current_user_id)) {
+												%>
 												<form
 													action="<%=request.getContextPath()%>/DeleteFoodReview"
 													method="post">
@@ -502,6 +515,9 @@ th, td {
 														value="<%=review.getReview_no()%>" />
 													<button type="submit">댓글 삭제</button>
 												</form>
+												<%
+												}
+												%>
 											</div>
 										</li>
 										<%
@@ -509,6 +525,10 @@ th, td {
 										%>
 									</ul>
 								</div>
+								<% } else { %>
+
+								<p>로그인 후 댓글을 작성하실 수 있습니다.</p>
+								<% } %>
 							</div>
 			</main>
 			<footer class="py-4 bg-light mt-auto">

@@ -430,18 +430,74 @@ th, td {
 									</table>
 
 								</div>
+<%
+								String reasd = Integer.toString(list.get(num).getTour_no());
+								%>
 
-								<div style="margin-top: 20px;">
-									<h5>댓글</h5>
-									<input type="text"> <input type="submit" value="등록">
+								<%
+								//int foodNo = 1; // replace with the correct foodNo value
+								TourReviewDAO reviewDAO = TourReviewDAOImpl.getInstance();
+								List<TourReviewVO> reviewList = reviewDAO.selectTourReview(list.get(num).getTour_no());
+								%>
 
+
+								<% String currentUser = (String) session.getAttribute("SESS_ID");%>
+
+								<% if(currentUser != null) { %>
+								<div>
+
+									<form action="<%=request.getContextPath()%>/TourReview"
+										method="post">
+										<input type="hidden" name="tourNo" value="<%=reasd%>" /> <label
+											for="userId">사용자 ID:</label> <input type="text" name="userId" value="<%=currentUser%>" readonly>
+										<br>		
+							 <label for="reviewContent">댓글
+											내용:</label>
+										<textarea name="reviewContent" cols="30" rows="4" required></textarea>
+										<br>
+										<button type="submit">댓글 작성</button>
+									</form>
 								</div>
+								<div>
+									<h2>댓글 목록</h2>
+									<ul>
+										<%
+										for (TourReviewVO review : reviewList) {
+										%>
+										<li>
+											<div>
+												작성자:
+												<%=review.getUser_id()%>
+												내용:
+												<%=review.getReview_content()%><br>
+												작성 시간: <%=review.getTime()%> <br>
+												<%
+												String tour_review_user_id = review.getUser_id();
+												String current_user_id = (String) session.getAttribute("SESS_ID");
+												if (tour_review_user_id.equals(current_user_id)) {
+												%>
+												<form
+													action="<%=request.getContextPath()%>/DeleteTourReview"
+													method="post">
+													<input type="hidden" name="reviewNo"
+														value="<%=review.getReview_no()%>" />
+													<button type="submit">댓글 삭제</button>
+												</form>
+												<%
+												}
+												%>
+											</div>
+										</li>
+										<%
+										}
+										%>
+									</ul>
+								</div>
+								<% } else { %>
 
+								<p>로그인 후 댓글을 작성하실 수 있습니다.</p>
+								<% } %>
 							</div>
-
-						</div>
-					</div>
-				</div>
 			</main>
 			<footer class="py-4 bg-light mt-auto">
 				<div class="container-fluid px-4"></div>
